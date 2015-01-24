@@ -8,7 +8,7 @@ import com.letsplay.data.Choice;
 public class GameModel extends Model {
 
 	public const bubbleText : Vector.<String> = new <String>[];
-	private var choices:Vector.<Choice>;
+	private var choices:Vector.<Choice> = new <Choice>[];
 
 	public function GameModel() {
 		super();
@@ -21,9 +21,9 @@ public class GameModel extends Model {
 		bubbleText.push("plein d'autre text super long plein d'autre text super long plein d'autre text super long plein d'autre text super long ");
 
 		choices.push(
-			new Choice({text : "choix no 1 lool"}),
-			new Choice({text : "choixasggsg no 2 lool"}),
-			new Choice({text : "choix no 3 lfassgAGool"})
+			new Choice({ id: "answerID_1", text : "choix no 1 lool"}),
+			new Choice({ id: "answerID_2", text : "choixasggsg no 2 lool"}),
+			new Choice({ id: "answerID_3", text : "choix no 3 lfassgAGool"})
 		);
 
 		super.start();

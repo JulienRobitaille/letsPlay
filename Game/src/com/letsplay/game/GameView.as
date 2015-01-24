@@ -7,6 +7,7 @@ import com.drawm.mvc.view.View;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Choice;
 import com.letsplay.game.ui.TextBubble;
+import com.letsplay.game.ui.answerBubble.AnswerBubble;
 
 import starling.events.Event;
 
@@ -35,6 +36,8 @@ public class GameView extends View {
 	private function onShowAnswer(event:Event):void {
 		var answerBubble : AnswerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>);
 		addChild(answerBubble);
+		answerBubble.x = stage.stageWidth - answerBubble.width >> 1
+		answerBubble.y = stage.stageHeight - answerBubble.height >> 1;
 	}
 
 	override public function start():void {

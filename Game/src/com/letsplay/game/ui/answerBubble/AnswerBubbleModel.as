@@ -16,7 +16,11 @@ public class AnswerBubbleModel extends Model {
 	override public function resume():void {
 		super.resume();
 
-		dispatchEventWith(AnswerBubbleEvent.SHOW_ANSWERS, false, { choices : this.choices });
+		dispatchEventWith(AnswerBubbleEvent.SHOW_ANSWERS, false, { width:300, choices : this.choices });
+	}
+
+	public function overAnswer(id:String):void {
+		dispatchEventWith(AnswerBubbleEvent.OVER_ANSWER, false, { id : id});
 	}
 }
 }

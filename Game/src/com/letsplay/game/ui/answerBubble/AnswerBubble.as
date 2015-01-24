@@ -1,7 +1,8 @@
 /**
  * Created by damon-karelab on 1/24/2015.
  */
-package com.letsplay.game {
+package com.letsplay.game.ui.answerBubble {
+import com.letsplay.game.*;
 import com.drawm.mvc.Page;
 import com.letsplay.data.Choice;
 import com.letsplay.game.ui.answerBubble.AnswerBubbleModel;
