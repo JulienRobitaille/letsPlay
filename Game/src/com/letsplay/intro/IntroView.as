@@ -29,10 +29,12 @@ public class IntroView extends View {
 
         this.addChild(introBackground);
 
-        var introText:TextField = new TextField(100, 100, "test hahahahahahahah");
-          //  introText.autoSize = TextFieldAutoSize.HORIZONTAL;
-        //introText.x = sWidth >> 1;
-        introText.color = 0xFF0000;
+        var introText:TextField = new TextField(sWidth, 1, "test hahahahahahahah\nsakdjalkdjaslkdjaksdj\njksdfjkdsjfkflskdflsdfjdskfj");
+            introText.autoSize = TextFieldAutoSize.VERTICAL;
+            introText.y = (sHeight - introText.height) >> 1;
+            introText.color = 0xFF0000;
+
+
 
         this.addChild(introText);
 
