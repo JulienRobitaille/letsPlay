@@ -66,9 +66,7 @@ public class TextBubble extends Sprite {
 			this.disposeTimer();
 		}else{
 			this.textfield.text += this.text.shift();
-
 			updateBubble();
-
 		}
 	}
 
