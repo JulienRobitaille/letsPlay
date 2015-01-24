@@ -2,11 +2,10 @@
  * Created by damon-karelab on 1/24/2015.
  */
 package com.letsplay {
-import com.drawm.mvc.Page;
 import com.letsplay.game.Game;
-import com.letsplay.intro.Intro;
 
-import starling.display.Quad;
+import flash.display.Bitmap;
+
 import starling.display.Sprite;
 import starling.text.BitmapFont;
 import starling.text.TextField;
