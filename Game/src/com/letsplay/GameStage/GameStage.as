@@ -17,5 +17,11 @@ public class GameStage extends Page {
     public function curtainLift():void {
         this.stageView.curtainLift();
     }
+    public function actTransition( data:Object ):void {
+        this.stageView.curtainDropThenLift( data);
+    }
+    public function theEnd():void {
+        this.stageView.theEnd();
+    }
 }
 }
