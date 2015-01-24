@@ -70,6 +70,12 @@ public class TextBubble extends Sprite {
 		}
 	}
 
+	public function skipAnimation():void{
+		this.textfield.text += this.text.join();
+		updateBubble();
+		disposeTimer();
+	}
+
 	private function updateBubble():void {
 
 		this.bubble.width = this.textfield.width -2;
