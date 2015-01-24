@@ -4,6 +4,8 @@
 package com.letsplay.game {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
+import com.letsplay.data.Choice;
+import com.letsplay.data.Choice;
 import com.letsplay.game.ui.TextBubble;
 
 import starling.events.Event;
@@ -26,13 +28,17 @@ public class GameView extends View {
 
 	override public function resume():void {
 		model.addEventListener(BubbleEvent.SHOW_TEXT, onShowText);
+		model.addEventListener(BubbleEvent.SHOW_ANSWER, onShowAnswer);
 		super.resume();
+	}
+
+	private function onShowAnswer(event:Event):void {
+		var answerBubble : AnswerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>);
+		addChild(answerBubble);
 	}
 
 	override public function start():void {
 		super.start();
-
-
 	}
 }
 }
