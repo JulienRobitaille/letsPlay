@@ -7,6 +7,6 @@ import com.drawm.mvc.Page;
 public class Intro extends Page {
     public function Intro() {
         super(IntroModel, IntroView, IntroController);
-    }
+}
 }
 }

@@ -39,18 +39,18 @@ public class IntroView extends View {
 
         this.addChild(this.introBackground);
 
-            this.introText = new TextField(sWidth, 1, I18n.INTRO,"Courrier",18);
+            this.introText = new TextField(sWidth, 1, I18n.INTRO,"fluorine",24);
             this.introText.autoSize = TextFieldAutoSize.VERTICAL;
             this.introText.y = (sHeight - this.introText.height-20) >> 1;
             this.introText.color = 0xD7D8D3;
             this.introText.alpha = 0;
-            this.introText.touchable = false
+            this.introText.touchable = false;
+
         TweenLite.to(this.introText,1.5,{alpha:1});
         setTimeout(function():void{
             TweenLite.to(self.introText,1.5,{alpha:0,onComplete:function():void{
                 TweenLite.to(self.introBackground,1,{alpha:0,onComplete:function():void{
-                    self.introBackground.parent.removeChild(self.introBackground);
-                    self.introText.parent.removeChild(self.introText);
+                    self.removeChildren();
                 }});
             }});
         },3500)
@@ -64,8 +64,8 @@ public class IntroView extends View {
         super.stop();
         TweenLite.killTweensOf(this.introBackground);
         TweenLite.killTweensOf(this.introText);
-        this.introBackground.parent.removeChild(this.introBackground);
-        this.introText.parent.removeChild(this.introText);
+
+        this.removeChildren();
     }
 }
 }
