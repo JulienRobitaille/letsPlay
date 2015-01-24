@@ -11,7 +11,6 @@ import starling.events.Event;
 	public class View extends Sprite {
 		
 		protected var _model:Model;
-		
 		public function View(model:Model){
 			_model = model;
 			setupListeners();
@@ -123,6 +122,6 @@ import starling.events.Event;
 			_model.addEventListener(MVCEvent.STOP, 	  onStop);
             _model.addEventListener(MVCEvent.DISPOSE, onDispose);
         }
-		
+
 	}
 }

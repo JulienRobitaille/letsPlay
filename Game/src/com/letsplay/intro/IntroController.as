@@ -5,6 +5,7 @@ package com.letsplay.intro {
 import com.drawm.mvc.Page;
 import com.drawm.mvc.controler.Controller;
 import com.drawm.mvc.model.Model;
+import com.letsplay.StateEvent.StateEvent;
 
 import starling.events.Touch;
 
@@ -17,7 +18,8 @@ public class IntroController extends Controller {
 
     override protected function click(touch:Touch):void {
         super.click(touch);
-        this.introModel.stop();
+        this._page.dispatchEventWith(StateEvent.DONE);
     }
+
 }
 }

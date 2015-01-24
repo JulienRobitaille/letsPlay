@@ -50,8 +50,7 @@ public class IntroView extends View {
         setTimeout(function():void{
             TweenLite.to(self.introText,1.5,{alpha:0,onComplete:function():void{
                 TweenLite.to(self.introBackground,1,{alpha:0,onComplete:function():void{
-                    self.introBackground.parent.removeChild(self.introBackground);
-                    self.introText.parent.removeChild(self.introText);
+                    self.removeChildren();
                 }});
             }});
         },3500)
@@ -65,8 +64,8 @@ public class IntroView extends View {
         super.stop();
         TweenLite.killTweensOf(this.introBackground);
         TweenLite.killTweensOf(this.introText);
-        this.introBackground.parent.removeChild(this.introBackground);
-        this.introText.parent.removeChild(this.introText);
+
+        this.removeChildren();
     }
 }
 }
