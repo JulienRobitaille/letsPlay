@@ -34,6 +34,7 @@ public class GameView extends View {
 
 	private function onShowAnswer(event:Event):void {
 		var answerBubble : AnswerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>);
+		addChild(answerBubble);
 	}
 
 	override public function start():void {

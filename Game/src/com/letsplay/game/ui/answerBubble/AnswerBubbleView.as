@@ -8,6 +8,8 @@ import com.drawm.ui.text.InteractiveText;
 import com.letsplay.data.Choice;
 import com.letsplay.game.ui.answerBubble.event.AnswerBubbleEvent;
 
+import starling.text.TextFieldAutoSize;
+
 public class AnswerBubbleView extends View {
 
 	private var answersText : Vector.<InteractiveText> = new <InteractiveText>[];
@@ -32,8 +34,14 @@ public class AnswerBubbleView extends View {
 		answersText.length = 0;
 		var data : Vector.<Choice> = event.data.choices as Vector.<Choice>;
 		var text : InteractiveText;
+		var nextY : int = 0;
 		for(var i : int = 0 ; i < data.length ; i++){
-			//text = new InteractiveText();
+			text = new InteractiveText(data[i].id, event.data.width, 2, data[i].text, "fluorine", 24);
+			text.autoSize = TextFieldAutoSize.VERTICAL;
+			addChild(text);
+			text.y = nextY;
+
+			nextY += text.height;
 		}
 	}
 }
