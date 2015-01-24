@@ -4,6 +4,7 @@
 package com.letsplay.intro {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
+import com.letsplay.I18n;
 
 import starling.display.Quad;
 import starling.text.TextField;
@@ -29,10 +30,12 @@ public class IntroView extends View {
 
         this.addChild(introBackground);
 
-        var introText:TextField = new TextField(100, 100, "test hahahahahahahah");
-          //  introText.autoSize = TextFieldAutoSize.HORIZONTAL;
-        //introText.x = sWidth >> 1;
-        introText.color = 0xFF0000;
+        var introText:TextField = new TextField(sWidth, 1, I18n.INTRO,"Courrier",18);
+            introText.autoSize = TextFieldAutoSize.VERTICAL;
+            introText.y = (sHeight - introText.height-20) >> 1;
+            introText.color = 0xD7D8D3;
+
+
 
         this.addChild(introText);
 
