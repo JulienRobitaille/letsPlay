@@ -28,25 +28,23 @@ public class LetsPlay extends Sprite {
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
 
-		//var self:LetsPlay = this;
-		//var intro:Intro = new Intro();
-		//menu = new Menu();
-		//gameStage = new GameStage();
+		var self:LetsPlay = this;
+		var intro:Intro = new Intro();
+		menu = new Menu();
+		gameStage = new GameStage();
 
-		//this.addChild(gameStage);
-		//this.addChild(menu);
-		//this.addChild(intro);
-		//
-		//intro.addEventListener(StateEvent.DONE, function():void{
-		//	self.removeChild(intro);
-		//	menu.oppeningAnimation();
-		//});
-		//
-		//this.bindMenu();
-		//this.bindGameStage();
+		this.addChild(gameStage);
+		this.addChild(menu);
+		this.addChild(intro);
 
-		var game:Game = new Game();
-		this.addChild(game);
+		intro.addEventListener(StateEvent.DONE, function():void{
+			self.removeChild(intro);
+			menu.oppeningAnimation();
+		});
+
+		this.bindMenu();
+		this.bindGameStage();
+
 	}
 
 	private function bindMenu():void {
@@ -54,6 +52,9 @@ public class LetsPlay extends Sprite {
 		menu.addEventListener(StateEvent.PLAY, function():void{
 			self.menu.removeMenuWithStyle();
 			self.startGame();
+
+			var game:Game = new Game();
+			self.addChild(game);
 
 		});
 		menu.addEventListener(StateEvent.CREDIT, function():void{
