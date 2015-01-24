@@ -19,6 +19,8 @@ import starling.text.TextFieldAutoSize;
 
 public class MenuView extends View {
     private var menuModel:MenuModel;
+    private var jouer:InteractiveText;
+    private var credit:InteractiveText;
 
    // private var menuModel:
     public function MenuView(model:Model) {
@@ -33,25 +35,32 @@ public class MenuView extends View {
     public function oppeningAnimation():void {
         var sWidth:int = this.stage.stageWidth;
         var sHeight:int = this.stage.stageHeight;
+
         var half:int = sHeight>>1;
 
-        var jouer:InteractiveText = new InteractiveText(this.menuModel.id_play, sWidth, 1, I18n.JOUER,"fluorine",48);
-            jouer.autoSize = TextFieldAutoSize.VERTICAL;
-            jouer.y = -20;
-            jouer.color = 0xD7D8D3;
-            jouer.useHandCursor = true;
+            this.jouer= new InteractiveText(this.menuModel.id_play, sWidth, 1, I18n.JOUER,"fluorine",48);
+            this.jouer.autoSize = TextFieldAutoSize.VERTICAL;
+            this.jouer.y = -20;
+            this.jouer.color = 0xD7D8D3;
+            this.jouer.useHandCursor = true;
 
-        var credit:InteractiveText = new InteractiveText(this.menuModel.id_credit, sWidth, 1, I18n.CREDIT,"fluorine",48);
-            credit.autoSize = TextFieldAutoSize.VERTICAL;
-            credit.y = -40;
-            credit.color = 0xD7D8D3;
-            credit.useHandCursor = true;
+            this.credit = new InteractiveText(this.menuModel.id_credit, sWidth, 1, I18n.CREDIT,"fluorine",48);
+            this.credit.autoSize = TextFieldAutoSize.VERTICAL;
+            this.credit.y = -40;
+            this.credit.color = 0xD7D8D3;
+            this.credit.useHandCursor = true;
 
-        this.addChild(jouer);
-        this.addChild(credit);
 
-        TweenLite.to(jouer,0.5,{y:(half-jouer.height - 20)});
-        TweenLite.to(credit,0.5,{y:(half-credit.height + 30)});
+        this.addChild(this.jouer);
+        this.addChild(this.credit);
+
+        TweenLite.to(this.jouer,0.5,{y:(half-this.jouer.height - 20)});
+        TweenLite.to(this.credit,0.5,{y:(half-this.credit.height + 30)});
+    }
+
+    public function removeMenuWithStyle():void {
+        TweenLite.to(this.jouer,0.7,{y: -60});
+        TweenLite.to(this.credit,0.7,{y:-50});
     }
 }
 }
