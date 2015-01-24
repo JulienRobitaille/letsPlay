@@ -6,7 +6,6 @@ import com.drawm.mvc.Page;
 import com.drawm.mvc.controler.Controller;
 import com.drawm.mvc.model.Model;
 import com.drawm.ui.interactive.IInteractiveUI;
-import com.letsplay.game.ui.answerBubble.AnswerBubbleModel;
 
 import starling.events.Touch;
 
@@ -15,9 +14,9 @@ public class AnswerBubbleController extends Controller {
 		super(model, page);
 	}
 
-
 	override protected function over(touch:Touch):void {
 		super.over(touch);
+
 		if(touch.target is IInteractiveUI){
 			(this._model as AnswerBubbleModel).overAnswer((touch.target as IInteractiveUI).id);
 		}

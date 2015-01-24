@@ -12,7 +12,6 @@ public class AnswerBubbleModel extends Model {
 		super();
 	}
 
-
 	override public function resume():void {
 		super.resume();
 
@@ -20,6 +19,9 @@ public class AnswerBubbleModel extends Model {
 	}
 
 	public function overAnswer(id:String):void {
+		dispatchEventWith(AnswerBubbleEvent.OVER_ANSWER, false, { id : id});
+	}
+	public function clickAnswer(id:String):void {
 		dispatchEventWith(AnswerBubbleEvent.OVER_ANSWER, false, { id : id});
 	}
 }

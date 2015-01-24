@@ -24,27 +24,27 @@ public class LetsPlay extends Sprite {
 
 	public function LetsPlay() {
 		super();
-		var self:LetsPlay = this;
+		//var self:LetsPlay = this;
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
-		var intro:Intro = new Intro();
-			menu = new Menu();
-			gameStage = new GameStage();
+		//var intro:Intro = new Intro();
+		//	menu = new Menu();
+		//	gameStage = new GameStage();
 
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
 
-		this.addChild(gameStage);
-		this.addChild(menu);
-		this.addChild(intro);
+		//this.addChild(gameStage);
+		//this.addChild(menu);
+		//this.addChild(intro);
+		//
+		//intro.addEventListener(StateEvent.DONE, function():void{
+		//	self.removeChild(intro);
+		//	menu.oppeningAnimation();
+		//});
+		//
+		//this.bindMenu();
 
-		intro.addEventListener(StateEvent.DONE, function():void{
-			self.removeChild(intro);
-			menu.oppeningAnimation();
-		});
-
-		this.bindMenu();
-
-		//var game:Game = new Game();
-		//this.addChild(game);
+		var game:Game = new Game();
+		this.addChild(game);
 	}
 
 	private function bindMenu():void {

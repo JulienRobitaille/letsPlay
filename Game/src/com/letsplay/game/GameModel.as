@@ -4,14 +4,18 @@
 package com.letsplay.game {
 import com.drawm.mvc.model.Model;
 import com.letsplay.data.Choice;
+import com.letsplay.data.DialogTree;
 
 public class GameModel extends Model {
 
 	public const bubbleText : Vector.<String> = new <String>[];
 	private var choices:Vector.<Choice> = new <Choice>[];
+	private var dialogTree:DialogTree;
 
 	public function GameModel() {
 		super();
+
+		this.dialogTree ||= new DialogTree();
 	}
 
 
