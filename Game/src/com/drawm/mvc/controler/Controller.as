@@ -171,18 +171,18 @@ public class Controller {
 	private function onTouch(event:TouchEvent):void{
 		var stage:Stage = Starling.current.nativeStage;
 		for each(var touch:Touch in event.touches){
-			if(touch.phase != TouchPhase.HOVER){
+			if(touch.phase != TouchPhase.HOVER){ // out of place for debug purposes
 				if(touch.phase == TouchPhase.BEGAN){
 					onTouchDown(touch);
 				}else if(touch.phase == TouchPhase.ENDED){
 					onTouchUp(touch);
-				}else if(touch.phase == TouchPhase.HOVER){
-					onMouseOver(touch);
 				}else if(touch.phase == TouchPhase.MOVED){
 					onTouchMove(touch);
 				}else if(touch.phase == TouchPhase.STATIONARY){
-					onTouchStationnary(touch);
+					stationnary(touch);
 				}
+			}else{
+				over(touch);
 			}
 		}
 	}
@@ -212,11 +212,12 @@ public class Controller {
 	}
 
 	protected function click(touch:Touch):void{ }
+	protected function stationnary(touch:Touch):void{ }
+	protected function over(touch:Touch):void{}
+	protected function out(touch:Touch):void{}
+
 	protected function onTextInputChange(event:Event):void{}
 	protected function onListChange(event:Event):void{}
-	protected function onTouchStationnary(touch:Touch):void{ }
-	protected function onMouseOver(touch:Touch):void{}
-	protected function onTouchOut(touch:Touch):void{}
 
 
 	public function changePage(page:Page):void {

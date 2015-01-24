@@ -26,10 +26,11 @@ public class TextBubble extends Sprite {
 		super();
 		this.text = text.split("");
 
-		this.textfield ||= new TextField(Math.max(2,width),Math.max(2,height)," ", "fluorine", 24);
+		this.textfield ||= new TextField(Math.max(2,width),Math.max(2,height),text, "fluorine", 24);
 		this.textfield.autoSize = TextFieldAutoSize.VERTICAL;
 		this.textfield.hAlign = HAlign.LEFT;
 		this.addChild(this.textfield);
+
 
 		this.bubble = new Quad(this.textfield.width-2, this.textfield.height-2, 0xFFFFFF);
 		this.bubbleBackground = new Quad(this.textfield.width, this.textfield.height, 0);
@@ -46,19 +47,25 @@ public class TextBubble extends Sprite {
 		this.textAnimationTimer = new Timer(50,0);
 		this.textAnimationTimer.addEventListener(TimerEvent.TIMER, tick);
 
+		this.textfield.text = "";
+
 		this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
 
 	private function onAddedToStage(event:Event):void {
 		event.target.removeEventListener(event.type, arguments.callee);
 		this.addEventListener(Event.REMOVED_FROM_STAGE, onRemoveFromStage);
-		this.textAnimationTimer.start();
+		if(this.textAnimationTimer) {
+			this.textAnimationTimer.start();
+		}
 	}
 
 	private function onRemoveFromStage(event:Event):void {
 		event.target.removeEventListener(event.type, arguments.callee);
 		this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-		this.textAnimationTimer.stop();
+		if(this.textAnimationTimer){
+			this.textAnimationTimer.stop();
+		}
 	}
 	
 	private function tick(event:TimerEvent):void {
