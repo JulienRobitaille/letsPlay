@@ -14,6 +14,8 @@ import starling.display.Sprite;
 public class GameStageView extends View {
     private var closedScene:InteractiveImage;
     private var act1:Sprite;
+    private var topScene:InteractiveImage;
+    private var scene:InteractiveImage;
 
     public function GameStageView(model:Model) {
         super(model);
@@ -23,26 +25,20 @@ public class GameStageView extends View {
         super.start();
         var sWidth:int = this.stage.stageWidth;
         var sHeight:int = this.stage.stageHeight;
-        var topScene:InteractiveImage = new InteractiveImage(null,Asset.TopScene);
-        var scene:InteractiveImage = new InteractiveImage(null,Asset.Scene);
+            this.scene = new InteractiveImage(null,Asset.Scene);
+            this.topScene= new InteractiveImage(null,Asset.TopScene);
 
         this.closedScene = new InteractiveImage(null,Asset.ClosedScene);
-        this.closedScene.y = topScene.height - 45;
-        this.closedScene.x = ( topScene.width - closedScene.width ) >> 1;
-        scene.y = sHeight - scene.height - 30;
+        this.closedScene.y = this.topScene.height - 45;
+        this.closedScene.x = ( this.topScene.width - closedScene.width ) >> 1;
+        this.scene.y = sHeight - this.scene.height - 30;
 
-        this.act1 = new Sprite();
+        this.setAct1();
 
-        var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
-            cloud.x = (( topScene.width - closedScene.width ) >> 1) + 100;
-            cloud.y = topScene.height - 25;
-        TweenMax.to(cloud,8,{x:"+30",y:"+15",yoyo:true,repeat:4});
-        this.act1.addChild(cloud);
-
-        this.addChild(scene);
+        this.addChild(this.scene);
         this.addChild(act1);
         this.addChild(this.closedScene);
-        this.addChild(topScene);
+        this.addChild(this.topScene);
 
     }
     public function curtainLift():void{
@@ -58,6 +54,39 @@ public class GameStageView extends View {
 
     public function theEnd():void {
         //todo
+    }
+
+    private function setAct1():void {
+        this.act1 = new Sprite();
+
+        var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
+        cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 100;
+        cloud.y = this.topScene.height - 25;
+        TweenMax.to(cloud,8,{x:"+30",y:"+15",yoyo:true,repeat:4});
+
+
+        var leftTree:InteractiveImage = new InteractiveImage(null,Asset.LeftTree);
+        leftTree.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 70;
+        leftTree.y = this.topScene.height + 85;
+
+
+        var house:InteractiveImage = new InteractiveImage(null,Asset.House);
+        house.x = (( this.topScene.width + this.closedScene.width ) >> 1) - 170 ;
+        house.y = this.topScene.height + 100;
+
+        var bush:InteractiveImage = new InteractiveImage(null,Asset.Bush);
+        bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
+        bush.y = this.topScene.height + 160;
+
+        var cat:InteractiveImage = new InteractiveImage(null,Asset.Cat);
+        cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
+        cat.y = this.topScene.height + 175;
+
+        this.act1.addChild(cloud);
+        this.act1.addChild(leftTree);
+        this.act1.addChild(house);
+        this.act1.addChild(bush);
+        this.act1.addChild(cat);
     }
 }
 }

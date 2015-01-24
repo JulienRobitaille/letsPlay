@@ -53,8 +53,8 @@ public class LetsPlay extends Sprite {
 			self.menu.removeMenuWithStyle();
 			self.startGame();
 
-			var game:Game = new Game();
-			self.addChild(game);
+			//var game:Game = new Game();
+			//self.addChild(game);
 
 		});
 		menu.addEventListener(StateEvent.CREDIT, function():void{
