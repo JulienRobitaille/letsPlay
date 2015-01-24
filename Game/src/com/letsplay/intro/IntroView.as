@@ -7,8 +7,10 @@ import com.drawm.mvc.view.View;
 import com.drawm.ui.interactive.InteractiveQuad;
 import com.greensock.TweenLite;
 import com.letsplay.I18n;
+import com.letsplay.StateEvent.StateEvent;
 
 import flash.utils.Timer;
+import flash.utils.clearTimeout;
 import flash.utils.setTimeout;
 
 import starling.display.Quad;
@@ -18,6 +20,7 @@ import starling.text.TextFieldAutoSize;
 public class IntroView extends View {
     private var introText:TextField;
     private var introBackground:InteractiveQuad;
+    private var idTimeout:int;
     public function IntroView(model:Model) {
         super(model);
 
@@ -47,10 +50,11 @@ public class IntroView extends View {
             this.introText.touchable = false;
 
         TweenLite.to(this.introText,1.5,{alpha:1});
-        setTimeout(function():void{
+       this.idTimeout = setTimeout(function():void{
             TweenLite.to(self.introText,1.5,{alpha:0,onComplete:function():void{
                 TweenLite.to(self.introBackground,1,{alpha:0,onComplete:function():void{
                     self.removeChildren();
+                    self.dispatchEventWith(StateEvent.DONE,true);
                 }});
             }});
         },3500)
@@ -62,6 +66,7 @@ public class IntroView extends View {
 
     override public function stop():void {
         super.stop();
+        flash.utils.clearTimeout(this.idTimeout);
         TweenLite.killTweensOf(this.introBackground);
         TweenLite.killTweensOf(this.introText);
 

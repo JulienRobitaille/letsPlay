@@ -19,9 +19,18 @@ public class Asset {
     public static var atlas:TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(AtlasTexture), XML(new AtlasXml));
 
 
+    public static const TopScene:Texture = atlas.getTexture("top_scene");
     public static const ClosedScene:Texture = atlas.getTexture("closed_scene");
+    public static const Scene:Texture = atlas.getTexture("scene");
+    public static const House:Texture = atlas.getTexture("house");
+    public static const Bush:Texture = atlas.getTexture("bush");
+    public static const Cloud:Texture = atlas.getTexture("cloud");
+    public static const LeftTree:Texture = atlas.getTexture("left_tree");
+    public static const RightTree:Texture = atlas.getTexture("right_tree");
+    public static const Cat:Texture = atlas.getTexture("cat");
 
     public function Asset() {
     }
 }
+
 }
