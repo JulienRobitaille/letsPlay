@@ -5,9 +5,12 @@ package com.letsplay.GameStage {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
 import com.drawm.ui.interactive.InteractiveImage;
+import com.greensock.TweenLite;
 import com.letsplay.Atlas.Asset;
 
 public class GameStageView extends View {
+    private var closedScene:InteractiveImage;
+
     public function GameStageView(model:Model) {
         super(model);
     }
@@ -17,7 +20,7 @@ public class GameStageView extends View {
         var sWidth:int = this.stage.stageWidth;
         var sHeight:int = this.stage.stageHeight;
         var topScene:InteractiveImage = new InteractiveImage(null,Asset.TopScene);
-        var closedScene:InteractiveImage = new InteractiveImage(null,Asset.ClosedScene);
+            closedScene = new InteractiveImage(null,Asset.ClosedScene);
         var scene:InteractiveImage = new InteractiveImage(null,Asset.Scene);
         scene.y = sHeight - scene.height - 30;
         closedScene.y = topScene.height - 45;
@@ -26,6 +29,9 @@ public class GameStageView extends View {
         this.addChild(closedScene);
         this.addChild(topScene);
 
+    }
+    public function curtainLift():void{
+        TweenLite.to(this.closedScene,3, {y:-115});
     }
 }
 }

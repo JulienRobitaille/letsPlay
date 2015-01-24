@@ -18,5 +18,9 @@ public class Menu extends Page {
     public function oppeningAnimation():void {
         this._viewMenu.oppeningAnimation();
     }
+
+    public function removeMenuWithStyle():void {
+        this._viewMenu.removeMenuWithStyle();
+    }
 }
 }

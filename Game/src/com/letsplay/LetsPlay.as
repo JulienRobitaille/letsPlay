@@ -50,7 +50,7 @@ public class LetsPlay extends Sprite {
 	private function bindMenu():void {
 		var self:LetsPlay = this;
 		menu.addEventListener(StateEvent.PLAY, function():void{
-			self.menu.removeChildren();
+			self.menu.removeMenuWithStyle();
 			self.startGame();
 
 		});
@@ -59,7 +59,7 @@ public class LetsPlay extends Sprite {
 		});
 	}
 	private function startGame():void{
-		//lololol
+		this.gameStage.curtainLift();
 	}
 }
 }
