@@ -32,11 +32,11 @@ public class LetsPlay extends Sprite {
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(AtlasTexture), XML(new AtlasXml));
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new FontXml())), "fluorine");
 
-		//var intro:Intro = new Intro();
-		//this.addChild(intro);
+		var intro:Intro = new Intro();
+		this.addChild(intro);
 
-		var game:Game = new Game();
-		this.addChild(game);
+		//var game:Game = new Game();
+		//this.addChild(game);
 
 	}
 
