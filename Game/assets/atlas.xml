@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:36910ff95108e5d8ccbe3d8f57c09afd:1b7503c43a15e48a5d833da75ec7a1dc:cde709370900f12288f3449eded86f07$ -->
+<!-- $TexturePacker:SmartUpdate:f0616168ce2933ade0318260c20d618e:4a6431e427d42624e212f5f2922fa7ea:cde709370900f12288f3449eded86f07$ -->
 <TextureAtlas imagePath="atlas.png">
-    <SubTexture name="closed_scene" x="2" y="2" width="483" height="252"/>
-    <SubTexture name="fluorine" x="487" y="2" width="256" height="256"/>
+    <SubTexture name="bush" x="42" y="2" width="72" height="43"/>
+    <SubTexture name="cat" x="2" y="2" width="38" height="36"/>
+    <SubTexture name="closed_scene" x="2" y="253" width="483" height="252"/>
+    <SubTexture name="cloud" x="116" y="2" width="72" height="86"/>
+    <SubTexture name="fluorine" x="487" y="253" width="256" height="256"/>
+    <SubTexture name="house" x="190" y="2" width="63" height="104"/>
+    <SubTexture name="left_tree" x="321" y="2" width="64" height="121"/>
+    <SubTexture name="right_tree" x="255" y="2" width="64" height="121"/>
+    <SubTexture name="scene" x="2" y="511" width="680" height="445"/>
+    <SubTexture name="top_scene" x="2" y="125" width="680" height="126"/>
 </TextureAtlas>

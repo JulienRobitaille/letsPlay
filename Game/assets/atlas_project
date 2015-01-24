@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>sparrow</string>
         <key>textureFileName</key>
-        <filename></filename>
+        <filename>atlas.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -145,7 +145,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>atlas.xml</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -190,6 +190,14 @@
         <array>
             <filename>src/closed_scene.png</filename>
             <filename>src/fluorine.png</filename>
+            <filename>src/cat.png</filename>
+            <filename>src/bush.png</filename>
+            <filename>src/top_scene.png</filename>
+            <filename>src/scene.png</filename>
+            <filename>src/right_tree.png</filename>
+            <filename>src/left_tree.png</filename>
+            <filename>src/house.png</filename>
+            <filename>src/cloud.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
