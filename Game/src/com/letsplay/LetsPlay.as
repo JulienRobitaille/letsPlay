@@ -3,6 +3,7 @@
  */
 package com.letsplay {
 import com.letsplay.Atlas.Asset;
+import com.letsplay.GameStage.GameStage;
 import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.game.Game;
 import com.letsplay.intro.Intro;
@@ -18,6 +19,7 @@ import starling.textures.TextureAtlas;
 
 public class LetsPlay extends Sprite {
 	private var menu:Menu;
+	private var gameStage:GameStage;
 
 
 	public function LetsPlay() {
@@ -26,9 +28,11 @@ public class LetsPlay extends Sprite {
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
 		var intro:Intro = new Intro();
 			menu = new Menu();
+			gameStage = new GameStage();
 
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
 
+		this.addChild(gameStage);
 		this.addChild(menu);
 		this.addChild(intro);
 
@@ -44,12 +48,18 @@ public class LetsPlay extends Sprite {
 	}
 
 	private function bindMenu():void {
+		var self:LetsPlay = this;
 		menu.addEventListener(StateEvent.PLAY, function():void{
-//play
+			self.menu.removeChildren();
+			self.startGame();
+
 		});
 		menu.addEventListener(StateEvent.CREDIT, function():void{
 			//credit
 		});
+	}
+	private function startGame():void{
+		//lololol
 	}
 }
 }
