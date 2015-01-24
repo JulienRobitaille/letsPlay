@@ -7,7 +7,7 @@ import flash.events.Event;
 
 import starling.core.Starling;
 
-[SWF(width=360,height=640,frameRate=60)]
+[SWF(width=680,height=560,frameRate=60)]
 public class Main extends Sprite {
 
     public function Main() {

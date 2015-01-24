@@ -19,8 +19,7 @@ public class GameView extends View {
 	private function onShowText(event:Event):void {
 		var texts : Vector.<String> = event.data.texts as Vector.<String>;
 		for(var i : int = 0 ; i < texts.length; i++){
-			var bubble : TextBubble = new TextBubble(texts[i]);
-			bubble.width = stage.stageWidth * 0.8
+			var bubble : TextBubble = new TextBubble(texts[i],stage.stageWidth * 0.8,2);
 			addChild(bubble);
 		}
 	}
