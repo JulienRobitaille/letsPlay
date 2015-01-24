@@ -18,6 +18,7 @@ public class TextBubble extends Sprite {
 	private var textAnimationTimer:Timer;
 	private var text:Array;
 	private var bubble:Quad;
+	private var bubbleBackground:Quad;
 
 
 
@@ -30,20 +31,27 @@ public class TextBubble extends Sprite {
 		this.textfield.hAlign = HAlign.LEFT;
 		this.addChild(this.textfield);
 
-		this.bubble = new Quad(this.textfield.width, this.textfield.height, 0xFFFFFF);
-		this.bubble = new Quad(this.textfield.width+2, this.textfield.height+2, 0xFFFFFF);
+		this.bubble = new Quad(this.textfield.width-2, this.textfield.height-2, 0xFFFFFF);
+		this.bubbleBackground = new Quad(this.textfield.width, this.textfield.height, 0);
 
+		this.addChildAt(this.bubble,0);
+		this.addChildAt(this.bubbleBackground,0);
+
+		this.bubble.x = this.textfield.width - this.bubble.width >>1;
+		this.bubble.y = this.textfield.height - this.bubble.height>>1;
+		this.bubbleBackground.x = this.textfield.width - this.bubbleBackground.width >>1;
+		this.bubbleBackground.y = this.textfield.height- this.bubbleBackground.height >>1;
 
 
 		this.textAnimationTimer = new Timer(50,0);
-		this.textAnimationTimer.addEventListener(TimerEvent.TIMER, tick)
+		this.textAnimationTimer.addEventListener(TimerEvent.TIMER, tick);
 
 		this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
 
 	private function onAddedToStage(event:Event):void {
 		event.target.removeEventListener(event.type, arguments.callee);
-		this.addEventListener(Event.REMOVED_FROM_STAGE, onRemoveFromStage)
+		this.addEventListener(Event.REMOVED_FROM_STAGE, onRemoveFromStage);
 		this.textAnimationTimer.start();
 	}
 
@@ -58,7 +66,36 @@ public class TextBubble extends Sprite {
 			this.disposeTimer();
 		}else{
 			this.textfield.text += this.text.shift();
+
+			updateBubble();
+
 		}
+	}
+
+	private function updateBubble():void {
+
+		this.bubble.width = this.textfield.width -2;
+		this.bubble.height = this.textfield.height -2;
+
+		this.bubbleBackground.width  = this.textfield.width;
+		this.bubbleBackground.height = this.textfield.height;
+
+		this.bubble.x = this.textfield.width - this.bubble.width >>1;
+		this.bubble.y = this.textfield.height - this.bubble.height>>1;
+		this.bubbleBackground.x = this.textfield.width - this.bubbleBackground.width >>1;
+		this.bubbleBackground.y = this.textfield.height- this.bubbleBackground.height >>1;
+
+	}
+
+
+	override public function set x(value:Number):void {
+		super.x = value;
+		updateBubble();
+	}
+
+	override public function set y(value:Number):void {
+		super.y = value;
+		updateBubble();
 	}
 
 	private function disposeTimer():void{
