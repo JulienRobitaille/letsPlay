@@ -8,8 +8,6 @@ import com.letsplay.game.ui.TextBubble;
 
 import starling.events.Event;
 
-import starling.text.TextField;
-
 public class GameView extends View {
 	private var model:GameModel;
 	public function GameView(model:Model) {
@@ -22,11 +20,8 @@ public class GameView extends View {
 		var texts : Vector.<String> = event.data.texts as Vector.<String>;
 		for(var i : int = 0 ; i < texts.length; i++){
 			var bubble : TextBubble = new TextBubble(texts[i]);
+			bubble.width = stage.stageWidth * 0.8
 			addChild(bubble);
-
-			var txt : TextField = new TextField(stage.stageWidth, 200, "default", "fluorine", 24, 0xFF0000);
-			txt.text = texts[i] + "sfafas";
-			addChild(txt);
 		}
 	}
 
