@@ -3,6 +3,7 @@
  */
 package com.letsplay {
 import com.letsplay.Atlas.Asset;
+import com.letsplay.GameStage.GameStage;
 import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.game.Game;
 import com.letsplay.intro.Intro;
@@ -18,40 +19,47 @@ import starling.textures.TextureAtlas;
 
 public class LetsPlay extends Sprite {
 	private var menu:Menu;
+	private var gameStage:GameStage;
 
 
 	public function LetsPlay() {
 		super();
-		//var self:LetsPlay = this;
+		var self:LetsPlay = this;
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
-		//var intro:Intro = new Intro();
-		//	menu = new Menu();
+		var intro:Intro = new Intro();
+			menu = new Menu();
+			gameStage = new GameStage();
 
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
 
-		addChild(new Game());
+		this.addChild(gameStage);
+		this.addChild(menu);
+		this.addChild(intro);
 
-		//this.addChild(menu);
-		//this.addChild(intro);
-		//
-		//intro.addEventListener(StateEvent.DONE, function():void{
-		//	self.removeChild(intro);
-		//	menu.oppeningAnimation();
-		//});
-		//
-		//this.bindMenu();
-		//
+		intro.addEventListener(StateEvent.DONE, function():void{
+			self.removeChild(intro);
+			menu.oppeningAnimation();
+		});
+
+		this.bindMenu();
+
 		//var game:Game = new Game();
 		//this.addChild(game);
 	}
 
 	private function bindMenu():void {
+		var self:LetsPlay = this;
 		menu.addEventListener(StateEvent.PLAY, function():void{
-//play
+			self.menu.removeChildren();
+			self.startGame();
+
 		});
 		menu.addEventListener(StateEvent.CREDIT, function():void{
 			//credit
 		});
+	}
+	private function startGame():void{
+		//lololol
 	}
 }
 }
