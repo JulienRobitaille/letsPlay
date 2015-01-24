@@ -3,6 +3,7 @@
  */
 package com.letsplay {
 import com.letsplay.game.Game;
+import com.letsplay.intro.Intro;
 
 import flash.display.Bitmap;
 
@@ -36,6 +37,7 @@ public class LetsPlay extends Sprite {
 
 		//var game:Game = new Game();
 		//this.addChild(game);
+
 
 	}
 

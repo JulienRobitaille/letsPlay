@@ -44,7 +44,8 @@ public class IntroView extends View {
             this.introText.y = (sHeight - this.introText.height-20) >> 1;
             this.introText.color = 0xD7D8D3;
             this.introText.alpha = 0;
-            this.introText.touchable = false
+            this.introText.touchable = false;
+
         TweenLite.to(this.introText,1.5,{alpha:1});
         setTimeout(function():void{
             TweenLite.to(self.introText,1.5,{alpha:0,onComplete:function():void{
