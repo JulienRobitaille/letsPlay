@@ -3,15 +3,17 @@ import com.drawm.ui.*;
 
 import flash.display.Bitmap;
 
+import starling.textures.Texture;
 
-	/**
+
+/**
 	 * ...
 	 * @author Damon Perron-Laurin
 	 */
 	public class InteractiveImage extends UIImage implements IInteractiveUI
 	{
 		
-		public function InteractiveImage(id:String, texture:Bitmap = null){
+		public function InteractiveImage(id:String, texture:Texture = null){
 			super(id, texture);
 		}
 		

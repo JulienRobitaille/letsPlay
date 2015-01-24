@@ -27,7 +27,7 @@ public class LetsPlay extends Sprite {
 		var intro:Intro = new Intro();
 			menu = new Menu();
 
-		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new FontXml())), "fluorine");
+		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
 
 		this.addChild(menu);
 		this.addChild(intro);

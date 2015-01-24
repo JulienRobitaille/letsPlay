@@ -8,7 +8,10 @@ import com.drawm.ui.interactive.InteractiveImage;
 import com.drawm.ui.interactive.InteractiveQuad;
 import com.drawm.ui.text.InteractiveText;
 import com.greensock.TweenLite;
+import com.letsplay.Atlas.Asset;
 import com.letsplay.I18n;
+
+import flash.display.Bitmap;
 
 import starling.text.TextField;
 
@@ -27,7 +30,7 @@ public class MenuView extends View {
         super.start();
         var sWidth:int = this.stage.stageWidth;
         var sHeight:int = this.stage.stageHeight;
-        var background:InteractiveImage = new InteractiveImage(null,Asset.)
+        var background:InteractiveImage = new InteractiveImage(null,Asset.ClosedScene)
 
         this.addChild(background);
     }

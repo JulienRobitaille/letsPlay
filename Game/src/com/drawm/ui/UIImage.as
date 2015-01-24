@@ -17,12 +17,12 @@ import starling.textures.Texture;
 
         private var _id:String;
 
-        public function UIImage(id:String, texture:Bitmap){
+        public function UIImage(id:String, texture:Texture){
 
             _id = id;
             UI.addUI(this);
 
-            addChild(new Image(Texture.fromBitmap(texture)));
+            addChild(new Image(texture));
         }
 
         public function get id():String{
