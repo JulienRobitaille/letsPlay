@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:224126e6a14dc1743c4013cf4f5b9449:38f8479bbd3ed5000e5ae2336d4d815f:cde709370900f12288f3449eded86f07$ -->
+<TextureAtlas imagePath="atlas.png">
+    <SubTexture name="fsa_0" x="2" y="2" width="256" height="256"/>
+</TextureAtlas>
