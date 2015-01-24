@@ -7,6 +7,7 @@ import com.drawm.mvc.view.View;
 
 import starling.display.Quad;
 import starling.text.TextField;
+import starling.text.TextFieldAutoSize;
 
 public class IntroView extends View {
     public function IntroView(model:Model) {
@@ -28,7 +29,13 @@ public class IntroView extends View {
 
         this.addChild(introBackground);
 
-        //var introText:TextField = new TextField(sWidth, 1,  );
+        var introText:TextField = new TextField(100, 100, "test hahahahahahahah");
+          //  introText.autoSize = TextFieldAutoSize.HORIZONTAL;
+        //introText.x = sWidth >> 1;
+        introText.color = 0xFF0000;
+
+        this.addChild(introText);
+
 
     }
 
