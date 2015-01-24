@@ -12,7 +12,6 @@ public class LetsPlay extends Sprite {
 	private var sequences: Array;
 	public function LetsPlay() {
 		super();
-
 		var intro:Intro = new Intro();
 		this.addChild(intro);
 
