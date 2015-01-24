@@ -196,7 +196,6 @@ public class Controller {
 
 	protected function onTouchUp(touch:Touch):void{
 		onTouchMove(touch);
-
 		if(touch.target is IInteractiveUI){
 			if(isClick(Starling.current.nativeStage.mouseX, Starling.current.nativeStage.mouseY)){
 				click(touch);
