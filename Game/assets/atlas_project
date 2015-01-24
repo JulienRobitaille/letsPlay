@@ -190,7 +190,6 @@
         <array>
             <filename>src/closed_scene.png</filename>
             <filename>src/fluorine.png</filename>
-            <filename>src/cat.png</filename>
             <filename>src/bush.png</filename>
             <filename>src/top_scene.png</filename>
             <filename>src/scene.png</filename>
@@ -198,6 +197,26 @@
             <filename>src/left_tree.png</filename>
             <filename>src/house.png</filename>
             <filename>src/cloud.png</filename>
+            <filename>src/cat_fall/cat_1.png</filename>
+            <filename>src/cat_fall/cat_2.png</filename>
+            <filename>src/cat_fall/cat_3.png</filename>
+            <filename>src/cat_fall/cat_4.png</filename>
+            <filename>src/cat_fall/cat_5.png</filename>
+            <filename>src/cat_fall/cat_6.png</filename>
+            <filename>src/cat_fall/cat_7.png</filename>
+            <filename>src/cat_fall/cat_8.png</filename>
+            <filename>src/cat_fall/cat_9.png</filename>
+            <filename>src/cat_fall/cat_10.png</filename>
+            <filename>src/cat_fall/cat_11.png</filename>
+            <filename>src/cat_fall/cat_12.png</filename>
+            <filename>src/cat_fall/cat_13.png</filename>
+            <filename>src/cat_fall/cat_14.png</filename>
+            <filename>src/cat_fall/cat_15.png</filename>
+            <filename>src/cat_fall/cat_16.png</filename>
+            <filename>src/cat_fall/cat_17.png</filename>
+            <filename>src/cat_fall/cat_18.png</filename>
+            <filename>src/cat_fall/cat_19.png</filename>
+            <filename>src/cat_fall/cat_20.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

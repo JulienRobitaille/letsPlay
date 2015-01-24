@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:f0616168ce2933ade0318260c20d618e:4a6431e427d42624e212f5f2922fa7ea:cde709370900f12288f3449eded86f07$ -->
+<!-- $TexturePacker:SmartUpdate:d97f9cb5646ae627b6cce8f2e040baaa:dc22d5e1e83b316b4e78d827a59a355f:cde709370900f12288f3449eded86f07$ -->
 <TextureAtlas imagePath="atlas.png">
-    <SubTexture name="bush" x="42" y="2" width="72" height="43"/>
-    <SubTexture name="cat" x="2" y="2" width="38" height="36"/>
+    <SubTexture name="bush" x="522" y="2" width="72" height="43"/>
+    <SubTexture name="cat_1" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_10" x="482" y="2" width="38" height="38"/>
+    <SubTexture name="cat_11" x="402" y="2" width="38" height="38"/>
+    <SubTexture name="cat_12" x="442" y="2" width="38" height="38"/>
+    <SubTexture name="cat_13" x="322" y="2" width="38" height="38"/>
+    <SubTexture name="cat_14" x="242" y="2" width="38" height="38"/>
+    <SubTexture name="cat_15" x="2" y="2" width="38" height="38"/>
+    <SubTexture name="cat_16" x="82" y="2" width="38" height="38"/>
+    <SubTexture name="cat_17" x="202" y="2" width="38" height="38"/>
+    <SubTexture name="cat_18" x="122" y="2" width="38" height="38"/>
+    <SubTexture name="cat_19" x="282" y="2" width="38" height="38"/>
+    <SubTexture name="cat_2" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_20" x="282" y="2" width="38" height="38"/>
+    <SubTexture name="cat_3" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_4" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_5" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_6" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_7" x="362" y="2" width="38" height="38"/>
+    <SubTexture name="cat_8" x="42" y="2" width="38" height="38"/>
+    <SubTexture name="cat_9" x="162" y="2" width="38" height="38"/>
     <SubTexture name="closed_scene" x="2" y="253" width="483" height="252"/>
-    <SubTexture name="cloud" x="116" y="2" width="72" height="86"/>
+    <SubTexture name="cloud" x="596" y="2" width="72" height="86"/>
     <SubTexture name="fluorine" x="487" y="253" width="256" height="256"/>
-    <SubTexture name="house" x="190" y="2" width="63" height="104"/>
-    <SubTexture name="left_tree" x="321" y="2" width="64" height="121"/>
-    <SubTexture name="right_tree" x="255" y="2" width="64" height="121"/>
+    <SubTexture name="house" x="670" y="2" width="63" height="104"/>
+    <SubTexture name="left_tree" x="2" y="125" width="64" height="121"/>
+    <SubTexture name="right_tree" x="735" y="2" width="64" height="121"/>
     <SubTexture name="scene" x="2" y="511" width="680" height="445"/>
-    <SubTexture name="top_scene" x="2" y="125" width="680" height="126"/>
+    <SubTexture name="top_scene" x="68" y="125" width="680" height="126"/>
 </TextureAtlas>

@@ -27,7 +27,7 @@ public class Asset {
     public static const Cloud:Texture = atlas.getTexture("cloud");
     public static const LeftTree:Texture = atlas.getTexture("left_tree");
     public static const RightTree:Texture = atlas.getTexture("right_tree");
-    public static const Cat:Texture = atlas.getTexture("cat");
+    public static const Cat:Vector.<Texture> = atlas.getTextures("cat_");
 
     public function Asset() {
     }
