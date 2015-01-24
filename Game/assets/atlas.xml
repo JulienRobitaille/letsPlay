@@ -3,5 +3,4 @@
 <!-- $TexturePacker:SmartUpdate:224126e6a14dc1743c4013cf4f5b9449:38f8479bbd3ed5000e5ae2336d4d815f:cde709370900f12288f3449eded86f07$ -->
 <TextureAtlas imagePath="atlas.png">
     <SubTexture name="fluorine" x="2" y="2" width="256" height="256"/>
-    <SubTexture name="menu_background" x="0" y="0" width="680" height="560"/>
 </TextureAtlas>

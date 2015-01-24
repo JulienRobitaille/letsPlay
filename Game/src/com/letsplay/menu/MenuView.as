@@ -4,6 +4,7 @@
 package com.letsplay.menu {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
+import com.drawm.ui.interactive.InteractiveImage;
 import com.drawm.ui.interactive.InteractiveQuad;
 import com.drawm.ui.text.InteractiveText;
 import com.greensock.TweenLite;
@@ -26,7 +27,7 @@ public class MenuView extends View {
         super.start();
         var sWidth:int = this.stage.stageWidth;
         var sHeight:int = this.stage.stageHeight;
-        var background:InteractiveQuad = new InteractiveQuad(null,sWidth,sHeight, 0x0FFF00);
+        var background:InteractiveImage = new InteractiveImage(null,Asset.)
 
         this.addChild(background);
     }
