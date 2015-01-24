@@ -6,6 +6,7 @@ import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
 import com.drawm.ui.interactive.InteractiveImage;
 import com.greensock.TweenLite;
+import com.greensock.TweenMax;
 import com.letsplay.Atlas.Asset;
 
 import starling.display.Sprite;
@@ -32,10 +33,14 @@ public class GameStageView extends View {
 
         this.act1 = new Sprite();
 
-
-
+        var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
+            cloud.x = (( topScene.width - closedScene.width ) >> 1) + 100;
+            cloud.y = topScene.height - 25;
+        TweenMax.to(cloud,8,{x:"+30",y:"+15",yoyo:true,repeat:4});
+        this.act1.addChild(cloud);
 
         this.addChild(scene);
+        this.addChild(act1);
         this.addChild(this.closedScene);
         this.addChild(topScene);
 
