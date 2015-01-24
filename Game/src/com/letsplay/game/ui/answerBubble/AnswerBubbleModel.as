@@ -8,6 +8,7 @@ import com.letsplay.game.ui.answerBubble.event.AnswerBubbleEvent;
 
 public class AnswerBubbleModel extends Model {
 	public var choices:Vector.<Choice>;
+	public var width:int;
 	public function AnswerBubbleModel() {
 		super();
 	}
@@ -15,13 +16,10 @@ public class AnswerBubbleModel extends Model {
 	override public function resume():void {
 		super.resume();
 
-		dispatchEventWith(AnswerBubbleEvent.SHOW_ANSWERS, false, { width:300, choices : this.choices });
+		dispatchEventWith(AnswerBubbleEvent.SHOW_ANSWERS, false, { width:this.width, choices : this.choices });
 	}
 
 	public function overAnswer(id:String):void {
-		dispatchEventWith(AnswerBubbleEvent.OVER_ANSWER, false, { id : id});
-	}
-	public function clickAnswer(id:String):void {
 		dispatchEventWith(AnswerBubbleEvent.OVER_ANSWER, false, { id : id});
 	}
 }

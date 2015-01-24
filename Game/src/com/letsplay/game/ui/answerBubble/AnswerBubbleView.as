@@ -66,7 +66,7 @@ public class AnswerBubbleView extends View {
 		var text : InteractiveText;
 		var nextY : int = 0;
 		for(var i : int = 0 ; i < data.length ; i++){
-			text = new InteractiveText(data[i].id, event.data.width, 20, " > "+data[i].text, "fluorine", 24);
+			text = new InteractiveText(i.toString(), event.data.width, 20, " > "+data[i].text, "fluorine", 24);
 			text.autoSize = TextFieldAutoSize.VERTICAL;
 			text.hAlign = HAlign.LEFT;
 			addChild(text);

@@ -12,6 +12,7 @@ import com.letsplay.menu.Menu;
 import flash.display.Bitmap;
 
 import starling.display.Sprite;
+import starling.events.Event;
 import starling.text.BitmapFont;
 import starling.text.TextField;
 import starling.textures.Texture;
@@ -24,13 +25,13 @@ public class LetsPlay extends Sprite {
 
 	public function LetsPlay() {
 		super();
-		//var self:LetsPlay = this;
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
-		//var intro:Intro = new Intro();
-		//	menu = new Menu();
-		//	gameStage = new GameStage();
-
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
+
+		//var self:LetsPlay = this;
+		//var intro:Intro = new Intro();
+		//menu = new Menu();
+		//gameStage = new GameStage();
 
 		//this.addChild(gameStage);
 		//this.addChild(menu);
@@ -42,6 +43,7 @@ public class LetsPlay extends Sprite {
 		//});
 		//
 		//this.bindMenu();
+		//this.bindGameStage();
 
 		var game:Game = new Game();
 		this.addChild(game);
@@ -58,8 +60,19 @@ public class LetsPlay extends Sprite {
 			//credit
 		});
 	}
+	private function bindGameStage():void {
+		var self:LetsPlay = this;
+		gameStage.addEventListener(StateEvent.ACTCHANGE, function(evt:Event):void{
+			self.gameStage.actTransition( evt.data );
+		});
+
+		gameStage.addEventListener(StateEvent.THEEND, function():void{
+			self.gameStage.theEnd();
+		});
+	}
 	private function startGame():void{
 		this.gameStage.curtainLift();
 	}
+
 }
 }

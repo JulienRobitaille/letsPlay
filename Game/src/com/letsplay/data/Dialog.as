@@ -7,7 +7,6 @@ import com.drawm.utils.ParsableVO;
 
 public class Dialog extends ParsableVO {
 
-	public var id : String;
 	public var text : String;
 	public var choices : Vector.<Choice>;
 

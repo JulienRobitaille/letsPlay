@@ -6,7 +6,6 @@ import com.drawm.utils.ParsableVO;
 
 public class Choice extends ParsableVO{
 
-	public var id : String;
 	public var text : String;
 	public var destinationId : String;
 
