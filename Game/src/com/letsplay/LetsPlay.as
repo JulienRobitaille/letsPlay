@@ -12,6 +12,7 @@ import com.letsplay.menu.Menu;
 import flash.display.Bitmap;
 
 import starling.display.Sprite;
+import starling.events.Event;
 import starling.text.BitmapFont;
 import starling.text.TextField;
 import starling.textures.Texture;
@@ -42,6 +43,7 @@ public class LetsPlay extends Sprite {
 		});
 
 		this.bindMenu();
+		this.bindGameStage();
 
 		//var game:Game = new Game();
 		//this.addChild(game);
@@ -58,8 +60,19 @@ public class LetsPlay extends Sprite {
 			//credit
 		});
 	}
+	private function bindGameStage():void {
+		var self:LetsPlay = this;
+		gameStage.addEventListener(StateEvent.ACTCHANGE, function(evt:Event):void{
+			self.gameStage.actTransition( evt.data );
+		});
+
+		gameStage.addEventListener(StateEvent.THEEND, function():void{
+			self.gameStage.theEnd();
+		});
+	}
 	private function startGame():void{
 		this.gameStage.curtainLift();
 	}
+
 }
 }
