@@ -31,6 +31,7 @@ public class Asset {
     public static const Public:Texture = atlas.getTexture("public");
     public static const PublicOdd:Texture = atlas.getTexture("public_odd");
     public static const PublicRandom:Texture = atlas.getTexture("public_variation");
+    public static const BoyHappy:Vector.<Texture> = atlas.getTextures("Boy_Happy_");
 
     public function Asset() {
     }

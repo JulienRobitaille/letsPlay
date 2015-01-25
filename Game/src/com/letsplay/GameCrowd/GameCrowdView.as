@@ -51,12 +51,12 @@ public class GameCrowdView extends View {
 
         this.addChild(publicSprite);
     }
+
     public function stopAnimation():void {
         for( var i:int = 0; i < this.peoples.length; i++) {
             TweenLite.killTweensOf(this.peoples[i]);
         }
     }
-
     public function crowdInteractiveLevelOne():void {
         this.stopAnimation();
         for( var i:int = 0; i < this.peoples.length; i++) {

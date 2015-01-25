@@ -26,6 +26,7 @@ public class GameStageView extends View {
     private var topScene:InteractiveImage;
     private var scene:InteractiveImage;
     private var cat:MovieClip;
+    private var boyHappy:MovieClip;
 
     public function GameStageView(model:Model) {
         super(model);
@@ -44,7 +45,7 @@ public class GameStageView extends View {
         this.scene.y = sHeight - this.scene.height - 30;
 
         this.setAct1();
-       // this.setAct2();
+        //this.setAct2();
         //this.setAct3();
 
         this.addChild(this.scene);
@@ -96,12 +97,17 @@ public class GameStageView extends View {
         this.cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
         this.cat.y = this.topScene.height + 165;
         this.cat.loop = false;
+        this.boyHappy = new MovieClip(Asset.BoyHappy,24);
+        this.boyHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
+        this.boyHappy.y = this.topScene.height + 115;
 
+        Starling.juggler.add(this.boyHappy);
 
         this.act1.addChild(cloud);
         this.act1.addChild(leftTree);
         this.act1.addChild(house);
         this.act1.addChild(bush);
+        this.act1.addChild(this.boyHappy);
     }
     private function setAct2():void {
         this.act2= new Sprite();
@@ -201,7 +207,7 @@ public class GameStageView extends View {
         this.cat.play();
     }
     public function entreFrameCat(evt:Event):void{
-        if( this.cat.currentFrame >= this.cat.numFrames-10 ) {
+        if( this.cat.currentFrame >= this.cat.numFrames-10 ) {//@todo please ...
             this.cat.pause();
             this.cat.removeEventListener(Event.ENTER_FRAME, this.entreFrameCat);
         }
