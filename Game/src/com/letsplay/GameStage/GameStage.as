@@ -20,13 +20,17 @@ public class GameStage extends Page {
     public function actTransition( act : int ):void {
 		switch (act){
 			case 1:
-				this.stageView.curtainDropThenLift( this.stageView.setAct1 );
+				this.stageView.curtainLift();
+				this.stageView.setAct1()
 				break;
 			case 2:
 				this.stageView.curtainDropThenLift( this.stageView.setAct2 );
 				break;
 			case 3:
-				this.stageView.curtainDropThenLift( this.stageView.setAct3 );
+				this.stageView.curtainDropThenLift( this.stageView.setAct1 );
+
+				// Cat destiny goes here
+
 				break;
 		}
 	}
@@ -34,7 +38,7 @@ public class GameStage extends Page {
 		this.stageView.theEnd();
     }
     public function startThekitten():void {
-        this.stageView.animateKitten();
+        this.stageView.cat.play()
     }
 }
 }

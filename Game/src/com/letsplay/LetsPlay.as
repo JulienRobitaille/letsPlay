@@ -55,11 +55,10 @@ public class LetsPlay extends Sprite {
 		menu.addEventListener(StateEvent.PLAY, function():void{
 			self.menu.removeMenuWithStyle();
 			self.gameCrowd.startLevelOne();
-			self.startGame();
-
+			self.gameStage.curtainLift();
 			self.game = new Game();
 			self.addChild(self.game);
-
+			self.gameStage.actTransition(1);
 			self.bindGameStage();
 
 		});
@@ -80,9 +79,6 @@ public class LetsPlay extends Sprite {
 		gameStage.addEventListener(StateEvent.THEEND, function():void{
 			self.gameStage.theEnd();
 		});
-	}
-	private function startGame():void{
-		this.gameStage.curtainLift();
 	}
 
 }

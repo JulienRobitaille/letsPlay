@@ -26,9 +26,11 @@ public class GameStageView extends View {
     private var act:Sprite;
     private var topScene:InteractiveImage;
     private var scene:InteractiveImage;
-    private var cat:MovieClip;
+    public var cat:MovieClip;
     private var boyHappy:MovieClip;
     private var girlHappy:MovieClip;
+    private var boySad:MovieClip;
+    private var girlSad:MovieClip;
 
     public function GameStageView(model:Model) {
         super(model);
@@ -36,46 +38,47 @@ public class GameStageView extends View {
 
     override public function start():void {
         super.start();
+
         var sWidth:int = this.stage.stageWidth;
         var sHeight:int = this.stage.stageHeight;
-            this.scene = new InteractiveImage(null,Asset.Scene);
-            this.topScene= new InteractiveImage(null,Asset.TopScene);
 
+
+        this.scene = new InteractiveImage(null,Asset.Scene);
+        this.topScene= new InteractiveImage(null,Asset.TopScene);
         this.closedScene = new InteractiveImage(null,Asset.ClosedScene);
         this.closedScene.y = this.topScene.height - 45;
         this.closedScene.x = ( this.topScene.width - closedScene.width ) >> 1;
         this.scene.y = sHeight - this.scene.height - 30;
 
-        //this.setAct2();
-        //this.setAct3();
+        this.cat = new MovieClip(Asset.Cat,12);
+        this.boyHappy = new MovieClip(Asset.BoyHappy,24);
+        this.girlHappy = new MovieClip(Asset.GirlHappy,24);
+        this.boySad = new MovieClip(Asset.BoySad,24);
 
-		this.act ||= new Sprite();
+
+
+        this.act ||= new Sprite();
 
         this.addChild(this.scene);
-
-		this.setAct1();
-
         this.addChild(this.act);
         this.addChild(this.closedScene);
         this.addChild(this.topScene);
 
     }
+
     public function curtainLift():void{
         TweenLite.to(this.closedScene,3, {y:-115});
     }
 
     public function curtainDropThenLift( callback : Function ):void {
-		var curtain : DisplayObject = this.closedScene;
+        var self:GameStageView = this;
+        var curtain : DisplayObject = this.closedScene;
+
 		TweenLite.killTweensOf(curtain);
         TweenLite.to(curtain,2, {y:95,onComplete:function():void{
 			callback();
-            TweenLite.to(curtain,3, {y:-115});
-
+           self.curtainLift();
         }});
-    }
-
-    public function theEnd():void {
-        //todo
     }
 
     public function setAct1():void {
@@ -100,22 +103,20 @@ public class GameStageView extends View {
         bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
         bush.y = this.topScene.height + 160;
 
-        this.cat = new MovieClip(Asset.Cat,12);
         this.cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
         this.cat.y = this.topScene.height + 165;
         this.cat.loop = false;
-        this.boyHappy = new MovieClip(Asset.BoyHappy,24);
+
         this.boyHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 225;
         this.boyHappy.y = this.topScene.height + 115;
 
-        Starling.juggler.add(this.boyHappy);
-
-        this.girlHappy = new MovieClip(Asset.GirlHappy,24);
         this.girlHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 275;
         this.girlHappy.y = this.topScene.height + 115;
 
+        Starling.juggler.add(this.boyHappy);
         Starling.juggler.add(this.girlHappy);
 
+        this.catEvents()
         this.act.addChild(cloud);
         this.act.addChild(leftTree);
         this.act.addChild(house);
@@ -123,6 +124,8 @@ public class GameStageView extends View {
         this.act.addChild(this.boyHappy);
         this.act.addChild(this.girlHappy);
     }
+
+
 	public function setAct2():void {
 		this.act.removeChildren(0,-1,true);
 
@@ -175,50 +178,20 @@ public class GameStageView extends View {
         this.act.addChild(rightTree);
     }
 
-	public function setAct3():void {
-		this.act.removeChildren(0,-1,true);
 
-        var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
-        cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 100;
-        cloud.y = this.topScene.height - 25;
-        TweenMax.to(cloud,8,{x:"+30",y:"+15",yoyo:true,repeat:4});
+    //Cat buisness -----------------
 
-
-        var leftTree:InteractiveImage = new InteractiveImage(null,Asset.LeftTree);
-        leftTree.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 70;
-        leftTree.y = this.topScene.height + 85;
-
-
-        var house:InteractiveImage = new InteractiveImage(null,Asset.House);
-        house.x = (( this.topScene.width + this.closedScene.width ) >> 1) - 170 ;
-        house.y = this.topScene.height + 100;
-
-        var bush:InteractiveImage = new InteractiveImage(null,Asset.Bush);
-        bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
-        bush.y = this.topScene.height + 160;
-
-        var kitten3:MovieClip = new MovieClip(Asset.Cat,12);
-        kitten3.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
-        kitten3.y = this.topScene.height + 175;
-        kitten3.loop = false;
-
-        //WTF CAT LOOP !?!?!?!
-
-        this.act.addChild(cloud);
-        this.act.addChild(leftTree);
-        this.act.addChild(house);
-        this.act.addChild(bush);
-        this.act.addChild(kitten3);
-    }
-    public function animateKitten():void{
+    public function catEvents():void{
         this.cat.addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
+       this.cat.pause();
         this.act.addChild(this.cat);
     }
+
     public function onAdded():void{
         this.cat.addEventListener(Event.ENTER_FRAME, this.entreFrameCat);
         Starling.juggler.add(this.cat);
-        this.cat.play();
     }
+
     public function entreFrameCat(evt:Event):void{
         if( this.cat.currentFrame >= this.cat.numFrames-10 ) {//@todo please ...
             this.cat.pause();
@@ -226,27 +199,38 @@ public class GameStageView extends View {
         }
     }
 
+    //------------------------
+    //-----------------------------
 
 
-	private function animatePlayerSad(event:AnimationTrigger):void {
+    //Animation sexy time
 
+
+	private function animatePlayerSad(event:Event):void {
+        this.cat.play();
 	}
 
-	private function animateKidHappy(event:AnimationTrigger):void {
+	private function animateKidHappy(event:Event):void {
 		
 	}
 
-	private function animateKidJump(event:AnimationTrigger):void {
+	private function animateKidJump(event:Event):void {
 		
 	}
 
-	private function animateCatFall(event:AnimationTrigger):void {
+	private function animateCatFall(event:Event):void {
 		
 	}
 
-	private function animateKidAngry(event:AnimationTrigger):void {
+	private function animateKidAngry(event:Event):void {
 		
 	}
+
+
+    // The game ending
+    public function theEnd():void {
+        //todo
+    }
 
 
 	override public function resume():void {
