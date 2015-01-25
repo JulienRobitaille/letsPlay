@@ -35,6 +35,8 @@ public class Asset {
     public static const GirlHappy:Vector.<Texture> = atlas.getTextures("Girl_Happy_");
     public static const BoySad:Vector.<Texture> = atlas.getTextures("Boy_Triste_");
     public static const GirlSad:Vector.<Texture> = atlas.getTextures("Girl_Triste_");
+    public static const BoyMad:Vector.<Texture> = atlas.getTextures("Boy_Mad_");
+    public static const GirlMad:Vector.<Texture> = atlas.getTextures("Girl_Mad_");
 
     public function Asset() {
     }
