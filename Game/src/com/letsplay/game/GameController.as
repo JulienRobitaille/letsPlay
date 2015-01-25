@@ -5,6 +5,7 @@ package com.letsplay.game {
 import com.drawm.mvc.Page;
 import com.drawm.mvc.controler.Controller;
 import com.drawm.mvc.model.Model;
+import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
 import com.letsplay.game.ui.answerBubble.event.AnswerBubbleEvent;
@@ -32,7 +33,14 @@ public class GameController extends Controller {
 	}
 
 	private function onClickAnswer(event:Event):void {
-		this.model.goToDialog((event.data as Choice).destinationId);
+		var id : String = (event.data as Choice).destinationId;
+		if(this.model.getDialog(id) == null){
+			this._page.dispatchEventWith(StateEvent.ACTCHANGE);
+		}else{
+			this.model.goToDialog(id);
+
+		}
+
 	}
 }
 }

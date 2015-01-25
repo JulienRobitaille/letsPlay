@@ -1,5 +1,5 @@
 package com.drawm.mvc {
-	
+
 	import com.drawm.mvc.data.DisplayData;
 
     import starling.display.Sprite;
@@ -9,7 +9,7 @@ package com.drawm.mvc {
 
 
 	public class Starter extends Sprite{
-		
+
 		private static var instance : Starter;
 
         private var _displayData : DisplayData;
@@ -20,10 +20,10 @@ package com.drawm.mvc {
             _displayData = DisplayData.instance;
 
 			validateDisplay(stage);
-			
+
 			super();
 		}
-		
+
 		public static function addEventListener(type:String, listener:Function):void{
 			instance.addEventListener(type, listener);
 		}

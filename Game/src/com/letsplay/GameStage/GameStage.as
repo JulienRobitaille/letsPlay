@@ -17,11 +17,21 @@ public class GameStage extends Page {
     public function curtainLift():void {
         this.stageView.curtainLift();
     }
-    public function actTransition( data:Object ):void {
-        this.stageView.curtainDropThenLift( data);
-    }
-    public function theEnd():void {
-        this.stageView.theEnd();
+    public function actTransition( act : int ):void {
+		switch (act){
+			case 1:
+				this.stageView.curtainDropThenLift( this.stageView.setAct1 );
+				break;
+			case 2:
+				this.stageView.curtainDropThenLift( this.stageView.setAct2 );
+				break;
+			case 3:
+				this.stageView.curtainDropThenLift( this.stageView.setAct3 );
+				break;
+		}
+	}
+	public function theEnd():void {
+		this.stageView.theEnd();
     }
     public function startThekitten():void {
         this.stageView.animateKitten();
