@@ -78,8 +78,8 @@ public class GameStageView extends View {
         this.girlSad = new MovieClip(Asset.GirlSad,24);
 		this.boyMad = new MovieClip(Asset.BoyMad,30);
 		this.girlMad = new MovieClip(Asset.GirlMad,30);
-		this.boyIdle = new MovieClip(Asset.BoyIdle,1);
-		this.girlIdle = new MovieClip(Asset.GirlIdle,1);
+		this.boyIdle = new MovieClip(Asset.BoyIdle,12);
+		this.girlIdle = new MovieClip(Asset.GirlIdle,12);
 
         this.boyHappy.visible = false;
         this.girlHappy.visible = false;
