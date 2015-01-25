@@ -3,16 +3,16 @@
   <component name="FlexBuildConfigurationManager" active="Mobile">
     <configurations>
       <configuration name="Mobile" target-platform="Mobile" pure-as="true" main-class="Mobile" output-file="Main.swf" output-folder="$MODULE_DIR$/../out/production/Mobile">
-        <dependencies target-player="13.0">
+        <dependencies target-player="16.0">
           <entries>
-            <entry library-id="b1acf001-b459-40fe-96d3-5af7ba486a59">
+            <entry library-id="4a6d2717-c437-4815-9414-0272ea43237f">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="f9a24c7b-d39e-4f86-80fe-a1eab632ab6e">
+            <entry library-id="b94c9dfb-971d-49ab-a902-6a3804dac3db">
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="13" />
+          <sdk name="air_sdk_3.9" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
@@ -27,11 +27,11 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="13" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="air_sdk_3.9" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="b1acf001-b459-40fe-96d3-5af7ba486a59" />
+        <properties id="4a6d2717-c437-4815-9414-0272ea43237f" />
         <CLASSES>
           <root url="file://$MODULE_DIR$/../Game/src" />
         </CLASSES>
@@ -41,7 +41,7 @@
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="f9a24c7b-d39e-4f86-80fe-a1eab632ab6e" />
+        <properties id="b94c9dfb-971d-49ab-a902-6a3804dac3db" />
         <CLASSES>
           <root url="file://$MODULE_DIR$/../Game/libs" />
         </CLASSES>
@@ -52,4 +52,3 @@
     </orderEntry>
   </component>
 </module>
-
