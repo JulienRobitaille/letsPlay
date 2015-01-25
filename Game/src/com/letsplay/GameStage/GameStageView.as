@@ -33,9 +33,10 @@ public class GameStageView extends View {
     private var girlHappy:MovieClip;
 	private var boySad:MovieClip;
 	private var girlSad:MovieClip;
-	private var boyMad:MovieClip;
-	private var girlMad:MovieClip;
-	private var boyIdle:MovieClip;
+    private var boyMad:MovieClip;
+    private var girlMad:MovieClip;
+    private var boyIdle:MovieClip;
+    private var girlIdle:MovieClip;
     private var sWidth:int;
     private var sHeight:int;
 
@@ -72,7 +73,8 @@ public class GameStageView extends View {
         this.girlSad = new MovieClip(Asset.GirlSad,24);
 		this.boyMad = new MovieClip(Asset.BoyMad,30);
 		this.girlMad = new MovieClip(Asset.GirlMad,30);
-		this.boyIdle = new MovieClip(Asset.BoyHappy,1);
+		this.boyIdle = new MovieClip(Asset.BoyIdle,1);
+		this.girlIdle = new MovieClip(Asset.GirlIdle,1);
 
 		Starling.juggler.add(this.boyHappy);
 		Starling.juggler.add(this.girlHappy);
@@ -81,6 +83,7 @@ public class GameStageView extends View {
         Starling.juggler.add(this.boySad);
 		Starling.juggler.add(this.girlSad);
 		Starling.juggler.add(this.boyIdle);
+		Starling.juggler.add(this.girlIdle);
 
         this.act ||= new Sprite();
 
@@ -97,6 +100,7 @@ public class GameStageView extends View {
 
     public function curtainDropThenLift( callback : Function ):void {
         var self:GameStageView = this;
+
         var curtain : DisplayObject = this.closedScene;
 
 		TweenLite.killTweensOf(curtain);
@@ -130,16 +134,18 @@ public class GameStageView extends View {
         this.cat.x =  sWidth - (sWidth/2);
         this.cat.y = sHeight/1.85
 
-        this.boyIdle.x = this.boyHappy.x = this.boyMad.x = this.boySad.x = sWidth/4;
-        this.boyIdle.y = this.boyHappy.y = this.boyMad.y = this.boySad.y = sHeight/2.2;
+        this.boyIdle.x = this.boyHappy.x = this.boyMad.x = this.boySad.x = this.boyIdle.x = sWidth/4;
+        this.boyIdle.y = this.boyHappy.y = this.boyMad.y = this.boySad.y = this.boyIdle.y = sHeight/2.2;
 
-        this.girlHappy.x = this.girlMad.x = this.girlSad.x = sWidth - (sWidth/2.3);
-        this.girlHappy.y = this.girlMad.y = this.girlSad.y = sHeight/2.2;
+        this.girlHappy.x = this.girlMad.x = this.girlSad.x = this.girlIdle.x = sWidth - (sWidth/2.3);
+        this.girlHappy.y = this.girlMad.y = this.girlSad.y = this.girlIdle.y = sHeight/2.2;
 
         this.boySad.visible = false;
         this.boyMad.visible = false;
+        this.boyHappy.visible = false;
         this.girlSad.visible = false;
         this.girlMad.visible = false;
+        this.girlHappy.visible = false;
 
 
         this.catEvents()
@@ -154,6 +160,7 @@ public class GameStageView extends View {
         this.act.addChild(this.girlSad);
         this.act.addChild(this.girlMad);
         this.act.addChild(this.boyIdle);
+        this.act.addChild(this.girlIdle);
     }
 
 
@@ -202,11 +209,11 @@ public class GameStageView extends View {
         bush4.y = sHeight/1.95;
 
 
-        this.boyIdle.x =this.boyHappy.x = this.boyMad.x = this.boySad.x = sWidth/4;
-        this.boyIdle.y =this.boyHappy.y = this.boyMad.y = this.boySad.y = sHeight/2.2;
+        this.boyIdle.x =this.boyHappy.x = this.boyMad.x = this.boySad.x = this.boyIdle.x = sWidth/4;
+        this.boyIdle.y =this.boyHappy.y = this.boyMad.y = this.boySad.y = this.boyIdle.y = sHeight/2.2;
 
-        this.girlHappy.x = this.girlMad.x = this.girlSad.x = sWidth - (sWidth/2.3);
-        this.girlHappy.y = this.girlMad.y = this.girlSad.y = sHeight/2.2;
+        this.girlHappy.x = this.girlMad.x = this.girlSad.x = this.girlIdle.x = sWidth - (sWidth/2.3);
+        this.girlHappy.y = this.girlMad.y = this.girlSad.y = this.girlIdle.y = sHeight/2.2;
 
 
         this.animateKidHappy(null);
@@ -229,6 +236,7 @@ public class GameStageView extends View {
         this.act.addChild(this.girlSad);
         this.act.addChild(this.girlMad);
         this.act.addChild(this.boyIdle);
+        this.act.addChild(this.girlIdle);
     }
 
 
@@ -300,28 +308,44 @@ public class GameStageView extends View {
 		var sound : Sounds = SoundsAssets.catAngry;
 		sound.playSound();
     }
+
 	private function animateKidHappy(event:Event):void {
         this.girlHappy.visible = true;
         this.girlSad.visible = false;
         this.girlMad.visible = false;
+        this.girlIdle.visible = false;
 
-		var sound : Sounds = SoundsAssets.kidHappy;
+
+        var sound : Sounds = SoundsAssets.kidHappy;
 		sound.playSound();
 	}
     private function animateKidSad(event:Event):void {
         this.girlHappy.visible = false;
         this.girlSad.visible = true;
         this.girlMad.visible = false;
+        this.girlIdle.visible = false;
 
 
 		var sound : Sounds = SoundsAssets.kidSad;
 		sound.playSound();
     }
+    private function animateKidIdle(event:Event):void {
+        this.boyHappy.visible = false;
+        this.boySad.visible = false;
+        this.boyMad.visible = false;
+        this.girlIdle.visible = true;
+
+
+    }
 	private function animateKidMad(event:Event):void {
 		this.girlHappy.visible = false;
 		this.girlSad.visible = false;
 		this.girlMad.visible = true;
-		var sound : Sounds = SoundsAssets.kidAngry;
+        this.girlIdle.visible = false;
+        this.girlIdle.visible = false;
+
+
+        var sound : Sounds = SoundsAssets.kidAngry;
 		sound.playSound();
 	}
 
@@ -340,8 +364,12 @@ public class GameStageView extends View {
 	}
 
     // The game ending
-    public function theEnd():void {
-        //todo
+    public function theGoodEnd():void {
+
+    }
+    // The game ending
+    public function theBadEnd():void {
+
     }
 
 
@@ -360,6 +388,7 @@ public class GameStageView extends View {
 		GlobalDispatcher.addEventListener(AnimationTrigger.CAT_MEOW, animateCatMeow);
 
 		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_IDLE, animatePlayerIdle);
+		GlobalDispatcher.addEventListener(AnimationTrigger.KID_IDLE, animatePlayerIdle);
 	}
 
 
@@ -376,6 +405,7 @@ public class GameStageView extends View {
 		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_PURR, animateCatPurr);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_MEOW, animateCatMeow);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.PLAYER_IDLE, animatePlayerIdle);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_IDLE, animatePlayerIdle);
 	}
 }
 }

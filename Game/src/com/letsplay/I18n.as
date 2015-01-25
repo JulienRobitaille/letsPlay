@@ -65,23 +65,23 @@ public class I18n {
         public static var CHOICE31:String = "Daccord ...";
 
     public static var QUESTION13:String   = "Arrête de faire ton rigolo! Tu vas tout gâcher!";
-        public static var CHOICE32:String = "Oh là là… On peut plus s’amuser...";
+        public static var CHOICE32:String = "Oh là là... On peut plus s’amuser...";
         public static var CHOICE33:String = "Désolé...";
 
     public static var QUESTION14:String   = "Bon... Il commence à se faire tard... nous devrions rentrer à la maison";
         public static var CHOICE34:String = "(Timmy suit Jocelyne)";
 
-    public static var QUESTION15:String   = "J’aurais bien aimé que l’on retrouve ce chat… Et toi?";
+    public static var QUESTION15:String   = "J’aurais bien aimé que l’on retrouve ce chat... Et toi?";
         public static var CHOICE35:String = "Oui, il avait l’air très gentil";
         public static var CHOICE36:String = "Non... il nous aurait donné des puces car c’est sale les chats";
 
     public static var QUESTION16:String   = "Crois tu qu’il va revenir un jour?";
         public static var CHOICE37:String = "Minou!!! Minooouuuu! Reviens!";
-        public static var CHOICE38:String = "Mais il est juste là… couché par terre... (je comprends vraiment rien à cette pièce!) ";
+        public static var CHOICE38:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!) ";
 
     public static var QUESTION17:String   = "Il reviendrait peut-être si tu étais plus gentil envers lui!";
         public static var CHOICE39:String = "Tu as raison... je m’excuse Mr. Chat!";
-        public static var CHOICE40:String = "Mais il est juste là… couché par terre… (je comprends vraiment rien à cette pièce!)";
+        public static var CHOICE40:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!)";
     public function I18n() {
     }
 }
