@@ -27,6 +27,7 @@ public class GameStageView extends View {
     private var scene:InteractiveImage;
     private var cat:MovieClip;
     private var boyHappy:MovieClip;
+    private var girlHappy:MovieClip;
 
     public function GameStageView(model:Model) {
         super(model);
@@ -98,16 +99,23 @@ public class GameStageView extends View {
         this.cat.y = this.topScene.height + 165;
         this.cat.loop = false;
         this.boyHappy = new MovieClip(Asset.BoyHappy,24);
-        this.boyHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
+        this.boyHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 225;
         this.boyHappy.y = this.topScene.height + 115;
 
         Starling.juggler.add(this.boyHappy);
+
+        this.girlHappy = new MovieClip(Asset.GirlHappy,24);
+        this.girlHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 275;
+        this.girlHappy.y = this.topScene.height + 115;
+
+        Starling.juggler.add(this.girlHappy);
 
         this.act1.addChild(cloud);
         this.act1.addChild(leftTree);
         this.act1.addChild(house);
         this.act1.addChild(bush);
         this.act1.addChild(this.boyHappy);
+        this.act1.addChild(this.girlHappy);
     }
     private function setAct2():void {
         this.act2= new Sprite();
