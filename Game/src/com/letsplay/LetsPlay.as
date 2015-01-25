@@ -10,10 +10,6 @@ import com.letsplay.game.Game;
 import com.letsplay.intro.Intro;
 import com.letsplay.menu.Menu;
 
-import flash.display.Bitmap;
-
-import starling.display.DisplayObject;
-
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.text.BitmapFont;

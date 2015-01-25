@@ -7,7 +7,9 @@ import com.drawm.mvc.view.View;
 import com.drawm.ui.interactive.InteractiveImage;
 import com.greensock.TweenLite;
 import com.greensock.TweenMax;
+import com.letsplay.AnimationTrigger;
 import com.letsplay.Atlas.Asset;
+import com.letsplay.GlobalDispatcher;
 
 import flash.utils.setTimeout;
 
@@ -223,5 +225,46 @@ public class GameStageView extends View {
             this.cat.removeEventListener(Event.ENTER_FRAME, this.entreFrameCat);
         }
     }
+
+
+
+	private function animatePlayerSad(event:AnimationTrigger):void {
+
+	}
+
+	private function animateKidHappy(event:AnimationTrigger):void {
+		
+	}
+
+	private function animateKidJump(event:AnimationTrigger):void {
+		
+	}
+
+	private function animateCatFall(event:AnimationTrigger):void {
+		
+	}
+
+	private function animateKidAngry(event:AnimationTrigger):void {
+		
+	}
+
+
+	override public function resume():void {
+		super.resume();
+		GlobalDispatcher.addEventListener(AnimationTrigger.KID_ANGRY, animateKidAngry);
+		GlobalDispatcher.addEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
+		GlobalDispatcher.addEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
+		GlobalDispatcher.addEventListener(AnimationTrigger.KID_HAPPY, animateKidHappy);
+		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_SAD, animatePlayerSad);
+	}
+
+	override public function pause():void {
+		super.pause();
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_ANGRY, animateKidAngry);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_HAPPY, animateKidHappy);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.PLAYER_SAD, animatePlayerSad);
+	}
 }
 }

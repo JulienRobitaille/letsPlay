@@ -3,6 +3,7 @@
  */
 package com.letsplay.game {
 import com.drawm.mvc.model.Model;
+import com.letsplay.AnimationTrigger;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
 import com.letsplay.data.DialogTree;
@@ -25,6 +26,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "NO YOU STINK!",
 					destinationId : "kidAngry_1",
+					animationTrigger : [AnimationTrigger.KID_ANGRY],
 					stats : {
 						parents : 5,
 						kid : -5
@@ -33,6 +35,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "With pleasure!",
 					destinationId : "parentsBored_1",
+					animationTrigger : [AnimationTrigger.KID_JUMP],
 					stats : {
 						parents : -5,
 						kid : 5
@@ -47,6 +50,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "This game suck! lets play ball!",
 					destinationId : "kidAngry_3",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
 						parents : 5,
 						kid : -5
@@ -55,6 +59,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "Even better! Lets make mud cake!",
 					destinationId : "parentsBored_3",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
 						parents : -5,
 						kid : 5
@@ -69,6 +74,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "LIAR!",
 					destinationId : "kidAngry_2",
+					animationTrigger : [AnimationTrigger.KID_HAPPY],
 					stats : {
 						parents : 5,
 						kid : -5
@@ -77,6 +83,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "Please don't... i'm sorry",
 					destinationId : "parentsBored_2",
+					animationTrigger : [AnimationTrigger.PLAYER_SAD],
 					stats : {
 						parents : -5,
 						kid : 5
@@ -108,9 +115,6 @@ public class GameModel extends Model {
 		super.resume();
 
 		this.dispatchEventWith(BubbleEvent.SHOW_BUBBLE, false, this.currentDialog);
-
-		//this.dispatchEventWith(BubbleEvent.SHOW_TEXT, false, {texts : bubbleText});
-		//this.dispatchEventWith(BubbleEvent.SHOW_ANSWER, false, {choices: choices});
 	}
 
 	public function goToDialog(destinationId:String):void {
