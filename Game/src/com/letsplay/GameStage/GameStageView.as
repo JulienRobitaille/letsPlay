@@ -110,6 +110,7 @@ public class GameStageView extends View {
 
     public function curtainLift():void{
         TweenLite.to(this.closedScene,3, {y:-115});
+		SoundsAssets.rideau.playSound();
     }
 
     public function curtainDrop( callback : Function ):void{
@@ -119,6 +120,7 @@ public class GameStageView extends View {
     }
 
     public function curtainDropThenLift( callback : Function ):void {
+		SoundsAssets.rideau.playSound();
         var self:GameStageView = this;
 
         var curtain : DisplayObject = this.closedScene;

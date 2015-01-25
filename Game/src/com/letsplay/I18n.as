@@ -3,96 +3,96 @@
  */
 package com.letsplay {
 public class I18n {
-    public static const TITLE:String = "À vous de jouer! ;)";
-    public static var INTRO:String = "Aujourd'hui à 16h15, Timmy et Jocelyne se lancent\n en avant première de la pièce:\n Des grenouilles et des chats.\n Jocelyne ne se doutait pas que Timmy avait oublié son texte !\n Que va-t-il bien pouvoir faire ?!";
-    public static var JOUER:String = "Jouer";
-    public static var CREDIT:String = "Crédits";
-    public static var CREDITTEXT:String = "MONTREAL GAME JAM 2015\n\n UN GROS MERCI À L'ETS !\n\nÀ vous de jouer! ;)\nVous est présenté par\n\nMyriam Thouin\nDamon Perron-Laurin\nJulien Robitaille\n\nMTL Game Jam 2015 audio team\nJérémi Ménard - Stephan Provost\nGabriel Essiambre - Léandre Monette\nBruno Coe\n\nVoice Acting\n\nJérémi Ménard - Stephan Provost\n\nMusic\nStephan Provost";
+	public static const TITLE:String = "Let's Play! ;)";
+	public static var INTRO:String = "Tonight 04:15 pm, Timmy and Jocelyne launch\n the pre-show of:\n Of frogs and cats.\n Jocelyne has no idea that Timmy forgot his lines !\n What is he gonna do ?!";
+	public static var JOUER:String = "Play";
+	public static var CREDIT:String = "Credit";
+	public static var CREDITTEXT:String = "MONTREAL GAME JAM 2015\n\n A BIG THANKS TO THE ETS !\n\nLet's Play! ;)\nis presented to you by\n\nMyriam Thouin\nDamon Perron-Laurin\nJulien Robitaille\n Thanks to the sound team !";
+	public static var AGAMEABOUT:String = "A game about forgetting your line on stage";
+	public static var QUESTION1:String = "Hey Timmy, Do you like dogs or cats?";
+	public static var CHOICE1:String = "Dogs!";
+	public static var CHOICE2:String = "Cats";
+	public static var CHOICE3:String = "... (pssst Jocelyne? Can't remember my lines!?)";
 
-    public static var QUESTION1:String = "Dis Timmy, est-ce que tu préfères les chiens ou les chats?";
-        public static var CHOICE1:String = "Les chiens";
-        public static var CHOICE2:String = "Les chats";
-        public static var CHOICE3:String = "... (pssst Jocelyne? C'est quoi déjà mon texte?)";
+	public static var QUESTION2:String = "Dogs are loud, brown and stink!\nI'd like to have a cat, but mom does'nt allow me to.";
+	public static var CHOICE4:String = "That's not even true! They have all sorts of colours! (But what am I doing here?)";
+	public static var CHOICE5:String = "Oh ! Look at this cute kitten!";
+	public static var CHOICE6:String = "... (Oops I have a blank; my sister won't be happy.)";
 
-    public static var QUESTION2:String = "Les chiens son bruyants, bruns et ils puent!\nJ'aimerais avoir un chat, mais maman ne veut pas.";
-        public static var CHOICE4:String = "C'est même pas vrai, ils ont plein de couleurs! (Mais qu'est-ce que je fais ici?)";
-        public static var CHOICE5:String = "Oh ! Regarde le joli chaton!";
-        public static var CHOICE6:String = "... (Oups j'ai un blanc; ma soeur ne sera vraiment pas contente.)";
+	public static var QUESTION3:String = "... Timmy do you like cats or not? (He really does'nt have a good memory!)";
+	public static var CHOICE7:String = "Yeah a lot!";
+	public static var CHOICE8:String = "Absolutely not !";
+	public static var CHOICE9:String = "... (What am I doing?!?!)";
 
-    public static var QUESTION3:String = "... Timmy aimes-tu les chats? (Il n'a vraiment aucune mémoire!)";
-        public static var CHOICE7:String = "Oui beaucoup!";
-        public static var CHOICE8:String = "Vraiment pas!";
-        public static var CHOICE9:String = "... (Qu'est-ce que je fais?!?!)";
+	public static var QUESTION4:String = "Oh look at the kitten! Let's catch it! Help me! Help me!";
+	public static var CHOICE10:String = "I'm going right, you go left!";
+	public static var CHOICE11:String = "That's not even a real cat. Mathew made it for the play...";
+	public static var CHOICE12:String = "...";
 
-    public static var QUESTION4:String = "Oh regarde le chaton. Attrapons-le! Aide moi! Aide moi!";
-        public static var CHOICE10:String = "Je vais à droite tu vas à gauche!";
-        public static var CHOICE11:String = "Ce n'est même pas un vrai chat. Mathieu l'a fabriqué pour la pièce...";
-        public static var CHOICE12:String = "...";
+	public static var QUESTION5:String = "Ohhhh. He's so cute! Let's catch it and bring it home. Don't tell mom!";
+	public static var CHOICE13:String = "He looks dirty and mean. That's not a good idea.";
+	public static var CHOICE14:String = "Only if I can pet him first!";
+	public static var CHOICE15:String = "... (It's stupid... Why a frog would adopt a cat!?)";
 
-    public static var QUESTION5:String = "Ohhhh. Il est si beau! Attrapons-le et rapportons-le chez moi. Dis rien à maman.";
-        public static var CHOICE13:String = "Il a l'air sale et méchant. Ce n'est pas une bonne idée.";
-        public static var CHOICE14:String = "Seulement si je peux le flatter en premier.";
-        public static var CHOICE15:String = "... (C'est n'importe quoi... Pourquoi une grenouille adopterait un chat?)";
+	public static var QUESTION6:String = "He's getting away !!! Quick quick ! Let's follow him.";
+	public static var CHOICE16:String = "... (I don't think I've got much of a choice.)";
 
-    public static var QUESTION6:String = "Le chat s'enfuit !!! Vite Vite ! Suivons-le.";
-        public static var CHOICE16:String = "... (Je crois que je n'ai pas vraiment le choix.)";
+	public static var QUESTION7:String = "You let him escape ! It's your fault !!! (She runs by the park)";
+	public static var CHOICE17:String = "... (Timmy follows Jocelyne.)";
 
-    public static var QUESTION7:String = "Tu l'as laissé s'enfuir ! C'est de ta faute !!! (Elle court dans le parc)";
-        public static var CHOICE17:String = "... (Se met à suivre Jocelyne.)";
+	public static var QUESTION8:String = "But where is this cat??";
+	public static var CHOICE18:String = "Don't worry, we'll find him!";
+	public static var CHOICE19:String = "He went away because you're always whining!";
+	public static var CHOICE20:String = "...";
 
-    public static var QUESTION8:String = "Mais où est passé ce chat??";
-        public static var CHOICE18:String = "Ne t'inquiete pas, nous allons le retrouver!";
-        public static var CHOICE19:String = "Il est parti parce que tu te plains tout le temps!";
-        public static var CHOICE20:String = "...";
+	public static var QUESTION9:String = "Hmm... He must have hide...";
+	public static var CHOICE21:String = "Maybe he's in a tree?";
+	public static var CHOICE22:String = "That's why I hate cats!";
+	public static var CHOICE23:String = "(I think I'm supposed to say something...)";
 
-    public static var QUESTION9:String = "Hmm... Il doit s'être bien caché...";
-        public static var CHOICE21:String = "Il est peut-être dans un arbre?";
-        public static var CHOICE22:String = "C'est pour ça que j'aime pas les chats!";
-        public static var CHOICE23:String = "(Je crois que je suis supposé répondre quelque chose...)";
+	public static var QUESTION10:String   = "My mom's always saying that too...";
+	public static var CHOICE24:String = "That's not really nice of her!";
+	public static var CHOICE25:String = "She must have good reasons...";
+	public static var CHOICE26:String = "(Is she sad for real or is it still in the play?!)";
 
-    public static var QUESTION10:String   = "Ma mère me dit toujours ça...";
-        public static var CHOICE24:String = "Ce n'est pas très gentil de sa part!";
-        public static var CHOICE25:String = "Elle doit avoir de bonnes raisons...";
-        public static var CHOICE26:String = "(Est-ce qu'elle est triste pour vrai ou c'est encore dans la pièce?!)";
+	public static var QUESTION11:String   = "(I can't beleive it! This kid has a real problem or what?!)\nWake up Timmy! say something!";
+	public static var CHOICE27:String = "euh... Kitty! Kitty! Kitty! Come here! ";
+	public static var CHOICE28:String = "euh... cats stink...";
+	public static var CHOICE29:String = "...";
 
-    public static var QUESTION11:String   = "(C'est pas vrai! Cet enfant a un vrai problème ou quoi?!)\nAllons Timmy! Dis quelque chose!";
-        public static var CHOICE27:String = "euh... Minou! Minou! Minou! Viens ici! ";
-        public static var CHOICE28:String = "euh... les chats ça sent pas bon...";
-        public static var CHOICE29:String = "...";
+	public static var QUESTION12:String   = "You're so sweet, but I think it's a lost cause...";
+	public static var CHOICE30:String = "We must never despair!";
+	public static var CHOICE31:String = "Okay ...";
 
-    public static var QUESTION12:String   = "Tu es bien gentil, mais je crois que c’est peine perdue...";
-        public static var CHOICE30:String = "Il ne faut jamais désespérer!";
-        public static var CHOICE31:String = "D'accord ...";
+	public static var QUESTION13:String   = "Stop fooling around! You'll ruin everything!";
+	public static var CHOICE32:String = "iiish... Can't have fun anymore...";
+	public static var CHOICE33:String = "Sorry...";
 
-    public static var QUESTION13:String   = "Arrête de faire ton rigolo! Tu vas tout gâcher!";
-        public static var CHOICE32:String = "Oh là là... On peut plus s’amuser...";
-        public static var CHOICE33:String = "Désolé...";
+	public static var QUESTION14:String   = "Well... It's starting to go dark... we should head back home";
+	public static var CHOICE34:String = "(Timmy follows Jocelyne)";
 
-    public static var QUESTION14:String   = "Bon... Il commence à se faire tard... nous devrions rentrer à la maison";
-        public static var CHOICE34:String = "(Timmy suit Jocelyne)";
+	public static var QUESTION15:String   = "I wished we found that cat... And you?";
+	public static var CHOICE35:String = "Yeah, he seemed nice!";
+	public static var CHOICE36:String = "No... he would have given us fleas because cats are filthy";
 
-    public static var QUESTION15:String   = "J’aurais bien aimé que l’on retrouve ce chat... Et toi?";
-        public static var CHOICE35:String = "Oui, il avait l’air très gentil";
-        public static var CHOICE36:String = "Non... il nous aurait donné des puces car c’est sale les chats";
+	public static var QUESTION16:String   = "Do you think he'll come back one day?";
+	public static var CHOICE37:String = "Kitty!!! Kittyyyyy! Come here!";
+	public static var CHOICE38:String = "But he's right there... on the ground... (I really understand nothing to this play!)";
 
-    public static var QUESTION16:String   = "Crois tu qu’il va revenir un jour?";
-        public static var CHOICE37:String = "Minou!!! Minooouuuu! Reviens!";
-        public static var CHOICE38:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!) ";
-
-    public static var QUESTION17:String   = "Il reviendrait peut-être si tu étais plus gentil envers lui!";
-        public static var CHOICE39:String = "Tu as raison... JE M'EXCUSE MONSIEUR CHAT!";
-        public static var CHOICE40:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!)";
-    public static var END:String = "La Fin !";
-    public function I18n() {
-    }
+	public static var QUESTION17:String   = "Perhaps he would come back if you were nicer with him!";
+	public static var CHOICE39:String = "You're right... I'M SORRY MR. CAT!";
+	public static var CHOICE40:String = "But he's right there... on the ground... (I really understand nothing to this play!)";
+	public static var END:String = "The End";
+	public function I18n() {
+	}
 }
 }
 /*
  public static var QUESTION15:String   = "";
-     public static var CHOICE35:String = "";
-     public static var CHOICE36:String = "";
-     public static var CHOICE37:String = "";
+ public static var CHOICE35:String = "";
+ public static var CHOICE36:String = "";
+ public static var CHOICE37:String = "";
 
 
-* */
+ * */
 
