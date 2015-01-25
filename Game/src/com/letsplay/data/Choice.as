@@ -8,6 +8,7 @@ public class Choice extends ParsableVO{
 
 	public var text : String;
 	public var destinationId : String;
+	public var animationTrigger : Array;
 
 	public function Choice(data:Object) {
 		super(data);
