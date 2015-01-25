@@ -3,6 +3,7 @@
  */
 package com.letsplay {
 import com.letsplay.Atlas.Asset;
+import com.letsplay.GameCrowd.GameCrowd;
 import com.letsplay.GameStage.GameStage;
 import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.game.Game;
@@ -21,6 +22,7 @@ import starling.textures.TextureAtlas;
 public class LetsPlay extends Sprite {
 	private var menu:Menu;
 	private var gameStage:GameStage;
+	private var gameCrowd:GameCrowd;
 
 
 	public function LetsPlay() {
@@ -32,9 +34,11 @@ public class LetsPlay extends Sprite {
 		var intro:Intro = new Intro();
 		menu = new Menu();
 		gameStage = new GameStage();
+		gameCrowd = new GameCrowd();
 
 		this.addChild(gameStage);
 		this.addChild(menu);
+		this.addChild(gameCrowd);
 		this.addChild(intro);
 
 		intro.addEventListener(StateEvent.DONE, function():void{

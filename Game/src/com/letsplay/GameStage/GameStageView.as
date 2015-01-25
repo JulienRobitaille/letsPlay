@@ -22,6 +22,7 @@ public class GameStageView extends View {
     private var closedScene:InteractiveImage;
     private var act1:Sprite;
     private var act2:Sprite;
+    private var act3:Sprite;
     private var topScene:InteractiveImage;
     private var scene:InteractiveImage;
 
@@ -41,12 +42,14 @@ public class GameStageView extends View {
         this.closedScene.x = ( this.topScene.width - closedScene.width ) >> 1;
         this.scene.y = sHeight - this.scene.height - 30;
 
-       // this.setAct1();
-        this.setAct2();
+        this.setAct1();
+       // this.setAct2();
+        //this.setAct3();
 
         this.addChild(this.scene);
-       //this.addChild(this.act1);
-        this.addChild(this.act2);
+       this.addChild(this.act1);
+        //this.addChild(this.act2);
+       // this.addChild(this.act3);
         this.addChild(this.closedScene);
         this.addChild(this.topScene);
 
@@ -155,9 +158,9 @@ public class GameStageView extends View {
         this.act2.addChild(leftTree);
         this.act2.addChild(rightTree);
     }
-    /*
+
     private function setAct3():void {
-        this.act1 = new Sprite();
+        this.act3 = new Sprite();
 
         var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
         cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 100;
@@ -187,11 +190,11 @@ public class GameStageView extends View {
 
         //WTF CAT LOOP !?!?!?!
 
-        this.act1.addChild(cloud);
-        this.act1.addChild(leftTree);
-        this.act1.addChild(house);
-        this.act1.addChild(bush);
-        this.act1.addChild(cat);
-    }*/
+        this.act3.addChild(cloud);
+        this.act3.addChild(leftTree);
+        this.act3.addChild(house);
+        this.act3.addChild(bush);
+        this.act3.addChild(cat);
+    }
 }
 }

@@ -28,6 +28,8 @@ public class Asset {
     public static const LeftTree:Texture = atlas.getTexture("left_tree");
     public static const RightTree:Texture = atlas.getTexture("right_tree");
     public static const Cat:Vector.<Texture> = atlas.getTextures("cat_");
+    public static const Public:Texture = atlas.getTexture("public");
+    public static const PublicOdd:Texture = atlas.getTexture("public_odd");
 
     public function Asset() {
     }
