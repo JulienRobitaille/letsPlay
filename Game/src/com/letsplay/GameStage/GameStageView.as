@@ -25,6 +25,7 @@ public class GameStageView extends View {
     private var act3:Sprite;
     private var topScene:InteractiveImage;
     private var scene:InteractiveImage;
+    private var cat:MovieClip;
 
     public function GameStageView(model:Model) {
         super(model);
@@ -91,20 +92,16 @@ public class GameStageView extends View {
         bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
         bush.y = this.topScene.height + 160;
 
-        var cat:MovieClip = new MovieClip(Asset.Cat,12);
-        cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
-        cat.y = this.topScene.height + 165;
-        cat.loop = false;
+        this.cat = new MovieClip(Asset.Cat,12);
+        this.cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
+        this.cat.y = this.topScene.height + 165;
+        this.cat.loop = false;
 
-        Starling.juggler.add(cat);
-
-        //WTF CAT LOOP !?!?!?!
 
         this.act1.addChild(cloud);
         this.act1.addChild(leftTree);
         this.act1.addChild(house);
         this.act1.addChild(bush);
-        this.act1.addChild(cat);
     }
     private function setAct2():void {
         this.act2= new Sprite();
@@ -181,12 +178,10 @@ public class GameStageView extends View {
         bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
         bush.y = this.topScene.height + 160;
 
-        var cat:MovieClip = new MovieClip(Asset.Cat,12);
-        cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
-        cat.y = this.topScene.height + 175;
-        cat.loop = false;
-
-        Starling.juggler.add(cat);
+        var kitten3:MovieClip = new MovieClip(Asset.Cat,12);
+        kitten3.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
+        kitten3.y = this.topScene.height + 175;
+        kitten3.loop = false;
 
         //WTF CAT LOOP !?!?!?!
 
@@ -194,7 +189,22 @@ public class GameStageView extends View {
         this.act3.addChild(leftTree);
         this.act3.addChild(house);
         this.act3.addChild(bush);
-        this.act3.addChild(cat);
+        this.act3.addChild(kitten3);
+    }
+    public function animateKitten():void{
+        this.cat.addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
+        this.act1.addChild(this.cat);
+    }
+    public function onAdded():void{
+        this.cat.addEventListener(Event.ENTER_FRAME, this.entreFrameCat);
+        Starling.juggler.add(this.cat);
+        this.cat.play();
+    }
+    public function entreFrameCat(evt:Event):void{
+        if( this.cat.currentFrame >= this.cat.numFrames-10 ) {
+            this.cat.pause();
+            this.cat.removeEventListener(Event.ENTER_FRAME, this.entreFrameCat);
+        }
     }
 }
 }

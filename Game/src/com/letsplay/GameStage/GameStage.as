@@ -23,5 +23,8 @@ public class GameStage extends Page {
     public function theEnd():void {
         this.stageView.theEnd();
     }
+    public function startThekitten():void {
+        this.stageView.animateKitten();
+    }
 }
 }

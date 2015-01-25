@@ -57,6 +57,7 @@ public class LetsPlay extends Sprite {
 			self.menu.removeMenuWithStyle();
 			self.gameCrowd.startLevelOne();
 			self.startGame();
+			self.gameStage.startThekitten();
 
 			//var game:Game = new Game();
 			//self.addChild(game);
