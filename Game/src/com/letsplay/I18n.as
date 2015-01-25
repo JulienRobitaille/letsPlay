@@ -56,18 +56,33 @@ public class I18n {
         public static var CHOICE26:String = "(Est-ce qu'elle est triste pour vrai ou c'est encore dans la pièce?!)";
 
     public static var QUESTION11:String   = "(C'est pas vrai! Cet enfant a un vrai problème ou quoi?!)\nAllons Timmy! Dis quelque chose!";
-        public static var CHOICE27:String = "trol";
-        public static var CHOICE28:String = "trol";
-        public static var CHOICE29:String = "trol";
+        public static var CHOICE27:String = "euh... Minou! Minou! Minou! Viens ici! ";
+        public static var CHOICE28:String = "euh... les chats ça sent pas bon...";
+        public static var CHOICE29:String = "...";
+
+    public static var QUESTION12:String   = "Tu es bien gentil, mais je crois que c’est peine perdue...";
+        public static var CHOICE30:String = "Il ne faut jamais désespérer!";
+        public static var CHOICE31:String = "Daccord ...";
+
+    public static var QUESTION13:String   = "Arrête de faire ton rigolo! Tu vas tout gâcher!";
+        public static var CHOICE32:String = "Oh là là… On peut plus s’amuser...";
+        public static var CHOICE33:String = "Désolé...";
+
+    public static var QUESTION14:String   = "Bon... Il commence à se faire tard... nous devrions rentrer à la maison";
+        public static var CHOICE34:String = "(Timmy suit Jocelyne)";
+    public static var QUESTION15:String   = "";
+        public static var CHOICE35:String = "";
+        public static var CHOICE36:String = "";
+        public static var CHOICE37:String = "";
     public function I18n() {
     }
 }
 }
 /*
- public static var QUESTION10:String   = "";
- public static var CHOICE24:String = "";
- public static var CHOICE25:String = "";
- public static var CHOICE26:String = "";
+ public static var QUESTION15:String   = "";
+     public static var CHOICE35:String = "";
+     public static var CHOICE36:String = "";
+     public static var CHOICE37:String = "";
 
 
 * */

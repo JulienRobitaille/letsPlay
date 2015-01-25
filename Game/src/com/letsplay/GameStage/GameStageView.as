@@ -10,6 +10,9 @@ import com.greensock.TweenMax;
 import com.letsplay.AnimationTrigger;
 import com.letsplay.Atlas.Asset;
 import com.letsplay.GlobalDispatcher;
+import com.letsplay.SoundsAssets;
+
+import mx.core.SoundAsset;
 
 import starling.core.Starling;
 import starling.display.DisplayObject;
@@ -253,6 +256,7 @@ public class GameStageView extends View {
         this.boyHappy.visible = true;
         this.boySad.visible = false;
         this.boyMad.visible = false;
+    //    SoundsAssets.kiddHappy.play();
     }
 
 	private function animatePlayerSad(event:Event):void {

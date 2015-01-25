@@ -255,7 +255,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : I18n.CHOICE18,
+					text : I18n.CHOICE19,
 					destinationId : "#3",
 					animationTrigger : [AnimationTrigger.PLAYER_MAD,AnimationTrigger.KID_MAD],
 					stats : {
@@ -345,10 +345,10 @@ public class GameModel extends Model {
 
 		//#4
 		this.dialogTree.add("#4", new Dialog({
-			text :I18n.QUESTION10,
+			text :I18n.QUESTION11,
 			choices : Vector.<Choice>([
 				new Choice({
-					text :I18n.CHOICE24,
+					text :I18n.CHOICE27,
 					destinationId : "#5",
 					animationTrigger : [],
 					stats : {
@@ -357,20 +357,86 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : I18n.CHOICE25,
+					text : I18n.CHOICE28,
 					destinationId : "#6",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.KID_MAD],
 					stats : {
 						parents : 0,
 						kid : 0
 					}
 				}),
 				new Choice({
-					text : I18n.CHOICE26,
+					text : I18n.CHOICE29,
 					destinationId : "#4",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.KID_SAD],
 					stats : {
 						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+		//#5
+		this.dialogTree.add("#5", new Dialog({
+			text :I18n.QUESTION12,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE30,
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_HAPPY],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE31,
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.KID_SAD,AnimationTrigger.PLAYER_SAD],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+		//#6
+		this.dialogTree.add("#6", new Dialog({
+			text :I18n.QUESTION12,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE32,
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_MAD],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE33,
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+		//#7
+		this.dialogTree.add("#6", new Dialog({
+			text :I18n.QUESTION12,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE34,
+					destinationId : "act-fin",
+					animationTrigger : [AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_MAD],
+					stats : {
+						people : 0,
 						kid : 0
 					}
 				})
@@ -380,7 +446,39 @@ public class GameModel extends Model {
 	}
 
 	private function act3():void{
-		trace("ACT 3");
+	/*	//#1
+		this.dialogTree.add("startDialog", new Dialog({
+			text :I18n.QUESTION8,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE18,
+					destinationId : "#2",
+					animationTrigger : [AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.KID_HAPPY],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE19,
+					destinationId : "#3",
+					animationTrigger : [AnimationTrigger.PLAYER_MAD,AnimationTrigger.KID_MAD],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE20,
+					destinationId : "#4",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));*/
 	}
 
 	override public function start():void {
