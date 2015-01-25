@@ -477,7 +477,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE37,
 					destinationId : "#5",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.GOOD_END],
 					stats : {
 						people : 0,
 						kid : 0
@@ -486,7 +486,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : I18n.CHOICE38,
 					destinationId : "#6",
-					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD],
+					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD,AnimationTrigger.BAD_END],
 					stats : {
 						parents : 0,
 						kid : 0
@@ -501,7 +501,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE39,
 					destinationId : "#5",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.PLAYER_IDLE/*,AnimationTrigger.KID_IDLE*/,AnimationTrigger.GOOD_END],
 					stats : {
 						people : 0,
 						kid : 0
@@ -510,13 +510,18 @@ public class GameModel extends Model {
 				new Choice({
 					text : I18n.CHOICE40,
 					destinationId : "#6",
-					animationTrigger : [/*AnimationTrigger.IDLE*/],
+					animationTrigger : [AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.BAD_END],
 					stats : {
 						parents : 0,
 						kid : 0
 					}
 				})
 			])
+		}));
+		//#5
+		this.dialogTree.add("#5", new Dialog({
+			text: "",
+			choices : Vector.<Choice>([	])
 		}));
 	}
 
