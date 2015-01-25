@@ -5,8 +5,8 @@ package com.letsplay {
 public class I18n {
     public static const TITLE:String = "Let's Play! ;)";
     public static var INTRO:String = "Tonight 04:15 pm, Timmy and Jocelyne launch\n the pre-show of:\n Of frogs and cats.\n Jocelyne has no idea that Timmy forgot his lines !\n What is he gonna do ?!";
-    public static var JOUER:String = "Jouer";
-    public static var CREDIT:String = "Crédits";
+    public static var JOUER:String = "Play";
+    public static var CREDIT:String = "Credit";
     public static var CREDITTEXT:String = "MONTREAL GAME JAM 2015\n\n A BIG THANKS TO THE ETS !\n\nLet's Play! ;)\nis presented to you by\n\nMyriam Thouin\nDamon Perron-Laurin\nJulien Robitaille\n Thanks to the sound team !";
 
     public static var QUESTION1:String = "Hey Timmy, Do you like dogs or cats?";
@@ -82,6 +82,7 @@ public class I18n {
     public static var QUESTION17:String   = "Perhaps he would come back if you were nicer with him!";
         public static var CHOICE39:String = "You're right... I'M SORRY MR. CAT!";
         public static var CHOICE40:String = "But he's right there... on the ground... (I really understand nothing to this play!)";
+    public static var END:String = "The End";
     public function I18n() {
     }
 }
