@@ -27,8 +27,10 @@ public class GameStageView extends View {
     public var cat:MovieClip;
     private var boyHappy:MovieClip;
     private var girlHappy:MovieClip;
-    private var boySad:MovieClip;
-    private var girlSad:MovieClip;
+	private var boySad:MovieClip;
+	private var girlSad:MovieClip;
+	private var boyMad:MovieClip;
+	private var girlMad:MovieClip;
     private var sWidth:int;
     private var sHeight:int;
 
@@ -63,7 +65,12 @@ public class GameStageView extends View {
         this.girlHappy = new MovieClip(Asset.GirlHappy,24);
         this.boySad = new MovieClip(Asset.BoySad,24);
         this.girlSad = new MovieClip(Asset.GirlSad,24);
+		this.boyMad = new MovieClip(Asset.BoyMad,30);
+		this.girlMad = new MovieClip(Asset.GirlMad,30);
 
+
+		Starling.juggler.add(this.boyMad);
+		Starling.juggler.add(this.girlMad);
 
 
         this.act ||= new Sprite();
