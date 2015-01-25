@@ -4,9 +4,12 @@
 package com.letsplay.game {
 import com.drawm.mvc.model.Model;
 import com.letsplay.AnimationTrigger;
+import com.letsplay.GlobalDispatcher;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
 import com.letsplay.data.DialogTree;
+
+import flash.utils.setTimeout;
 
 public class GameModel extends Model {
 
@@ -119,6 +122,13 @@ public class GameModel extends Model {
 
 	public function goToDialog(destinationId:String):void {
 		this.currentDialog = dialogTree.get(destinationId);
+		setTimeout(showCurrentDialog, 2000);
+
+		//GlobalDispatcher.dispatchEventWith(this.currentDialog.)
+
+
+	}
+	private function showCurrentDialog():void{
 		this.dispatchEventWith(BubbleEvent.SHOW_BUBBLE, false, this.currentDialog);
 	}
 

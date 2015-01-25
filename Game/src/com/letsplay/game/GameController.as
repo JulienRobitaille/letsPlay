@@ -38,7 +38,6 @@ public class GameController extends Controller {
 			this._page.dispatchEventWith(StateEvent.ACTCHANGE);
 		}else{
 			this.model.goToDialog(id);
-
 		}
 
 	}
