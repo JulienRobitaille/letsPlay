@@ -222,6 +222,166 @@ public class GameModel extends Model {
 
 	}
 
+	public function changeAct( $id:int ):void{
+
+		this.dialogTree = new DialogTree();
+
+		switch ( $id ) {
+			case 2:
+				this.act2()
+				break;
+
+			case 3:
+				this.act3()
+				break;
+		}
+
+		this.currentDialog = dialogTree.get("startDialog");
+	}
+
+	private function act2():void{
+
+		//#1
+		this.dialogTree.add("startDialog", new Dialog({
+			text :I18n.QUESTION8,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE18,
+					destinationId : "#2",
+					animationTrigger : [AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.KID_HAPPY],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE18,
+					destinationId : "#3",
+					animationTrigger : [AnimationTrigger.PLAYER_MAD,AnimationTrigger.KID_MAD],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE20,
+					destinationId : "#4",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+		//#2
+		this.dialogTree.add("#2", new Dialog({
+			text :I18n.QUESTION9,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE21,
+					destinationId : "#5",
+					animationTrigger : [],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE22,
+					destinationId : "#6",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE23,
+					destinationId : "#4",
+					animationTrigger : [AnimationTrigger.KID_MAD],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+		//#3
+		this.dialogTree.add("#3", new Dialog({
+			text :I18n.QUESTION10,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE24,
+					destinationId : "#5",
+					animationTrigger : [],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE25,
+					destinationId : "#6",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE26,
+					destinationId : "#4",
+					animationTrigger : [AnimationTrigger.KID_MAD],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+		//#4
+		this.dialogTree.add("#4", new Dialog({
+			text :I18n.QUESTION10,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE24,
+					destinationId : "#5",
+					animationTrigger : [],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE25,
+					destinationId : "#6",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE26,
+					destinationId : "#4",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+
+	}
+
+	private function act3():void{
+		trace("ACT 3");
+	}
 
 	override public function start():void {
 
@@ -242,6 +402,7 @@ public class GameModel extends Model {
 	}
 
 	public function goToDialog(destinationId:String):void {
+		trace(destinationId);
 		this.currentDialog = dialogTree.get(destinationId);
 		setTimeout(showCurrentDialog, 2000);
 	}

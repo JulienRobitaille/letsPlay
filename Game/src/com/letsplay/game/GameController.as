@@ -6,6 +6,7 @@ import com.drawm.mvc.Page;
 import com.drawm.mvc.controler.Controller;
 import com.drawm.mvc.model.Model;
 import com.greensock.TweenLite;
+import com.letsplay.LetsPlay;
 import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
@@ -47,6 +48,7 @@ public class GameController extends Controller {
 		this.model.triggerAnimationFromChoice(choice);
 		if(this.model.getDialog(id) == null){
 			this._page.dispatchEventWith(StateEvent.ACTCHANGE);
+			this.model.changeAct(LetsPlay.act);
 		}else{
 			this.model.goToDialog(id);
 		}

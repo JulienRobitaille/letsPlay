@@ -195,6 +195,17 @@ public class GameStageView extends View {
         bush4.y = sHeight/1.95;
 
 
+        this.boyHappy.x = this.boyMad.x = this.boySad.x = sWidth/4;
+        this.boyHappy.y = this.boyMad.y = this.boySad.y = sHeight/2.2;
+
+        this.girlHappy.x = this.girlMad.x = this.girlSad.x = sWidth - (sWidth/2.3);
+        this.girlHappy.y = this.girlMad.y = this.girlSad.y = sHeight/2.2;
+
+        this.boySad.visible = false;
+        this.boyMad.visible = false;
+        this.girlSad.visible = false;
+        this.girlMad.visible = false;
+
         this.act.addChild(cloud);
         this.act.addChild(cloud2);
         this.act.addChild(bush);
@@ -203,6 +214,13 @@ public class GameStageView extends View {
         this.act.addChild(bush4);
         this.act.addChild(leftTree);
         this.act.addChild(rightTree);
+
+        this.act.addChild(this.boyHappy);
+        this.act.addChild(this.boyMad);
+        this.act.addChild(this.boySad);
+        this.act.addChild(this.girlHappy);
+        this.act.addChild(this.girlSad);
+        this.act.addChild(this.girlMad);
     }
 
 

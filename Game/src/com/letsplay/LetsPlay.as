@@ -22,7 +22,7 @@ public class LetsPlay extends Sprite {
 	private var gameStage:GameStage;
 	private var gameCrowd:GameCrowd;
 
-	private var act : int = 1;
+	public static var act : int = 1;
 	private var game:Game;
 
 	public function LetsPlay() {
@@ -72,8 +72,8 @@ public class LetsPlay extends Sprite {
 	private function bindGameStage():void {
 		var self:LetsPlay = this;
 		this.game.addEventListener(StateEvent.ACTCHANGE, function(evt:Event):void{
-			self.act++;
-			self.gameStage.actTransition( self.act );
+			LetsPlay.act++;
+			self.gameStage.actTransition( LetsPlay.act );
 		});
 
 		gameStage.addEventListener(StateEvent.THEEND, function(event:Event):void{
