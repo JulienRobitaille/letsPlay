@@ -72,7 +72,6 @@ public class MenuView extends View {
         this.addChild(this.credit);
         this.addChild(this.title);
 
-
 		this.subTitle= new InteractiveText(this.menuModel.id_credit, sWidth, 1, I18n.AGAMEABOUT,"fluorine",21);
 		this.subTitle.autoSize = TextFieldAutoSize.BOTH_DIRECTIONS;
 		this.subTitle.color = 0xD7D8D3;
@@ -98,6 +97,7 @@ public class MenuView extends View {
         TweenLite.to(this.jouer,0.5,{y: -60});
         TweenLite.to(this.credit,0.7,{y:-50});
         TweenLite.to(this.title,0.3,{y:-70});
+        TweenLite.to(this.subTitle,0.3,{y:-70});
     }
     public function creditMenu():void {
         var sWidth:int = this.stage.stageWidth;
