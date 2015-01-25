@@ -118,27 +118,29 @@ public class SoundsAssets {
 
 	public function SoundsAssets() {}
 
-	public static function get catAngry():Sound{
+	public static function get catAngry():Sounds{
 		return getRandomSoundFromArray(angryCatArray);
 	};
-	public static function get catPurr():Sound{
+	public static function get catPurr():Sounds{
 		return getRandomSoundFromArray(purrCatArray);
 	};
-	public static function get catMeow():Sound{
+	public static function get catMeow():Sounds{
 		return getRandomSoundFromArray(meowCatArray);
 	};
-	public static function get kidAngry():Sound{
+	public static function get kidAngry():Sounds{
 		return getRandomSoundFromArray(angryKidArray);
 	};
-	public static function get kidHappy():Sound{
+	public static function get kidHappy():Sounds{
 		return getRandomSoundFromArray(happyKidArray);
 	};
-	public static function get shut():Sound{
+	public static function get shut():Sounds{
 		return getRandomSoundFromArray(shutArray);
 	};
 
-	private static function getRandomSoundFromArray(soundArray:Array):Sound{
-		return soundArray[(Math.ceil(Math.random()*soundArray.length))];
+	private static function getRandomSoundFromArray(soundArray:Array):Sounds{
+		var index : int = Math.floor(Math.random()*soundArray.length);
+		var sound:Sounds =  soundArray[index];
+		return sound;
 	}
 }
 }

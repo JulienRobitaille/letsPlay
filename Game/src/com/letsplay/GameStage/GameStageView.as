@@ -12,6 +12,8 @@ import com.letsplay.Atlas.Asset;
 import com.letsplay.GlobalDispatcher;
 import com.letsplay.SoundsAssets;
 
+import com.letsplay.utils.Sounds;
+
 import starling.core.Starling;
 import starling.display.DisplayObject;
 
@@ -255,7 +257,8 @@ public class GameStageView extends View {
         this.boySad.visible = false;
         this.boyMad.visible = false;
 
-		SoundsAssets.kidHappy.play();
+		var sound : Sounds = SoundsAssets.kidHappy;
+		sound.playSound();
     }
 
 	private function animatePlayerSad(event:Event):void {
@@ -268,7 +271,8 @@ public class GameStageView extends View {
         this.boyHappy.visible = false;
         this.boySad.visible = false;
         this.boyMad.visible = true;
-		SoundsAssets.kidAngry.play();
+		var sound : Sounds = SoundsAssets.kidAngry;
+		sound.playSound();
 
 	}
 
@@ -276,14 +280,16 @@ public class GameStageView extends View {
         trace("animateCatFall");
         this.cat.play();
 
-		SoundsAssets.catAngry.play();
+		var sound : Sounds = SoundsAssets.catAngry;
+		sound.playSound();
     }
 	private function animateKidHappy(event:Event):void {
         this.girlHappy.visible = true;
         this.girlSad.visible = false;
         this.girlMad.visible = false;
 
-		SoundsAssets.kidHappy.play();
+		var sound : Sounds = SoundsAssets.kidHappy;
+		sound.playSound();
 	}
     private function animateKidSad(event:Event):void {
         this.girlHappy.visible = false;
@@ -294,14 +300,17 @@ public class GameStageView extends View {
 		this.girlHappy.visible = false;
 		this.girlSad.visible = false;
 		this.girlMad.visible = true;
-		SoundsAssets.kidAngry.play();
+		var sound : Sounds = SoundsAssets.kidAngry;
+		sound.playSound();
 	}
 
 	private function animateCatPurr(event:Event):void {
-		SoundsAssets.catPurr.play();
+		var sound : Sounds = SoundsAssets.catPurr;
+		sound.playSound();
 	}
 	private function animateCatMeow(event:Event):void {
-		SoundsAssets.catMeow.play();
+		var sound : Sounds = SoundsAssets.catMeow;
+		sound.playSound();
 	}
 
 	private function animateKidJump(event:Event):void {
