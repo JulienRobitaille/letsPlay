@@ -29,7 +29,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "NO YOU STINK!",
 					destinationId : "kidAngry_1",
-					animationTrigger : [AnimationTrigger.KID_ANGRY],
+					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
 						parents : 5,
 						kid : -5
@@ -38,7 +38,7 @@ public class GameModel extends Model {
 				new Choice({
 					text : "With pleasure!",
 					destinationId : "parentsBored_1",
-					animationTrigger : [AnimationTrigger.KID_JUMP],
+					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
 						parents : -5,
 						kid : 5
@@ -121,7 +121,7 @@ public class GameModel extends Model {
 	}
 
 	public function triggerAnimationFromChoice(choice:Choice):void{
-		for(var i:int = 0 ; i < choice.animationTrigger; i++){
+		for(var i:int = 0 ; i < choice.animationTrigger.length; i++){
 			GlobalDispatcher.dispatchEventWith(choice.animationTrigger[i]);
 		}
 	}

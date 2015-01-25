@@ -51,6 +51,15 @@ public class GameStageView extends View {
         this.scene.y = sHeight - this.scene.height - 30;
 
         this.cat = new MovieClip(Asset.Cat,12);
+		Starling.juggler.add(this.cat);
+		this.cat.stop();
+		this.cat.loop = false;
+		this.cat.addEventListener(Event.ENTER_FRAME, this.enterFrameCat);
+
+		//this.cat.addEventListener(Event.COMPLETE, function(event:Event):void{
+		//	cat.stop();
+		//});
+
         this.boyHappy = new MovieClip(Asset.BoyHappy,24);
         this.girlHappy = new MovieClip(Asset.GirlHappy,24);
         this.boySad = new MovieClip(Asset.BoySad,24);
@@ -105,7 +114,7 @@ public class GameStageView extends View {
 
         this.cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
         this.cat.y = this.topScene.height + 165;
-        this.cat.loop = false;
+
 
         this.boyHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 225;
         this.boyHappy.y = this.topScene.height + 115;
@@ -182,20 +191,19 @@ public class GameStageView extends View {
     //Cat buisness -----------------
 
     public function catEvents():void{
-        this.cat.addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
-       this.cat.pause();
+        //this.cat.addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
+		//this.cat.pause();
         this.act.addChild(this.cat);
     }
 
-    public function onAdded():void{
-        this.cat.addEventListener(Event.ENTER_FRAME, this.entreFrameCat);
-        Starling.juggler.add(this.cat);
-    }
+    //public function onAdded():void{
+    //    this.cat.addEventListener(Event.ENTER_FRAME, this.entreFrameCat);
+    //}
 
-    public function entreFrameCat(evt:Event):void{
+    public function enterFrameCat(evt:Event):void{
         if( this.cat.currentFrame >= this.cat.numFrames-10 ) {//@todo please ...
             this.cat.pause();
-            this.cat.removeEventListener(Event.ENTER_FRAME, this.entreFrameCat);
+            this.cat.removeEventListener(Event.ENTER_FRAME, this.enterFrameCat);
         }
     }
 
@@ -207,22 +215,26 @@ public class GameStageView extends View {
 
 
 	private function animatePlayerSad(event:Event):void {
-        this.cat.play();
+		trace("animatePlayerSad");
 	}
 
 	private function animateKidHappy(event:Event):void {
+		trace("animateKidHappy");
 		
 	}
 
 	private function animateKidJump(event:Event):void {
+		trace("animateKidJump");
 		
 	}
 
 	private function animateCatFall(event:Event):void {
-		
+		trace("animateCatFall");
+		this.cat.play();
 	}
 
 	private function animateKidAngry(event:Event):void {
+		trace("animateKidAngry");
 		
 	}
 

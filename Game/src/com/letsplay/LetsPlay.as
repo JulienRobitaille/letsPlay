@@ -62,10 +62,10 @@ public class LetsPlay extends Sprite {
 			self.bindGameStage();
 
 		});
-		menu.addEventListener(StateEvent.CREDIT, function():void{
+		menu.addEventListener(StateEvent.CREDIT, function(event:Event):void{
 			self.menu.showCredit();
 		});
-		menu.addEventListener(StateEvent.REMOVE_CREDIT, function():void{
+		menu.addEventListener(StateEvent.REMOVE_CREDIT, function(event:Event):void{
 			self.menu.hideCredit();
 		});
 	}
@@ -76,7 +76,7 @@ public class LetsPlay extends Sprite {
 			self.gameStage.actTransition( self.act );
 		});
 
-		gameStage.addEventListener(StateEvent.THEEND, function():void{
+		gameStage.addEventListener(StateEvent.THEEND, function(event:Event):void{
 			self.gameStage.theEnd();
 		});
 	}
