@@ -59,13 +59,12 @@ public class MenuView extends View {
         this.credit.useHandCursor = true;
 
 
-        this.title = new InteractiveText(null, sWidth, 1, I18n.TITLE, "fluorine", 32);
+        this.title = new InteractiveText(null, sWidth, 1, I18n.TITLE, "fluorine", 48);
         this.title.autoSize = TextFieldAutoSize.VERTICAL;
         this.title.y = -10;
         this.title.color = 0xD7D8D3;
         this.title.useHandCursor = false;
         this.title.rotation = starling.utils.deg2rad(3.5);
-		this.title.alpha = 0;
 
 
 
@@ -73,23 +72,24 @@ public class MenuView extends View {
         this.addChild(this.credit);
         this.addChild(this.title);
 
-		this.subTitle= new InteractiveText(this.menuModel.id_credit, sWidth, 1, I18n.AGAMEABOUT,"fluorine",48);
-		this.subTitle.autoSize = TextFieldAutoSize.VERTICAL;
-		this.subTitle.y = -40;
+
+		this.subTitle= new InteractiveText(this.menuModel.id_credit, sWidth, 1, I18n.AGAMEABOUT,"fluorine",21);
+		this.subTitle.autoSize = TextFieldAutoSize.BOTH_DIRECTIONS;
 		this.subTitle.color = 0xD7D8D3;
 		this.subTitle.useHandCursor = true;
+		this.subTitle.alpha = 0;
 
 
-        TweenLite.to(this.title,0.5,{y:(half-this.title.height - 50),onComplete:function():void{
-            setTimeout(function():void{
-                TweenMax.to(self.title,0.1,{ x:"+10", yoyo:true, repeat:5  });
-				self.addChild( self.title);
+		TweenLite.to(this.title,0.5,{y:(half-this.title.height - 50),onComplete:function():void{
+			setTimeout(function():void{
+				TweenMax.to(self.title,0.1,{ x:"+10", yoyo:true, repeat:5  });
+				self.addChild( self.subTitle);
 				self.subTitle.x = self.title.x + ((self.title.width - self.subTitle.width)>>1);
-				self.subTitle.y = self.title.y + self.title.height;
-				TweenLite.to(self.subTitle, 1, { alpha : 0.7 });
+				self.subTitle.y = self.title.y + self.title.height * 0.7;
+				TweenLite.to(self.subTitle, 1, { alpha : 1 });
 
-            }, 200)
-        }});
+			}, 200)
+		}});
         TweenLite.to(this.jouer,0.5,{y:(half-this.jouer.height - 20)});
         TweenLite.to(this.credit,0.5,{y:(half-this.credit.height + 30)});
     }
