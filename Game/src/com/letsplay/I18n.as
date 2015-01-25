@@ -4,10 +4,10 @@
 package com.letsplay {
 public class I18n {
     public static const TITLE:String = "À vous de jouer! ;)";
-    public static var INTRO:String = "Aujourd'hui 16h15, Timmy et Jocelyne se lancent\n dans l'avant première de la pièce:\n Des grenouilles et des chats.\n Jocelyne ne se doutait pas que Timmy avait oublié son texte !\n Que va-t-il bien pouvoir faire ?!";
+    public static var INTRO:String = "Aujourd'hui à 16h15, Timmy et Jocelyne se lancent\n en avant première de la pièce:\n Des grenouilles et des chats.\n Jocelyne ne se doutait pas que Timmy avait oublié son texte !\n Que va-t-il bien pouvoir faire ?!";
     public static var JOUER:String = "Jouer";
     public static var CREDIT:String = "Crédits";
-    public static var CREDITTEXT:String = "MONTREAL GAME JAM 2015\n\n UN GROS MERCI À L'ETS !\n\nÀ vous de jouer! ;)\nVous est présenté par\n\nMyriam Thouin\nDamon Perron-Laurin\nJulien Robitaille\n Merci à toute l'équipe de son !";
+    public static var CREDITTEXT:String = "MONTREAL GAME JAM 2015\n\n UN GROS MERCI À L'ETS !\n\nÀ vous de jouer! ;)\nVous est présenté par\n\nMyriam Thouin\nDamon Perron-Laurin\nJulien Robitaille\n\nMTL Game Jam 2015 audio team\nJérémi Ménard - Stephan Provost\nGabriel Essiambre - Léandre Monette\nBruno Coe\n\nVoice Acting\n\nJérémi Ménard - Stephan Provost\n\nMusic\nStephan Provost";
 
     public static var QUESTION1:String = "Dis Timmy, est-ce que tu préfères les chiens ou les chats?";
         public static var CHOICE1:String = "Les chiens";
@@ -20,8 +20,8 @@ public class I18n {
         public static var CHOICE6:String = "... (Oups j'ai un blanc; ma soeur ne sera vraiment pas contente.)";
 
     public static var QUESTION3:String = "... Timmy aimes-tu les chats? (Il n'a vraiment aucune mémoire!)";
-        public static var CHOICE7:String = "Oui beaucoup.";
-        public static var CHOICE8:String = "Vraiment pas.";
+        public static var CHOICE7:String = "Oui beaucoup!";
+        public static var CHOICE8:String = "Vraiment pas!";
         public static var CHOICE9:String = "... (Qu'est-ce que je fais?!?!)";
 
     public static var QUESTION4:String = "Oh regarde le chaton. Attrapons-le! Aide moi! Aide moi!";
@@ -62,7 +62,7 @@ public class I18n {
 
     public static var QUESTION12:String   = "Tu es bien gentil, mais je crois que c’est peine perdue...";
         public static var CHOICE30:String = "Il ne faut jamais désespérer!";
-        public static var CHOICE31:String = "Daccord ...";
+        public static var CHOICE31:String = "D'accord ...";
 
     public static var QUESTION13:String   = "Arrête de faire ton rigolo! Tu vas tout gâcher!";
         public static var CHOICE32:String = "Oh là là... On peut plus s’amuser...";
@@ -80,7 +80,7 @@ public class I18n {
         public static var CHOICE38:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!) ";
 
     public static var QUESTION17:String   = "Il reviendrait peut-être si tu étais plus gentil envers lui!";
-        public static var CHOICE39:String = "Tu as raison... je m’excuse Mr. Chat!";
+        public static var CHOICE39:String = "Tu as raison... JE M'EXCUSE MONSIEUR CHAT!";
         public static var CHOICE40:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!)";
     public function I18n() {
     }

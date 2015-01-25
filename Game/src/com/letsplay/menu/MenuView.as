@@ -90,13 +90,13 @@ public class MenuView extends View {
         backgroundCredit = new InteractiveQuad(this.menuModel.id_credit_box,sWidth,sHeight,0x000000);
 
 
-        creditText = new TextField(sWidth, 1, I18n.CREDITTEXT,"fluorine",24);
+        creditText = new TextField(sWidth, 1, I18n.CREDITTEXT,"fluorine",23);
         trace(I18n.CREDITTEXT);
         creditText.autoSize = TextFieldAutoSize.VERTICAL;
         creditText.y = sHeight;
         creditText.color = 0xD7D8D3;
         creditText.touchable = false;
-        TweenLite.to(creditText,5,{y:50});
+        TweenLite.to(creditText,5,{y:-65});
         this.addChild( backgroundCredit );
         this.addChild( creditText );
 
