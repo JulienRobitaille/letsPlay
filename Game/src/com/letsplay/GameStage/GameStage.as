@@ -6,6 +6,8 @@ import com.drawm.mvc.Page;
 import com.drawm.mvc.controler.Controller;
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
+import com.letsplay.AnimationTrigger;
+import com.letsplay.GlobalDispatcher;
 
 public class GameStage extends Page {
     private var stageView:GameStageView;
@@ -18,6 +20,7 @@ public class GameStage extends Page {
         this.stageView.curtainLift();
     }
     public function actTransition( act : int ):void {
+		GlobalDispatcher.dispatchEventWith(AnimationTrigger.PLAYER_IDLE);
 		switch (act){
 			case 1:
 				this.stageView.curtainLift();
