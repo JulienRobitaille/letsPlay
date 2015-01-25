@@ -446,31 +446,22 @@ public class GameModel extends Model {
 	}
 
 	private function act3():void{
-	/*	//#1
+		//#1
 		this.dialogTree.add("startDialog", new Dialog({
-			text :I18n.QUESTION8,
+			text :I18n.QUESTION15,
 			choices : Vector.<Choice>([
 				new Choice({
-					text :I18n.CHOICE18,
+					text :I18n.CHOICE35,
 					destinationId : "#2",
-					animationTrigger : [AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.KID_HAPPY],
+					animationTrigger : [],
 					stats : {
 						people : 0,
 						kid : 0
 					}
 				}),
 				new Choice({
-					text : I18n.CHOICE19,
+					text : I18n.CHOICE36,
 					destinationId : "#3",
-					animationTrigger : [AnimationTrigger.PLAYER_MAD,AnimationTrigger.KID_MAD],
-					stats : {
-						parents : 0,
-						kid : 0
-					}
-				}),
-				new Choice({
-					text : I18n.CHOICE20,
-					destinationId : "#4",
 					animationTrigger : [],
 					stats : {
 						parents : 0,
@@ -478,7 +469,60 @@ public class GameModel extends Model {
 					}
 				})
 			])
-		}));*/
+		}));
+		//#2
+		this.dialogTree.add("#2", new Dialog({
+			text :I18n.QUESTION16,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE37,
+					destinationId : "#5",
+					animationTrigger : [AnimationTrigger.GOOD_END],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE38,
+					destinationId : "#6",
+					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD,AnimationTrigger.BAD_END],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+		//#3
+		this.dialogTree.add("#3", new Dialog({
+			text :I18n.QUESTION17,
+			choices : Vector.<Choice>([
+				new Choice({
+					text :I18n.CHOICE39,
+					destinationId : "#5",
+					animationTrigger : [AnimationTrigger.PLAYER_IDLE/*,AnimationTrigger.KID_IDLE*/,AnimationTrigger.GOOD_END],
+					stats : {
+						people : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : I18n.CHOICE40,
+					destinationId : "#6",
+					animationTrigger : [AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.BAD_END],
+					stats : {
+						parents : 0,
+						kid : 0
+					}
+				})
+			])
+		}));
+		//#5
+		this.dialogTree.add("#5", new Dialog({
+			text: "",
+			choices : Vector.<Choice>([	])
+		}));
 	}
 
 	override public function start():void {
