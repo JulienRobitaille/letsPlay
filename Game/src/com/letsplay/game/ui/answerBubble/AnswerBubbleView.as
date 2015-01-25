@@ -4,16 +4,14 @@
 package com.letsplay.game.ui.answerBubble {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
-import com.drawm.ui.UI;
 import com.drawm.ui.text.InteractiveText;
-import com.greensock.TweenLite;
 import com.letsplay.data.Choice;
 import com.letsplay.game.ui.answerBubble.event.AnswerBubbleEvent;
 
-import starling.display.DisplayObject;
 import starling.display.Quad;
 
 import starling.events.Event;
+import starling.text.TextField;
 
 import starling.text.TextFieldAutoSize;
 import starling.utils.HAlign;
@@ -23,12 +21,12 @@ public class AnswerBubbleView extends View {
 	private var model:AnswerBubbleModel;
 	private var background:Quad;
 	private var backgroundBorder:Quad;
+	private var nameTextfield : TextField;
 
 	public function AnswerBubbleView(model:Model) {
 		super(model);
 
 		this.model = model as AnswerBubbleModel;
-
 	}
 
 	override public function resume():void {
@@ -61,10 +59,16 @@ public class AnswerBubbleView extends View {
 
 	private function onShowAnswers(event:Event):void {
 		this.removeChildren(0,-1,true);
+
+		this.nameTextfield ||= new TextField(event.data.width, 20," You : ", "fluorine", 24);
+		this.nameTextfield.autoSize = TextFieldAutoSize.VERTICAL;
+		this.nameTextfield.hAlign = HAlign.LEFT;
+		this.addChild(this.nameTextfield);
+
 		answersText.length = 0;
 		var data : Vector.<Choice> = event.data.choices as Vector.<Choice>;
 		var text : InteractiveText;
-		var nextY : int = 0;
+		var nextY : int = nameTextfield.height;
 		for(var i : int = 0 ; i < data.length ; i++){
 			text = new InteractiveText(i.toString(), event.data.width, 20, " > "+data[i].text, "fluorine", 24);
 			text.autoSize = TextFieldAutoSize.VERTICAL;
@@ -73,11 +77,10 @@ public class AnswerBubbleView extends View {
 			text.y = nextY;
 
 			nextY += text.height;
-
 		}
+
 		background = new Quad(event.data.width-2, nextY-2, 0xFFFFFF);
 		addChildAt(background,0);
-
 
 		backgroundBorder = new Quad(event.data.width, nextY, 0);
 		addChildAt(backgroundBorder,0);

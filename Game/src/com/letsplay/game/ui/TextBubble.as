@@ -15,6 +15,7 @@ import starling.utils.HAlign;
 
 public class TextBubble extends Sprite {
 	private var textfield:TextField;
+	private var nameTextfield:TextField;
 	private var textAnimationTimer:Timer;
 	private var text:Array;
 	private var bubble:Quad;
@@ -26,28 +27,34 @@ public class TextBubble extends Sprite {
 		super();
 		this.text = text.split("");
 
-		this.textfield ||= new TextField(Math.max(2,width),Math.max(2,height),text, "fluorine", 24);
+
+		this.nameTextfield ||= new TextField(Math.max(2,width),Math.max(2,height)," Timmy : ", "fluorine", 24);
+		this.nameTextfield.autoSize = TextFieldAutoSize.VERTICAL;
+		this.nameTextfield.hAlign = HAlign.LEFT;
+		this.addChild(this.nameTextfield);
+
+		this.textfield ||= new TextField(Math.max(2,width),Math.max(2,height)," "+text, "fluorine", 24);
 		this.textfield.autoSize = TextFieldAutoSize.VERTICAL;
 		this.textfield.hAlign = HAlign.LEFT;
 		this.addChild(this.textfield);
+		this.textfield.y = this.nameTextfield.height;
 
-
-		this.bubble = new Quad(this.textfield.width-2, this.textfield.height-2, 0xFFFFFF);
-		this.bubbleBackground = new Quad(this.textfield.width, this.textfield.height, 0);
+		this.bubble = new Quad(this.textfield.width-2, this.textfield.y+this.textfield.height-2, 0xFFFFFF);
+		this.bubbleBackground = new Quad(this.textfield.width, this.textfield.y+this.textfield.height, 0);
 
 		this.addChildAt(this.bubble,0);
 		this.addChildAt(this.bubbleBackground,0);
 
-		this.bubble.x = this.textfield.width - this.bubble.width >>1;
+		this.bubble.x = this.textfield.width - this.bubble.width >>1 + 10;
 		this.bubble.y = this.textfield.height - this.bubble.height>>1;
-		this.bubbleBackground.x = this.textfield.width - this.bubbleBackground.width >>1;
+		this.bubbleBackground.x = this.textfield.width - this.bubbleBackground.width >>1 + 10;
 		this.bubbleBackground.y = this.textfield.height- this.bubbleBackground.height >>1;
 
 
 		this.textAnimationTimer = new Timer(50,0);
 		this.textAnimationTimer.addEventListener(TimerEvent.TIMER, tick);
 
-		this.textfield.text = "";
+		this.textfield.text = " ";
 
 		this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
@@ -86,15 +93,15 @@ public class TextBubble extends Sprite {
 	private function updateBubble():void {
 
 		this.bubble.width = this.textfield.width -2;
-		this.bubble.height = this.textfield.height -2;
+		this.bubble.height = this.textfield.y+this.textfield.height -2;
 
 		this.bubbleBackground.width  = this.textfield.width;
-		this.bubbleBackground.height = this.textfield.height;
+		this.bubbleBackground.height = this.textfield.y+this.textfield.height;
 
-		this.bubble.x = this.textfield.width - this.bubble.width >>1;
-		this.bubble.y = this.textfield.height - this.bubble.height>>1;
-		this.bubbleBackground.x = this.textfield.width - this.bubbleBackground.width >>1;
-		this.bubbleBackground.y = this.textfield.height- this.bubbleBackground.height >>1;
+		this.bubble.x = this.nameTextfield.x + 1;
+		this.bubble.y = this.nameTextfield.y + 1;
+		this.bubbleBackground.x = this.nameTextfield.x;
+		this.bubbleBackground.y = this.nameTextfield.y;
 
 	}
 

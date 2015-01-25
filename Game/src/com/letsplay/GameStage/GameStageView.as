@@ -11,8 +11,6 @@ import com.letsplay.AnimationTrigger;
 import com.letsplay.Atlas.Asset;
 import com.letsplay.GlobalDispatcher;
 
-import flash.utils.setTimeout;
-
 import starling.core.Starling;
 import starling.display.DisplayObject;
 
