@@ -47,7 +47,7 @@ public class GameView extends View {
 		}
 
 		this.bubble = new TextBubble( dialog.text, stage.stageWidth * 0.8, 2 );
-		this.bubble.addEventListener(Event.COMPLETE, showAnswers)
+		this.bubble.addEventListener(Event.COMPLETE, showAnswers);
 		this.bubble.alpha = 0;
 		addChild(bubble);
 		bubble.x = (stage.stageWidth - bubble.width >> 1);
@@ -56,7 +56,7 @@ public class GameView extends View {
 
 
 		this.answerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>, bubble.width);
-		this.answerBubble.touchable = false;
+		this.touchable = false;
 		this.answerBubble.alpha = 0;
 		this.addChild(this.answerBubble);
 		this.answerBubble.x = (stage.stageWidth - this.answerBubble.width >> 1);
@@ -66,9 +66,9 @@ public class GameView extends View {
 	private function showAnswers(event:Event):void {
 		event.target.removeEventListener(event.type, arguments.callee);
 
-		var answer : AnswerBubble = this.answerBubble;
+		var self : GameView = this;
 		TweenLite.to(this.answerBubble, .5, { alpha : 1, onComplete: function():void{
-			answer.touchable = true;
+			self.touchable = true;
 		} });
 
 

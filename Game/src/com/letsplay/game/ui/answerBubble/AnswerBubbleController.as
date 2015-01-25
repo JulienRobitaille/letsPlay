@@ -18,7 +18,7 @@ import starling.events.Touch;
 
 public class AnswerBubbleController extends Controller {
 
-	private var oldText : InteractiveText // sorry for view code in contreoller
+	private var oldText : InteractiveText // sorry for view code in controller
 
 	public function AnswerBubbleController(model:Model, page:Page) {
 		super(model, page);
@@ -46,6 +46,7 @@ public class AnswerBubbleController extends Controller {
 		if(touch.target is IInteractiveUI){
 			var choices : Choice = (this._model as AnswerBubbleModel).choices[parseInt((touch.target as IInteractiveUI).id)];
 			this._page.dispatchEventWith(AnswerBubbleEvent.CLICK_ANSWER, true, choices);
+			_page.touchable = false;
 		}
 
 	}
