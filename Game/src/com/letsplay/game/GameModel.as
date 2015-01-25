@@ -486,7 +486,7 @@ public class GameModel extends Model {
 				}),
 				new Choice({
 					text : I18n.CHOICE38,
-					destinationId : "#6",
+					destinationId : "#5",
 					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD,AnimationTrigger.BAD_END],
 					stats : {
 						people : 0,
@@ -502,7 +502,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE39,
 					destinationId : "#5",
-					animationTrigger : [AnimationTrigger.PLAYER_IDLE/*,AnimationTrigger.KID_IDLE*/,AnimationTrigger.GOOD_END],
+					animationTrigger : [AnimationTrigger.PLAYER_IDLE,AnimationTrigger.KID_IDLE,AnimationTrigger.GOOD_END],
 					stats : {
 						people : 0,
 						kid : 0
@@ -510,7 +510,7 @@ public class GameModel extends Model {
 				}),
 				new Choice({
 					text : I18n.CHOICE40,
-					destinationId : "#6",
+					destinationId : "#5",
 					animationTrigger : [AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.BAD_END],
 					stats : {
 						people : 0,

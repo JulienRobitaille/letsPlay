@@ -5,11 +5,14 @@ package com.letsplay.GameStage {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
 import com.drawm.ui.interactive.InteractiveImage;
+import com.drawm.ui.text.InteractiveText;
 import com.greensock.TweenLite;
 import com.greensock.TweenMax;
 import com.letsplay.AnimationTrigger;
 import com.letsplay.Atlas.Asset;
 import com.letsplay.GlobalDispatcher;
+import com.letsplay.I18n;
+import com.letsplay.LetsPlay;
 import com.letsplay.SoundsAssets;
 import com.letsplay.game.StatsEvent;
 
@@ -23,6 +26,7 @@ import starling.display.MovieClip;
 
 import starling.display.Sprite;
 import starling.events.Event;
+import starling.text.TextFieldAutoSize;
 
 public class GameStageView extends View {
     private var closedScene:InteractiveImage;
@@ -106,6 +110,12 @@ public class GameStageView extends View {
 
     public function curtainLift():void{
         TweenLite.to(this.closedScene,3, {y:-115});
+    }
+
+    public function curtainDrop( callback : Function ):void{
+        TweenLite.to(this.closedScene,4, {y:95, onComplete:function():void{
+            callback();
+        }});
     }
 
     public function curtainDropThenLift( callback : Function ):void {
@@ -337,9 +347,9 @@ public class GameStageView extends View {
 		sound.playSound();
     }
     private function animateKidIdle(event:Event):void {
-        this.girlIdle.visible = false;
-        this.girlIdle.visible = false;
-        this.girlIdle.visible = false;
+        this.girlHappy.visible = false;
+        this.girlSad.visible = false;
+        this.girlMad.visible = false;
         this.girlIdle.visible = true;
     }
 	private function animateKidMad(event:Event):void {
@@ -369,11 +379,24 @@ public class GameStageView extends View {
 
     // The game ending
     public function theGoodEnd():void {
+        this.cat.play();
+        this.animatePlayerHappy(null);
+        this.animateKidHappy(null);
+        this.curtainDrop(function():void {
 
+            var end:InteractiveText = new InteractiveText(null, sWidth, 1, I18n.END, "fluorine", 48);
+            end.autoSize = TextFieldAutoSize.VERTICAL;
+            end.y = -20;
+            end.color = 0xD7D8D3;
+            end.useHandCursor = true;
+
+            TweenLite.to(end, 0.5, {y: (this.sHeight / 2 - end.height - 50)});
+        });
     }
     // The game ending
     public function theBadEnd():void {
-
+        this.animateKidMad(null);
+        this.animatePlayerHappy(null);
     }
 
 
