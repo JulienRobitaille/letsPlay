@@ -48,13 +48,13 @@ public class GameView extends View {
 
 		this.bubble = new TextBubble( dialog.text, stage.stageWidth * 0.8, 2 );
 		addChild(bubble);
-		bubble.x = (stage.stageWidth - bubble.width >> 1) + 25;
-		bubble.y = stage.stageHeight * 0.11;
+		bubble.x = (stage.stageWidth - bubble.width >> 1);
+		bubble.y = stage.stageHeight * 0.08;
 
 		answerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>, bubble.width);
 		addChild(answerBubble);
-		answerBubble.x = (stage.stageWidth - answerBubble.width >> 1) - 25
-		answerBubble.y = bubble.y + bubble.height + 25;
+		answerBubble.x = (stage.stageWidth - answerBubble.width >> 1);
+		answerBubble.y = bubble.y + bubble.height + 45;
 	}
 
 	override public function start():void {

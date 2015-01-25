@@ -17,7 +17,6 @@ import starling.events.Event;
 public class GameController extends Controller {
 	private var model:GameModel;
 	public function GameController(model:Model, page:Page) {
-
 		this.model = model as GameModel;
 
 		super(model, page);
