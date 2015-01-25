@@ -11,6 +11,7 @@ import com.letsplay.AnimationTrigger;
 import com.letsplay.Atlas.Asset;
 import com.letsplay.GlobalDispatcher;
 import com.letsplay.SoundsAssets;
+import com.letsplay.game.StatsEvent;
 
 
 import com.letsplay.utils.Sounds;
@@ -142,7 +143,7 @@ public class GameStageView extends View {
         this.girlMad.visible = false;
 
 
-        this.catEvents()
+        this.catEvents();
         this.act.addChild(cloud);
         this.act.addChild(leftTree);
         this.act.addChild(house);
@@ -347,6 +348,9 @@ public class GameStageView extends View {
 
 	override public function resume():void {
 		super.resume();
+
+		GlobalDispatcher.addEventListener(StatsEvent.APPLY_STATS, onApplyStats);
+
         GlobalDispatcher.addEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
         GlobalDispatcher.addEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
         GlobalDispatcher.addEventListener(AnimationTrigger.KID_MAD, animateKidMad);
@@ -363,8 +367,22 @@ public class GameStageView extends View {
 	}
 
 
+	private const shadeOfGray : Array = [
+		0x444444,
+		0x333333,
+		0x222222,
+		0x111111
+	];
+	private function onApplyStats(event:StatsEvent):void {
+		// changer le mood??
+	}
+
+
 	override public function pause():void {
 		super.pause();
+
+		GlobalDispatcher.removeEventListener(StatsEvent.APPLY_STATS, onApplyStats);
+
 		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_MAD, animateKidMad);

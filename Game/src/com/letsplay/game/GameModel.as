@@ -40,7 +40,7 @@ public class GameModel extends Model {
 					destinationId : "#2",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				}),
@@ -49,7 +49,7 @@ public class GameModel extends Model {
 					destinationId : "#3",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -74,7 +74,7 @@ public class GameModel extends Model {
 					destinationId : "#5",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 1
 					}
 				}),
@@ -83,7 +83,7 @@ public class GameModel extends Model {
 					destinationId : "#4",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 1
 					}
 				})
@@ -108,7 +108,7 @@ public class GameModel extends Model {
 					destinationId : "#2",
 					animationTrigger : [AnimationTrigger.KID_MAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 1
 					}
 				}),
@@ -117,7 +117,7 @@ public class GameModel extends Model {
 					destinationId : "#3",
 					animationTrigger : [],
 					stats : {
-						parents : -1,
+						people : -1,
 						kid : -1
 					}
 				})
@@ -141,7 +141,7 @@ public class GameModel extends Model {
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL, AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
-						parents : 1,
+						people : 1,
 						kid : 0
 					}
 				}),
@@ -150,7 +150,7 @@ public class GameModel extends Model {
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL, AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
-						parents : -1,
+						people : -1,
 						kid : -1
 					}
 				})
@@ -174,7 +174,7 @@ public class GameModel extends Model {
 					destinationId : "#6",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 1
 					}
 				}),
@@ -183,7 +183,7 @@ public class GameModel extends Model {
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
-						parents : -1,
+						people : -1,
 						kid : -1
 					}
 				})
@@ -259,7 +259,7 @@ public class GameModel extends Model {
 					destinationId : "#3",
 					animationTrigger : [AnimationTrigger.PLAYER_MAD,AnimationTrigger.KID_MAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				}),
@@ -268,7 +268,7 @@ public class GameModel extends Model {
 					destinationId : "#4",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -293,7 +293,7 @@ public class GameModel extends Model {
 					destinationId : "#6",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				}),
@@ -302,7 +302,7 @@ public class GameModel extends Model {
 					destinationId : "#4",
 					animationTrigger : [AnimationTrigger.KID_MAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -327,7 +327,7 @@ public class GameModel extends Model {
 					destinationId : "#6",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				}),
@@ -336,7 +336,7 @@ public class GameModel extends Model {
 					destinationId : "#4",
 					animationTrigger : [AnimationTrigger.KID_MAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -361,7 +361,7 @@ public class GameModel extends Model {
 					destinationId : "#6",
 					animationTrigger : [AnimationTrigger.KID_MAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				}),
@@ -370,7 +370,7 @@ public class GameModel extends Model {
 					destinationId : "#4",
 					animationTrigger : [AnimationTrigger.KID_SAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -395,7 +395,7 @@ public class GameModel extends Model {
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.KID_SAD,AnimationTrigger.PLAYER_SAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -420,7 +420,7 @@ public class GameModel extends Model {
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -464,7 +464,7 @@ public class GameModel extends Model {
 					destinationId : "#3",
 					animationTrigger : [],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -488,7 +488,7 @@ public class GameModel extends Model {
 					destinationId : "#6",
 					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_SAD,AnimationTrigger.BAD_END],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -512,7 +512,7 @@ public class GameModel extends Model {
 					destinationId : "#6",
 					animationTrigger : [AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_HAPPY,AnimationTrigger.BAD_END],
 					stats : {
-						parents : 0,
+						people : 0,
 						kid : 0
 					}
 				})
@@ -540,6 +540,10 @@ public class GameModel extends Model {
 		for(var i:int = 0 ; i < choice.animationTrigger.length; i++){
 			GlobalDispatcher.dispatchEventWith(choice.animationTrigger[i]);
 		}
+	}
+
+	public function changeStats(stats:Object){
+		GlobalDispatcher.dispatchEventWith(StatsEvent.CHANGE_STATS, false, stats);
 	}
 
 	public function goToDialog(destinationId:String):void {

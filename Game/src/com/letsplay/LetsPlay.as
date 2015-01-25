@@ -8,6 +8,7 @@ import com.letsplay.GameCrowd.GameCrowd;
 import com.letsplay.GameStage.GameStage;
 import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.game.Game;
+import com.letsplay.game.StatsEvent;
 import com.letsplay.intro.Intro;
 import com.letsplay.menu.Menu;
 import com.letsplay.utils.Sounds;
@@ -57,6 +58,21 @@ public class LetsPlay extends Sprite {
 		});
 
 		this.bindMenu();
+
+
+		GlobalDispatcher.addEventListener(StatsEvent.CHANGE_STATS, onChangeStats);
+	}
+
+	private var stats : Object = {
+		people : 0,
+		kid : 0
+	};
+
+	private function onChangeStats(event:Event):void {
+		stats.people = Math.max(0,stats.people + event.data.people);
+		stats.kid = Math.max(0,stats.kid + event.data.kid);
+
+		GlobalDispatcher.dispatchEventWith(StatsEvent.APPLY_STATS, false, this.stats);
 	}
 
 	private function bindMenu():void {
