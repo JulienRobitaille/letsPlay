@@ -4,6 +4,7 @@
 package com.letsplay.game {
 import com.drawm.mvc.model.Model;
 import com.drawm.mvc.view.View;
+import com.greensock.TweenLite;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
@@ -37,24 +38,34 @@ public class GameView extends View {
 
 		if(this.bubble){
 			this.bubble.parent.removeChild(this.bubble);
-			//this.bubble.dispose();
 			this.bubble = null;
 		}
+
 		if(this.answerBubble){
 			this.answerBubble.parent.removeChild(this.answerBubble);
-			//this.answerBubble.dispose();
 			this.answerBubble= null;
 		}
 
 		this.bubble = new TextBubble( dialog.text, stage.stageWidth * 0.8, 2 );
+		this.bubble.addEventListener(Event.COMPLETE, showAnswers)
+		this.bubble.alpha = 0;
 		addChild(bubble);
 		bubble.x = (stage.stageWidth - bubble.width >> 1);
 		bubble.y = stage.stageHeight * 0.08;
+		TweenLite.to(this.bubble, .5, { alpha : 1 });
 
-		answerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>, bubble.width);
-		addChild(answerBubble);
-		answerBubble.x = (stage.stageWidth - answerBubble.width >> 1);
-		answerBubble.y = stage.stageHeight*0.65//bubble.y + bubble.height + 45;
+
+		this.answerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>, bubble.width);
+		this.answerBubble.alpha = 0;
+		this.addChild(this.answerBubble);
+		this.answerBubble.x = (stage.stageWidth - this.answerBubble.width >> 1);
+		this.answerBubble.y = stage.stageHeight*0.65;
+	}
+
+	private function showAnswers(event:Event):void {
+		event.target.removeEventListener(event.type, arguments.callee);
+		TweenLite.to(this.answerBubble, .5, { alpha : 1 });
+
 	}
 
 	override public function start():void {

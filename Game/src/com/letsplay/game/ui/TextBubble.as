@@ -36,7 +36,7 @@ public class TextBubble extends Sprite {
 		this.addChild(this.textfield);
 		this.textfield.y = this.nameTextfield.height;
 
-		this.bubble = new Quad(this.textfield.width-2, this.textfield.y+this.textfield.height-2, 0xFFFFFF);
+		this.bubble = new Quad(this.textfield.width+4, this.textfield.y+this.textfield.height+4, 0xFFFFFF);
 		this.bubbleBackground = new Quad(this.textfield.width, this.textfield.y+this.textfield.height, 0);
 
 		this.addChildAt(this.bubble,0);
@@ -89,11 +89,11 @@ public class TextBubble extends Sprite {
 
 	private function updateBubble():void {
 
-		this.bubble.width = this.textfield.width -2;
-		this.bubble.height = this.textfield.y+this.textfield.height -2;
+		this.bubble.width = this.textfield.width +4;
+		this.bubble.height = this.textfield.y+this.textfield.height +4;
 
-		this.bubbleBackground.width  = this.textfield.width;
-		this.bubbleBackground.height = this.textfield.y+this.textfield.height;
+		this.bubbleBackground.width  = this.textfield.width + 5;
+		this.bubbleBackground.height = this.textfield.y+this.textfield.height + 5;
 
 		this.bubble.x = this.nameTextfield.x + 1;
 		this.bubble.y = this.nameTextfield.y + 1;
@@ -118,7 +118,9 @@ public class TextBubble extends Sprite {
 			this.textAnimationTimer.stop();
 			this.textAnimationTimer.removeEventListener(TimerEvent.TIMER, tick);
 			this.textAnimationTimer = null;
+			this.dispatchEventWith(Event.COMPLETE);
 		}
+
 	}
 
 	override public function dispose():void {
