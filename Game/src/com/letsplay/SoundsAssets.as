@@ -93,6 +93,10 @@ public class SoundsAssets {
 	private static var theaterClass:Class;
 	public static var theater:Sounds = new Sounds(new theaterClass(), { volume: 0.2, autoPlay: false, loop : true });
 
+	[Embed(source="/../assets/sounds/theater.mp3")]
+	private static var applause_lowClass:Class;
+	public static var applause_low:Sounds = new Sounds(new applause_lowClass(), { volume: 0.2, autoPlay: false, loop : false });
+
 
 
 
