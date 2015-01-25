@@ -60,7 +60,7 @@ public class AnswerBubbleView extends View {
 	private function onShowAnswers(event:Event):void {
 		this.removeChildren(0,-1,true);
 
-		this.nameTextfield ||= new TextField(event.data.width, 20," You : ", "fluorine", 24);
+		this.nameTextfield ||= new TextField(event.data.width, 20," Timmy : ", "fluorine", 24);
 		this.nameTextfield.autoSize = TextFieldAutoSize.VERTICAL;
 		this.nameTextfield.hAlign = HAlign.LEFT;
 		this.addChild(this.nameTextfield);

@@ -29,10 +29,11 @@ public class AnswerBubbleController extends Controller {
 		super.over(touch);
 
 
+		if(touch.target != oldText && oldText != null){
+			TweenLite.to(oldText,0.25, {alpha : 1});
+
+		}
 		if(touch.target is IInteractiveUI){
-			if(oldText){
-				TweenLite.to(oldText,0.25, {alpha : 1});
-			}
 			oldText = (touch.target as InteractiveText);
 
 			TweenLite.to(oldText,0.25, {alpha : 0.4});
