@@ -63,7 +63,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE4,
 					destinationId : "#4",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.PLAYER_SAD],
 					stats : {
 						people : 1,
 						kid : 0
@@ -106,7 +106,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE8,
 					destinationId : "#2",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.KID_MAD],
 					stats : {
 						parents : 0,
 						kid : 1
@@ -130,7 +130,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE10,
 					destinationId : "#6",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					animationTrigger : [AnimationTrigger.CAT_FALL, AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
 						people : 0,
 						kid : 1
@@ -139,7 +139,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE11,
 					destinationId : "#7",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					animationTrigger : [AnimationTrigger.CAT_FALL, AnimationTrigger.KID_MAD,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
 						parents : 1,
 						kid : 0
@@ -148,7 +148,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE12,
 					destinationId : "#7",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					animationTrigger : [AnimationTrigger.CAT_FALL, AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
 						parents : -1,
 						kid : -1
@@ -196,7 +196,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE16,
 					destinationId : "act-fin",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
 						people : -1,
 						kid : -1
@@ -211,7 +211,7 @@ public class GameModel extends Model {
 				new Choice({
 					text :I18n.CHOICE17,
 					destinationId : "act-fin",
-					animationTrigger : [],
+					animationTrigger : [AnimationTrigger.KID_HAPPY,AnimationTrigger.PLAYER_HAPPY],
 					stats : {
 						people : -1,
 						kid : -1

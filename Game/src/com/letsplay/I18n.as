@@ -26,7 +26,7 @@ public class I18n {
 
     public static var QUESTION4:String = "Oh regarde le chaton. Attrapons-le! Aide moi! Aide moi!";
         public static var CHOICE10:String = "Je vais à droite tu vas à gauche!";
-        public static var CHOICE11:String = "Ce n'ais même pas un vria chat. Mathieu la fabriqué pour la pièce.";
+        public static var CHOICE11:String = "Ce n'ais même pas un vrai chat. Mathieu la fabriqué pour la pièce.";
         public static var CHOICE12:String = "...";
 
     public static var QUESTION5:String = "Ohhhh. Il est si beau! Attrapons-le. Ramenons le chez moi. Dis rien à maman.";

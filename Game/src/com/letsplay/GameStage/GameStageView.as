@@ -68,9 +68,12 @@ public class GameStageView extends View {
 		this.boyMad = new MovieClip(Asset.BoyMad,30);
 		this.girlMad = new MovieClip(Asset.GirlMad,30);
 
-
-		Starling.juggler.add(this.boyMad);
+		Starling.juggler.add(this.boyHappy);
+		Starling.juggler.add(this.girlHappy);
+        Starling.juggler.add(this.boyMad);
 		Starling.juggler.add(this.girlMad);
+        Starling.juggler.add(this.boySad);
+		Starling.juggler.add(this.girlSad);
 
 
         this.act ||= new Sprite();
@@ -121,14 +124,17 @@ public class GameStageView extends View {
         this.cat.x =  sWidth - (sWidth/2);
         this.cat.y = sHeight/1.85
 
-        this.boyHappy.x = sWidth/4;
-        this.boyHappy.y =  sHeight/2.1;
+        this.boyHappy.x = this.boyMad.x = this.boySad.x = sWidth/4;
+        this.boyHappy.y = this.boyMad.y = this.boySad.y = sHeight/2.2;
 
-        this.girlHappy.x = sWidth - (sWidth/2.3);
-        this.girlHappy.y = sHeight/2.1;
+        this.girlHappy.x = this.girlMad.x = this.girlSad.x = sWidth - (sWidth/2.3);
+        this.girlHappy.y = this.girlMad.y = this.girlSad.y = sHeight/2.2;
 
-        Starling.juggler.add(this.boyHappy);
-        Starling.juggler.add(this.girlHappy);
+        this.boySad.visible = false;
+        this.boyMad.visible = false;
+        this.girlSad.visible = false;
+        this.girlMad.visible = false;
+
 
         this.catEvents()
         this.act.addChild(cloud);
@@ -136,7 +142,11 @@ public class GameStageView extends View {
         this.act.addChild(house);
         this.act.addChild(bush);
         this.act.addChild(this.boyHappy);
+        this.act.addChild(this.boyMad);
+        this.act.addChild(this.boySad);
         this.act.addChild(this.girlHappy);
+        this.act.addChild(this.girlSad);
+        this.act.addChild(this.girlMad);
     }
 
 
@@ -223,15 +233,21 @@ public class GameStageView extends View {
 
 
     private function animatePlayerHappy(event:Event):void {
-        trace("animatePlayerSad");
+        this.boyHappy.visible = true;
+        this.boySad.visible = false;
+        this.boyMad.visible = false;
     }
 
 	private function animatePlayerSad(event:Event):void {
-		trace("animatePlayerSad");
+        this.boyHappy.visible = false;
+        this.boySad.visible = true;
+        this.boyMad.visible = false;
 	}
 
     private function animatePlayerMad(event:Event):void {
-		trace("animatePlayerSad");
+        this.boyHappy.visible = false;
+        this.boySad.visible = false;
+        this.boyMad.visible = true;
 	}
 
     private function animateCatFall(event:Event):void {
@@ -239,15 +255,19 @@ public class GameStageView extends View {
         this.cat.play();
     }
 	private function animateKidHappy(event:Event):void {
-		trace("animateKidHappy");
-
+        this.girlHappy.visible = true;
+        this.girlSad.visible = false;
+        this.girlMad.visible = false;
 	}
     private function animateKidSad(event:Event):void {
-
+        this.girlHappy.visible = false;
+        this.girlSad.visible = true;
+        this.girlMad.visible = false;
     }
     private function animateKidMad(event:Event):void {
-        trace("animateKidAngry");
-
+        this.girlHappy.visible = false;
+        this.girlSad.visible = false;
+        this.girlMad.visible = true;
     }
 
 	private function animateKidJump(event:Event):void {
