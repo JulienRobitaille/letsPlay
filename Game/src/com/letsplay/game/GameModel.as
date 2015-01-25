@@ -428,7 +428,7 @@ public class GameModel extends Model {
 		}));
 
 		//#7
-		this.dialogTree.add("#6", new Dialog({
+		this.dialogTree.add("#7", new Dialog({
 			text :I18n.QUESTION12,
 			choices : Vector.<Choice>([
 				new Choice({
