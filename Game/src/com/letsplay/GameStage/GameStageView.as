@@ -31,6 +31,9 @@ public class GameStageView extends View {
     private var girlHappy:MovieClip;
     private var boySad:MovieClip;
     private var girlSad:MovieClip;
+    private var sWidth:int;
+    private var sHeight:int;
+
 
     public function GameStageView(model:Model) {
         super(model);
@@ -39,10 +42,8 @@ public class GameStageView extends View {
     override public function start():void {
         super.start();
 
-        var sWidth:int = this.stage.stageWidth;
-        var sHeight:int = this.stage.stageHeight;
-
-
+        sWidth = this.stage.stageWidth;
+        sHeight = this.stage.stageHeight;
         this.scene = new InteractiveImage(null,Asset.Scene);
         this.topScene= new InteractiveImage(null,Asset.TopScene);
         this.closedScene = new InteractiveImage(null,Asset.ClosedScene);
@@ -92,35 +93,33 @@ public class GameStageView extends View {
 
     public function setAct1():void {
 		this.act.removeChildren(0,-1,true);
-
         var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
-        cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 100;
-        cloud.y = this.topScene.height - 25;
+        cloud.x = sWidth/3;
+        cloud.y = sHeight/5;
         TweenMax.to(cloud,8,{x:"+30",y:"+15",yoyo:true,repeat:4});
 
 
         var leftTree:InteractiveImage = new InteractiveImage(null,Asset.LeftTree);
-        leftTree.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 70;
-        leftTree.y = this.topScene.height + 85;
+        leftTree.x = sWidth/4;
+        leftTree.y = sHeight/2.7;
 
 
         var house:InteractiveImage = new InteractiveImage(null,Asset.House);
-        house.x = (( this.topScene.width + this.closedScene.width ) >> 1) - 170 ;
-        house.y = this.topScene.height + 100;
+        house.x = sWidth - (sWidth/2.5);
+        house.y = sHeight/2.4;
 
         var bush:InteractiveImage = new InteractiveImage(null,Asset.Bush);
-        bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
-        bush.y = this.topScene.height + 160;
+        bush.x =  sWidth/3;
+        bush.y =  sHeight/1.95;
 
-        this.cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
-        this.cat.y = this.topScene.height + 165;
+        this.cat.x =  sWidth - (sWidth/2);
+        this.cat.y = sHeight/1.85
 
+        this.boyHappy.x = sWidth/4;
+        this.boyHappy.y =  sHeight/2.1;
 
-        this.boyHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 225;
-        this.boyHappy.y = this.topScene.height + 115;
-
-        this.girlHappy.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 275;
-        this.girlHappy.y = this.topScene.height + 115;
+        this.girlHappy.x = sWidth - (sWidth/2.3);
+        this.girlHappy.y = sHeight/2.1;
 
         Starling.juggler.add(this.boyHappy);
         Starling.juggler.add(this.girlHappy);
@@ -139,43 +138,46 @@ public class GameStageView extends View {
 		this.act.removeChildren(0,-1,true);
 
         var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
-        cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 170;
-        cloud.y = this.topScene.height - 25;
+        cloud.x = sWidth/3;
+        cloud.y = sHeight/5;
+
         TweenMax.to(cloud,7,{x:"-30",y:"+15",yoyo:true,repeat:4});
 
         var cloud2:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
-        cloud2.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
-        cloud2.y = this.topScene.height -10;
+        cloud2.x = sWidth/2;
+        cloud2.y = sHeight/5.2;
         cloud2.width = cloud2.width/2;
         cloud2.height = cloud2.height/2;
         TweenMax.to(cloud2,8,{x:"+30",y:"+15",yoyo:true,repeat:4});
 
 
         var leftTree:InteractiveImage = new InteractiveImage(null,Asset.LeftTree);
-        leftTree.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 60;
-        leftTree.y = this.topScene.height + 85;
+        leftTree.x = sWidth/4;
+        leftTree.y = sHeight/2.6;
 
 
         var rightTree:InteractiveImage = new InteractiveImage(null,Asset.RightTree);
-        rightTree.x = (( this.topScene.width + this.closedScene.width ) >> 1) - 150 ;
-        rightTree.y = this.topScene.height + 90;
+        rightTree.x = sWidth/1.6;
+        rightTree.y = sHeight/2.6;
 
         var bush:InteractiveImage = new InteractiveImage(null,Asset.Bush);
-        bush.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160;
-        bush.y = this.topScene.height + 160;
+        bush.x = sWidth/2.4;
+        bush.y = sHeight/1.95;
         bush.scaleX = -1;
 
-        var bush2:InteractiveImage = new InteractiveImage(null,Asset.Bush);
-        bush2.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160 + bush2.width;
-        bush2.y = this.topScene.height + 160;
+       var bush2:InteractiveImage = new InteractiveImage(null,Asset.Bush);
+        bush2.x = sWidth/2.45;
+        bush2.y = sHeight/1.95;
 
         var bush3:InteractiveImage = new InteractiveImage(null,Asset.Bush);
-        bush3.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160 + bush3.width;
-        bush3.y = this.topScene.height + 160;
+        bush3.x = sWidth/1.65;
+        bush3.y = sHeight/1.95;
         bush3.scaleX = -1;
-        var bush4:InteractiveImage = new InteractiveImage(null,Asset.Bush);
-        bush4.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160 + bush4.width + 70;
-        bush4.y = this.topScene.height + 160;
+
+       var bush4:InteractiveImage = new InteractiveImage(null,Asset.Bush);
+        bush4.x = sWidth/1.7;
+        bush4.y = sHeight/1.95;
+
 
         this.act.addChild(cloud);
         this.act.addChild(cloud2);

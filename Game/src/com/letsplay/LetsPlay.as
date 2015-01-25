@@ -57,8 +57,8 @@ public class LetsPlay extends Sprite {
 			self.gameCrowd.startLevelOne();
 			self.gameStage.curtainLift();
 			self.game = new Game();
-			self.addChild(self.game);
-			self.gameStage.actTransition(1);
+			//self.addChild(self.game);
+			self.gameStage.actTransition(2);
 			self.bindGameStage();
 
 		});
