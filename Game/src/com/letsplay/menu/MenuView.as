@@ -28,6 +28,8 @@ public class MenuView extends View {
     private var backgroundCredit:InteractiveQuad;
     private var creditText:TextField;
 
+	private var subTitle : TextField;
+
    // private var menuModel:
     public function MenuView(model:Model) {
         super(model);
@@ -57,12 +59,13 @@ public class MenuView extends View {
         this.credit.useHandCursor = true;
 
 
-        this.title = new InteractiveText(null, sWidth, 1, I18n.TITLE, "fluorine", 48);
+        this.title = new InteractiveText(null, sWidth, 1, I18n.TITLE, "fluorine", 32);
         this.title.autoSize = TextFieldAutoSize.VERTICAL;
         this.title.y = -10;
         this.title.color = 0xD7D8D3;
         this.title.useHandCursor = false;
         this.title.rotation = starling.utils.deg2rad(3.5);
+		this.title.alpha = 0;
 
 
 
@@ -70,9 +73,21 @@ public class MenuView extends View {
         this.addChild(this.credit);
         this.addChild(this.title);
 
+		this.subTitle= new InteractiveText(this.menuModel.id_credit, sWidth, 1, I18n.AGAMEABOUT,"fluorine",48);
+		this.subTitle.autoSize = TextFieldAutoSize.VERTICAL;
+		this.subTitle.y = -40;
+		this.subTitle.color = 0xD7D8D3;
+		this.subTitle.useHandCursor = true;
+
+
         TweenLite.to(this.title,0.5,{y:(half-this.title.height - 50),onComplete:function():void{
             setTimeout(function():void{
                 TweenMax.to(self.title,0.1,{ x:"+10", yoyo:true, repeat:5  });
+				self.addChild( self.title);
+				self.subTitle.x = self.title.x + ((self.title.width - self.subTitle.width)>>1);
+				self.subTitle.y = self.title.y + self.title.height;
+				TweenLite.to(self.subTitle, 1, { alpha : 0.7 });
+
             }, 200)
         }});
         TweenLite.to(this.jouer,0.5,{y:(half-this.jouer.height - 20)});

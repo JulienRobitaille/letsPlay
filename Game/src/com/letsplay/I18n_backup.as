@@ -9,7 +9,7 @@ public class I18n {
     public static var CREDIT:String = "Crédits";
     public static var CREDITTEXT:String = "MONTREAL GAME JAM 2015\n\n UN GROS MERCI À L'ETS !\n\nÀ vous de jouer! ;)\nVous est présenté par\n\nMyriam Thouin\nDamon Perron-Laurin\nJulien Robitaille\nMTL Game Jam 2015 audio team\n\nJérémi Ménard - Stephan Provost\nGabriel Essiambre - Léandre Monette\nBruno Coe\n\nVoice Acting\n\nJérémi Ménard - Stephan Provost\n\nMusic\nStephan Provost";
 
-
+	public static var AGAMEABOUT : String = "A game about\nimprovising your text";
 
     public static var QUESTION1:String = "Dis Timmy, est-ce que tu préfères les chiens ou les chats?";
         public static var CHOICE1:String = "Les chiens";
@@ -64,7 +64,7 @@ public class I18n {
 
     public static var QUESTION12:String   = "Tu es bien gentil, mais je crois que c’est peine perdue...";
         public static var CHOICE30:String = "Il ne faut jamais désespérer!";
-        public static var CHOICE31:String = "Daccord ...";
+        public static var CHOICE31:String = "D'accord ...";
 
     public static var QUESTION13:String   = "Arrête de faire ton rigolo! Tu vas tout gâcher!";
         public static var CHOICE32:String = "Oh là là... On peut plus s’amuser...";

@@ -79,6 +79,9 @@ public class LetsPlay extends Sprite {
 		menu.addEventListener(StateEvent.PLAY, function(event:Event):void{
 			TweenLite.to(theaterSound, 2, { volume : .1});
 
+			SoundsAssets.musique.playSound();
+			TweenLite.to(SoundsAssets.musique, 2, { volume : .11});
+
 			self.menu.removeMenuWithStyle();
 			self.gameCrowd.startLevelOne();
 			self.gameStage.curtainLift();

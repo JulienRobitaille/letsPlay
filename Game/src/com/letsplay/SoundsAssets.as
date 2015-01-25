@@ -89,6 +89,9 @@ public class SoundsAssets {
 	private static var kid_sad_001:Sounds = new Sounds(new kid_sad_001Class(), { volume: 0.5, autoPlay: false });
 
 
+
+
+
 	[Embed(source="/../assets/sounds/theater.mp3")]
 	private static var theaterClass:Class;
 	public static var theater:Sounds = new Sounds(new theaterClass(), { volume: 0.2, autoPlay: false, loop : true });
@@ -101,7 +104,13 @@ public class SoundsAssets {
 	private static var applause_highClass:Class;
 	public static var applause_high:Sounds = new Sounds(new applause_highClass(), { volume: 0.2, autoPlay: false, loop : false });
 
+	[Embed(source="/../assets/sounds/rideau.mp3")]
+	private static var rideauClass:Class;
+	public static var rideau:Sounds = new Sounds(new rideauClass(), { volume: 0.2, autoPlay: false, loop : false });
 
+	[Embed(source="/../assets/sounds/musique.mp3")]
+	private static var musiqueClass:Class;
+	public static var musique:Sounds = new Sounds(new musiqueClass(), { volume: 0, autoPlay: false, loop : true });
 
 
 	private static const angryCatArray:Array = [
