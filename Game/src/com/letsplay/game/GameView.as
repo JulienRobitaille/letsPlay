@@ -29,7 +29,7 @@ public class GameView extends View {
 		super.resume();
 	}
 	override public function pause():void {
-		model.addEventListener(BubbleEvent.SHOW_BUBBLE, onShowBubble);
+		model.removeEventListener(BubbleEvent.SHOW_BUBBLE, onShowBubble);
 		super.pause();
 	}
 
@@ -56,6 +56,7 @@ public class GameView extends View {
 
 
 		this.answerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>, bubble.width);
+		this.answerBubble.touchable = false;
 		this.answerBubble.alpha = 0;
 		this.addChild(this.answerBubble);
 		this.answerBubble.x = (stage.stageWidth - this.answerBubble.width >> 1);
@@ -64,7 +65,12 @@ public class GameView extends View {
 
 	private function showAnswers(event:Event):void {
 		event.target.removeEventListener(event.type, arguments.callee);
-		TweenLite.to(this.answerBubble, .5, { alpha : 1 });
+
+		var answer : AnswerBubble = this.answerBubble;
+		TweenLite.to(this.answerBubble, .5, { alpha : 1, onComplete: function():void{
+			answer.touchable = true;
+		} });
+
 
 	}
 

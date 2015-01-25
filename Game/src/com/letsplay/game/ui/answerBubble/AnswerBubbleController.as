@@ -24,10 +24,8 @@ public class AnswerBubbleController extends Controller {
 		super(model, page);
 	}
 
-
 	override protected function over(touch:Touch):void {
 		super.over(touch);
-
 
 		if(touch.target != oldText && oldText != null){
 			TweenLite.to(oldText,0.25, {alpha : 1});

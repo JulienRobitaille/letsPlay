@@ -9,6 +9,8 @@ import starling.display.Quad;
 
 import starling.display.Sprite;
 import starling.events.Event;
+import starling.events.TouchEvent;
+import starling.events.TouchPhase;
 import starling.text.TextField;
 import starling.text.TextFieldAutoSize;
 import starling.utils.HAlign;
@@ -63,6 +65,13 @@ public class TextBubble extends Sprite {
 		if(this.textAnimationTimer) {
 			this.textAnimationTimer.start();
 		}
+		this.stage.addEventListener(TouchEvent.TOUCH, onTouchStage);
+	}
+
+	private function onTouchStage(event:TouchEvent):void {
+		if(event.getTouch(stage,TouchPhase.ENDED) !== null){
+			this.skipAnimation();
+		}
 	}
 
 	private function onRemoveFromStage(event:Event):void {
@@ -83,7 +92,7 @@ public class TextBubble extends Sprite {
 	}
 
 	public function skipAnimation():void{
-		this.textfield.text += this.text.join();
+		this.textfield.text += this.text.join("");
 		updateBubble();
 		disposeTimer();
 	}
@@ -114,6 +123,8 @@ public class TextBubble extends Sprite {
 	}
 
 	private function disposeTimer():void{
+		this.stage.removeEventListener(TouchEvent.TOUCH, onTouchStage);
+
 		if(this.textAnimationTimer){
 			this.textAnimationTimer.stop();
 			this.textAnimationTimer.removeEventListener(TimerEvent.TIMER, tick);

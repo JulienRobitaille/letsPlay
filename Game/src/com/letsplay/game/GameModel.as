@@ -219,7 +219,6 @@ public class GameModel extends Model {
 				})
 			])
 		}));
-
 	}
 
 	public function changeAct( $id:int ):void{
@@ -237,6 +236,7 @@ public class GameModel extends Model {
 		}
 
 		this.currentDialog = dialogTree.get("startDialog");
+		this.showCurrentDialog();
 	}
 
 	private function act2():void{
@@ -384,7 +384,6 @@ public class GameModel extends Model {
 	}
 
 	override public function start():void {
-
 		this.currentDialog = dialogTree.get("startDialog");
 		super.start();
 	}
@@ -402,7 +401,6 @@ public class GameModel extends Model {
 	}
 
 	public function goToDialog(destinationId:String):void {
-		trace(destinationId);
 		this.currentDialog = dialogTree.get(destinationId);
 		setTimeout(showCurrentDialog, 2000);
 	}

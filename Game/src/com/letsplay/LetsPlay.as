@@ -42,7 +42,7 @@ public class LetsPlay extends Sprite {
 		this.addChild(gameCrowd);
 		this.addChild(intro);
 
-		intro.addEventListener(StateEvent.DONE, function():void{
+		intro.addEventListener(StateEvent.DONE, function(event:Event):void{
 			self.removeChild(intro);
 			menu.oppeningAnimation();
 		});
@@ -52,7 +52,7 @@ public class LetsPlay extends Sprite {
 
 	private function bindMenu():void {
 		var self:LetsPlay = this;
-		menu.addEventListener(StateEvent.PLAY, function():void{
+		menu.addEventListener(StateEvent.PLAY, function(event:Event):void{
 			self.menu.removeMenuWithStyle();
 			self.gameCrowd.startLevelOne();
 			self.gameStage.curtainLift();
@@ -60,7 +60,6 @@ public class LetsPlay extends Sprite {
 			self.addChild(self.game);
 			self.gameStage.actTransition(1);
 			self.bindGameStage();
-
 		});
 		menu.addEventListener(StateEvent.CREDIT, function(event:Event):void{
 			self.menu.showCredit();
