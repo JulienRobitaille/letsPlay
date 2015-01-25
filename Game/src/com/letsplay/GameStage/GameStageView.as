@@ -222,30 +222,38 @@ public class GameStageView extends View {
     //Animation sexy time
 
 
+    private function animatePlayerHappy(event:Event):void {
+        trace("animatePlayerSad");
+    }
+
 	private function animatePlayerSad(event:Event):void {
 		trace("animatePlayerSad");
 	}
 
+    private function animatePlayerMad(event:Event):void {
+		trace("animatePlayerSad");
+	}
+
+    private function animateCatFall(event:Event):void {
+        trace("animateCatFall");
+        this.cat.play();
+    }
 	private function animateKidHappy(event:Event):void {
 		trace("animateKidHappy");
-		
+
 	}
+    private function animateKidSad(event:Event):void {
+
+    }
+    private function animateKidMad(event:Event):void {
+        trace("animateKidAngry");
+
+    }
 
 	private function animateKidJump(event:Event):void {
 		trace("animateKidJump");
-		
-	}
 
-	private function animateCatFall(event:Event):void {
-		trace("animateCatFall");
-		this.cat.play();
 	}
-
-	private function animateKidAngry(event:Event):void {
-		trace("animateKidAngry");
-		
-	}
-
 
     // The game ending
     public function theEnd():void {
@@ -255,16 +263,19 @@ public class GameStageView extends View {
 
 	override public function resume():void {
 		super.resume();
-		GlobalDispatcher.addEventListener(AnimationTrigger.KID_ANGRY, animateKidAngry);
-		GlobalDispatcher.addEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
-		GlobalDispatcher.addEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
+        GlobalDispatcher.addEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
+        GlobalDispatcher.addEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
+        GlobalDispatcher.addEventListener(AnimationTrigger.KID_MAD, animateKidMad);
 		GlobalDispatcher.addEventListener(AnimationTrigger.KID_HAPPY, animateKidHappy);
+		GlobalDispatcher.addEventListener(AnimationTrigger.KID_SAD, animateKidSad);
 		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_SAD, animatePlayerSad);
+		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_HAPPY, animatePlayerSad);
+		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_MAD, animatePlayerSad);
 	}
 
 	override public function pause():void {
 		super.pause();
-		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_ANGRY, animateKidAngry);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_MAD, animateKidMad);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_HAPPY, animateKidHappy);

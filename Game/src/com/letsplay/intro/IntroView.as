@@ -42,7 +42,7 @@ public class IntroView extends View {
 
         this.addChild(this.introBackground);
 
-            this.introText = new TextField(sWidth, 1, I18n.INTRO,"fluorine",24);
+            this.introText = new TextField(sWidth, 1, I18n.INTRO,"fluorine",30);
             this.introText.autoSize = TextFieldAutoSize.VERTICAL;
             this.introText.y = (sHeight - this.introText.height-20) >> 1;
             this.introText.color = 0xD7D8D3;
@@ -57,7 +57,7 @@ public class IntroView extends View {
                     self.dispatchEventWith(StateEvent.DONE,true);
                 }});
             }});
-        },3500)
+        },10000);
 
 
         this.addChild(this.introText);
