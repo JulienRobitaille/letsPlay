@@ -12,7 +12,7 @@ public class GameCrowd extends Page {
     }
 
     public function startLevelOne():void {
-        this.gameView.crowdInteractiveLevelOne();
+        this.gameView.crowdInteractiveLevelTwo();
     }
     public function startLevelTwo():void {
         this.gameView.crowdInteractiveLevelTwo();

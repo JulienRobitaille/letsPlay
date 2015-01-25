@@ -29,6 +29,9 @@ public class MenuController extends Controller {
             case this.menuModel.id_credit:
                 this._page.dispatchEventWith(StateEvent.CREDIT);
                 break;
+            case this.menuModel.id_credit_box:
+                this._page.dispatchEventWith(StateEvent.REMOVE_CREDIT);
+                break;
         }
     }
 }

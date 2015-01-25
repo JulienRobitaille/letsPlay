@@ -63,7 +63,10 @@ public class LetsPlay extends Sprite {
 
 		});
 		menu.addEventListener(StateEvent.CREDIT, function():void{
-			//credit
+			self.menu.showCredit();
+		});
+		menu.addEventListener(StateEvent.REMOVE_CREDIT, function():void{
+			self.menu.hideCredit();
 		});
 	}
 	private function bindGameStage():void {

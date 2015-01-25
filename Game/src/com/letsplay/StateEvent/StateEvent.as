@@ -10,6 +10,7 @@ public class StateEvent extends Event {
     public static const CREDIT:String = "credit";
     public static const ACTCHANGE:String = "actchange";
     public static const THEEND:String = "theend";
+    public static const REMOVE_CREDIT:String = "removecredit";
 
     public function StateEvent(type:String, bubbles:Boolean = false, data:Object = null) {
         super(type, bubbles, data);

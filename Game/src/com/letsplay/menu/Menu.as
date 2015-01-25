@@ -22,5 +22,13 @@ public class Menu extends Page {
     public function removeMenuWithStyle():void {
         this._viewMenu.removeMenuWithStyle();
     }
+
+    public function showCredit():void {
+        this._viewMenu.creditMenu();
+    }
+
+    public function hideCredit():void {
+        this._viewMenu.hideCredit();
+    }
 }
 }

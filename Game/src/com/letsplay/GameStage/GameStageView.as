@@ -47,7 +47,7 @@ public class GameStageView extends View {
         //this.setAct3();
 
         this.addChild(this.scene);
-       this.addChild(this.act1);
+        this.addChild(this.act1);
         //this.addChild(this.act2);
        // this.addChild(this.act3);
         this.addChild(this.closedScene);

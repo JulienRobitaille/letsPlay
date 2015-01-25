@@ -25,6 +25,8 @@ public class MenuView extends View {
     private var jouer:InteractiveText;
     private var credit:InteractiveText;
     private var title:InteractiveText;
+    private var backgroundCredit:InteractiveQuad;
+    private var creditText:TextField;
 
    // private var menuModel:
     public function MenuView(model:Model) {
@@ -81,6 +83,28 @@ public class MenuView extends View {
         TweenLite.to(this.jouer,0.5,{y: -60});
         TweenLite.to(this.credit,0.7,{y:-50});
         TweenLite.to(this.title,0.3,{y:-70});
+    }
+    public function creditMenu():void {
+        var sWidth:int = this.stage.stageWidth;
+        var sHeight:int = this.stage.stageHeight;
+        backgroundCredit = new InteractiveQuad(this.menuModel.id_credit_box,sWidth,sHeight,0x000000);
+
+
+        creditText = new TextField(sWidth, 1, I18n.CREDITTEXT,"fluorine",24);
+        trace(I18n.CREDITTEXT);
+        creditText.autoSize = TextFieldAutoSize.VERTICAL;
+        creditText.y = sHeight;
+        creditText.color = 0xD7D8D3;
+        creditText.touchable = false;
+        TweenLite.to(creditText,5,{y:50});
+        this.addChild( backgroundCredit );
+        this.addChild( creditText );
+
+    }
+
+    public function hideCredit():void {
+        this.backgroundCredit.parent.removeChild(this.backgroundCredit);
+        this.creditText.parent.removeChild(this.creditText);
     }
 }
 }
