@@ -122,6 +122,5 @@ import starling.events.Event;
 			_model.addEventListener(MVCEvent.STOP, 	  onStop);
             _model.addEventListener(MVCEvent.DISPOSE, onDispose);
         }
-
 	}
 }

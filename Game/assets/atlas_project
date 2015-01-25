@@ -219,6 +219,7 @@
             <filename>src/cat_fall/cat_20.png</filename>
             <filename>src/public.png</filename>
             <filename>src/public_odd.png</filename>
+            <filename>src/public_variation.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

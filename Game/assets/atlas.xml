@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:4dfe0d630148842a09a6363254db8767:a9e13beeb46566184e52f48538f13eae:cde709370900f12288f3449eded86f07$ -->
+<!-- $TexturePacker:SmartUpdate:807e57c4074632936cc97d2f86df808b:debe7221553df93a5b63269aa0c5ac9f:cde709370900f12288f3449eded86f07$ -->
 <TextureAtlas imagePath="atlas.png">
     <SubTexture name="bush" x="2" y="2" width="72" height="43"/>
     <SubTexture name="cat_1" x="76" y="2" width="38" height="38"/>
@@ -30,7 +30,8 @@
     <SubTexture name="left_tree" x="67" y="305" width="64" height="121"/>
     <SubTexture name="public" x="133" y="305" width="64" height="84"/>
     <SubTexture name="public_odd" x="199" y="305" width="64" height="84"/>
-    <SubTexture name="right_tree" x="265" y="305" width="64" height="121"/>
+    <SubTexture name="public_variation" x="265" y="305" width="64" height="84"/>
+    <SubTexture name="right_tree" x="331" y="305" width="64" height="121"/>
     <SubTexture name="scene" x="2" y="428" width="680" height="445"/>
     <SubTexture name="top_scene" x="2" y="875" width="680" height="126"/>
 </TextureAtlas>

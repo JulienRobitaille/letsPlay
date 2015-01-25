@@ -55,6 +55,7 @@ public class LetsPlay extends Sprite {
 		var self:LetsPlay = this;
 		menu.addEventListener(StateEvent.PLAY, function():void{
 			self.menu.removeMenuWithStyle();
+			self.gameCrowd.startLevelOne();
 			self.startGame();
 
 			//var game:Game = new Game();

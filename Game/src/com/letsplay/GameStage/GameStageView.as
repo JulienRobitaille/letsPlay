@@ -93,7 +93,7 @@ public class GameStageView extends View {
 
         var cat:MovieClip = new MovieClip(Asset.Cat,12);
         cat.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 250;
-        cat.y = this.topScene.height + 175;
+        cat.y = this.topScene.height + 165;
         cat.loop = false;
 
         Starling.juggler.add(cat);
