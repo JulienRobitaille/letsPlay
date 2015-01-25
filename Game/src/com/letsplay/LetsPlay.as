@@ -22,7 +22,7 @@ public class LetsPlay extends Sprite {
 	private var gameStage:GameStage;
 	private var gameCrowd:GameCrowd;
 
-	private var act : int = 0;
+	private var act : int = 1;
 	private var game:Game;
 
 	public function LetsPlay() {
