@@ -5,6 +5,7 @@ package com.letsplay.game {
 import com.drawm.mvc.model.Model;
 import com.letsplay.AnimationTrigger;
 import com.letsplay.GlobalDispatcher;
+import com.letsplay.I18n;
 import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
 import com.letsplay.data.DialogTree;
@@ -13,8 +14,6 @@ import flash.utils.setTimeout;
 
 public class GameModel extends Model {
 
-	public const bubbleText : Vector.<String> = new <String>[];
-	private var choices:Vector.<Choice> = new <Choice>[];
 	private var dialogTree:DialogTree;
 	private var currentDialog:Dialog;
 
@@ -25,10 +24,10 @@ public class GameModel extends Model {
 
 		//#1
 		this.dialogTree.add("startDialog", new Dialog({
-			text : "Est ce que tu préfère les chiens ou les chats?",
+			text :I18n.QUESTION1,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "Les chiens",
+					text :I18n.CHOICE1,
 					destinationId : "#2",
 					animationTrigger : [],
 					stats : {
@@ -37,7 +36,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "Les chats",
+					text : I18n.CHOICE2,
 					destinationId : "#2",
 					animationTrigger : [],
 					stats : {
@@ -46,7 +45,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "... (psss Jocelyne? C'est quoi déjà mon texte?)",
+					text : I18n.CHOICE3,
 					destinationId : "#3",
 					animationTrigger : [],
 					stats : {
@@ -59,10 +58,10 @@ public class GameModel extends Model {
 
 		//#2
 		this.dialogTree.add("#2", new Dialog({
-			text : "Les chiens son bruiant, bruns et ils puent!\nJ'aimerais avoir un chat, mais maman ne veut pas.",
+			text :I18n.QUESTION2,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "Brun? Ce n'est même pas vrai! (Mais qu'est-ce que je fait ici?)",
+					text :I18n.CHOICE4,
 					destinationId : "#4",
 					animationTrigger : [],
 					stats : {
@@ -71,7 +70,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "Oh ! Regarde le jolie chaton!",
+					text :I18n.CHOICE5,
 					destinationId : "#5",
 					animationTrigger : [],
 					stats : {
@@ -80,7 +79,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "... (Oups j'ai un blanc; ma soeur ne sera vraiment pas contente.)",
+					text :I18n.CHOICE6,
 					destinationId : "#4",
 					animationTrigger : [],
 					stats : {
@@ -93,10 +92,10 @@ public class GameModel extends Model {
 
 		//#3
 		this.dialogTree.add("#3", new Dialog({
-			text : "... Timmy aime-tu les chats? (Il n'a vraiment aucune mémoire!)",
+			text :I18n.QUESTION3,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "Oui beaucoup.",
+					text :I18n.CHOICE7,
 					destinationId : "#2",
 					animationTrigger : [],
 					stats : {
@@ -105,7 +104,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "Vraiment pas.",
+					text :I18n.CHOICE8,
 					destinationId : "#2",
 					animationTrigger : [],
 					stats : {
@@ -114,7 +113,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "... (Qu'est-ce que je fait)",
+					text :I18n.CHOICE9,
 					destinationId : "#3",
 					animationTrigger : [],
 					stats : {
@@ -126,10 +125,10 @@ public class GameModel extends Model {
 		}));
 		//#4
 		this.dialogTree.add("#4", new Dialog({
-			text : "Oh regarde le chaton. Attrapons-le! Aide moi! Aide moi!",
+			text :I18n.QUESTION4,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "Je vais à droite tu vas à gauche!",
+					text :I18n.CHOICE10,
 					destinationId : "#6",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
@@ -138,7 +137,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "Ce n'ais même pas un vria chat. Mathieu la fabriqué pour la pièce.",
+					text :I18n.CHOICE11,
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
@@ -147,7 +146,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "...",
+					text :I18n.CHOICE12,
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
@@ -159,10 +158,10 @@ public class GameModel extends Model {
 		}));
 		//#5
 		this.dialogTree.add("#5", new Dialog({
-			text : "Ohhhh. Il est si beau! Attrapons-le. Ramenons le chez moi. Dis rien à maman.",
+			text :I18n.QUESTION5,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "Il a l'aire sale et méchant. Ce n'est pas une bonne idée.",
+					text :I18n.CHOICE13,
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
@@ -171,7 +170,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "Seulement si je peux le flatter en premier.",
+					text :I18n.CHOICE14,
 					destinationId : "#6",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
@@ -180,7 +179,7 @@ public class GameModel extends Model {
 					}
 				}),
 				new Choice({
-					text : "... (Je pers vraiment mon temps. Pourquoi une grenouille adopterait un chat?)",
+					text :I18n.CHOICE15,
 					destinationId : "#7",
 					animationTrigger : [AnimationTrigger.CAT_FALL],
 					stats : {
@@ -192,10 +191,10 @@ public class GameModel extends Model {
 		}));
 		//#6
 		this.dialogTree.add("#6", new Dialog({
-			text : "Le chat s'enfuit !!! Vite Vite ! Suivons-le.",
+			text :I18n.QUESTION6,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "... (Je crois que je n'ai pas vraiment le choix.)",
+					text :I18n.CHOICE16,
 					destinationId : "act-fin",
 					animationTrigger : [],
 					stats : {
@@ -207,10 +206,10 @@ public class GameModel extends Model {
 		}));
 		//#7
 		this.dialogTree.add("#7", new Dialog({
-			text : "Tu l'as laisser s'enfuire ! C'est de ta faute !!! (Elle court dans le parc)",
+			text :I18n.QUESTION7,
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "... (Se met à suivre Jocelyne.)",
+					text :I18n.CHOICE17,
 					destinationId : "act-fin",
 					animationTrigger : [],
 					stats : {
@@ -227,16 +226,6 @@ public class GameModel extends Model {
 	override public function start():void {
 
 		this.currentDialog = dialogTree.get("startDialog");
-
-		bubbleText.push("blablabla text de coquin");
-		bubbleText.push("plein d'autre text super long plein d'autre text super long plein d'autre text super long plein d'autre text super long ");
-
-		choices.push(
-			new Choice({ id: "answerID_1", text : "choix no 1 lool"}),
-			new Choice({ id: "answerID_2", text : "choixasggsg no 2 lool"}),
-			new Choice({ id: "answerID_3", text : "choix no 3 lfassgAGool"})
-		);
-
 		super.start();
 	}
 
@@ -256,6 +245,7 @@ public class GameModel extends Model {
 		this.currentDialog = dialogTree.get(destinationId);
 		setTimeout(showCurrentDialog, 2000);
 	}
+
 	private function showCurrentDialog():void{
 		this.dispatchEventWith(BubbleEvent.SHOW_BUBBLE, false, this.currentDialog);
 	}
