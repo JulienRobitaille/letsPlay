@@ -104,8 +104,16 @@ public class LetsPlay extends Sprite {
 			self.gameStage.actTransition( LetsPlay.act );
 		});
 
-		GlobalDispatcher.addEventListener(AnimationTrigger.GOOD_END, self.gameStage.theGoodEnd );
-		GlobalDispatcher.addEventListener(AnimationTrigger.BAD_END, self.gameStage.theBadEnd );
+
+		GlobalDispatcher.addEventListener(AnimationTrigger.GOOD_END, function():void{
+			self.game.visible = false;
+			self.gameStage.theGoodEnd();
+		} );
+
+		GlobalDispatcher.addEventListener(AnimationTrigger.BAD_END, function():void{
+			self.game.visible = false;
+			self.gameStage.theBadEnd();
+		} );
 
 }
 

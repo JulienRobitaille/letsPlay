@@ -83,6 +83,7 @@ public class I18n {
     public static var QUESTION17:String   = "Il reviendrait peut-être si tu étais plus gentil envers lui!";
         public static var CHOICE39:String = "Tu as raison... JE M'EXCUSE MONSIEUR CHAT!";
         public static var CHOICE40:String = "Mais il est juste là... couché par terre... (je comprends vraiment rien à cette pièce!)";
+    public static var END:String = "LA Fin !";
     public function I18n() {
     }
 }
