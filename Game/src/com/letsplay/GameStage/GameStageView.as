@@ -402,7 +402,7 @@ public class GameStageView extends View {
 		0x222222,
 		0x111111
 	];
-	private function onApplyStats(event:StatsEvent):void {
+	private function onApplyStats(event:Event):void {
 		// changer le mood??
 	}
 

@@ -59,7 +59,6 @@ public class LetsPlay extends Sprite {
 
 		this.bindMenu();
 
-
 		GlobalDispatcher.addEventListener(StatsEvent.CHANGE_STATS, onChangeStats);
 	}
 
