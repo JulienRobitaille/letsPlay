@@ -10,6 +10,7 @@ import com.greensock.TweenMax;
 import com.letsplay.AnimationTrigger;
 import com.letsplay.Atlas.Asset;
 import com.letsplay.GlobalDispatcher;
+import com.letsplay.SoundsAssets;
 
 import starling.core.Starling;
 import starling.display.DisplayObject;
@@ -253,6 +254,8 @@ public class GameStageView extends View {
         this.boyHappy.visible = true;
         this.boySad.visible = false;
         this.boyMad.visible = false;
+
+		SoundsAssets.kidHappy.play();
     }
 
 	private function animatePlayerSad(event:Event):void {
@@ -265,27 +268,41 @@ public class GameStageView extends View {
         this.boyHappy.visible = false;
         this.boySad.visible = false;
         this.boyMad.visible = true;
+		SoundsAssets.kidAngry.play();
+
 	}
 
     private function animateCatFall(event:Event):void {
         trace("animateCatFall");
         this.cat.play();
+
+		SoundsAssets.catAngry.play();
     }
 	private function animateKidHappy(event:Event):void {
         this.girlHappy.visible = true;
         this.girlSad.visible = false;
         this.girlMad.visible = false;
+
+		SoundsAssets.kidHappy.play();
 	}
     private function animateKidSad(event:Event):void {
         this.girlHappy.visible = false;
         this.girlSad.visible = true;
         this.girlMad.visible = false;
     }
-    private function animateKidMad(event:Event):void {
-        this.girlHappy.visible = false;
-        this.girlSad.visible = false;
-        this.girlMad.visible = true;
-    }
+	private function animateKidMad(event:Event):void {
+		this.girlHappy.visible = false;
+		this.girlSad.visible = false;
+		this.girlMad.visible = true;
+		SoundsAssets.kidAngry.play();
+	}
+
+	private function animateCatPurr(event:Event):void {
+		SoundsAssets.catPurr.play();
+	}
+	private function animateCatMeow(event:Event):void {
+		SoundsAssets.catMeow.play();
+	}
 
 	private function animateKidJump(event:Event):void {
 		trace("animateKidJump");
@@ -306,17 +323,25 @@ public class GameStageView extends View {
 		GlobalDispatcher.addEventListener(AnimationTrigger.KID_HAPPY, animateKidHappy);
 		GlobalDispatcher.addEventListener(AnimationTrigger.KID_SAD, animateKidSad);
 		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_SAD, animatePlayerSad);
-		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_HAPPY, animatePlayerSad);
-		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_MAD, animatePlayerSad);
+		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_HAPPY, animatePlayerHappy);
+		GlobalDispatcher.addEventListener(AnimationTrigger.PLAYER_MAD, animatePlayerMad);
+
+		GlobalDispatcher.addEventListener(AnimationTrigger.CAT_PURR, animateCatPurr);
+		GlobalDispatcher.addEventListener(AnimationTrigger.CAT_MEOW, animateCatMeow);
 	}
 
 	override public function pause():void {
 		super.pause();
-		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_MAD, animateKidMad);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_FALL, animateCatFall);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_JUMP, animateKidJump);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_MAD, animateKidMad);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_HAPPY, animateKidHappy);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.KID_SAD, animateKidSad);
 		GlobalDispatcher.removeEventListener(AnimationTrigger.PLAYER_SAD, animatePlayerSad);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.PLAYER_HAPPY, animatePlayerHappy);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.PLAYER_MAD, animatePlayerMad);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_PURR, animateCatPurr);
+		GlobalDispatcher.removeEventListener(AnimationTrigger.CAT_MEOW, animateCatMeow);
 	}
 }
 }

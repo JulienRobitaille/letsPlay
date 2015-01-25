@@ -14,6 +14,11 @@ public class AnimationTrigger extends Event {
 	public static const PLAYER_MAD:String = "PLAYER_MAD";
 	public static const PLAYER_HAPPY:String = "PLAYER_HAPPY";
 
+	public static const CAT_PURR:String = "CAT_PURR";
+	public static const CAT_MEOW:String = "CAT_MEOW";
+
+
+
 	public function AnimationTrigger(type:String, bubbles:Boolean = false, data:Object = null) {
 		super(type, bubbles, data);
 	}
