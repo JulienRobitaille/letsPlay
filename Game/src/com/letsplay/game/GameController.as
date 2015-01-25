@@ -10,12 +10,13 @@ import com.letsplay.data.Choice;
 import com.letsplay.data.Dialog;
 import com.letsplay.game.ui.answerBubble.event.AnswerBubbleEvent;
 
+import feathers.controls.Check;
+
 import starling.events.Event;
 
 public class GameController extends Controller {
 	private var model:GameModel;
 	public function GameController(model:Model, page:Page) {
-
 		this.model = model as GameModel;
 
 		super(model, page);
@@ -33,7 +34,9 @@ public class GameController extends Controller {
 	}
 
 	private function onClickAnswer(event:Event):void {
-		var id : String = (event.data as Choice).destinationId;
+		var choice : Choice = event.data as Choice;
+		var id : String = choice.destinationId;
+		this.model.triggerAnimationFromChoice(choice);
 		if(this.model.getDialog(id) == null){
 			this._page.dispatchEventWith(StateEvent.ACTCHANGE);
 		}else{

@@ -120,13 +120,15 @@ public class GameModel extends Model {
 		this.dispatchEventWith(BubbleEvent.SHOW_BUBBLE, false, this.currentDialog);
 	}
 
+	public function triggerAnimationFromChoice(choice:Choice):void{
+		for(var i:int = 0 ; i < choice.animationTrigger; i++){
+			GlobalDispatcher.dispatchEventWith(choice.animationTrigger[i]);
+		}
+	}
+
 	public function goToDialog(destinationId:String):void {
 		this.currentDialog = dialogTree.get(destinationId);
 		setTimeout(showCurrentDialog, 2000);
-
-		//GlobalDispatcher.dispatchEventWith(this.currentDialog.)
-
-
 	}
 	private function showCurrentDialog():void{
 		this.dispatchEventWith(BubbleEvent.SHOW_BUBBLE, false, this.currentDialog);
