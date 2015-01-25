@@ -69,7 +69,7 @@ public class TextBubble extends Sprite {
 	}
 
 	private function onTouchStage(event:TouchEvent):void {
-		if(event.getTouch(stage,TouchPhase.ENDED) !== null){
+		if(event.getTouch(stage,TouchPhase.BEGAN) !== null){
 			this.skipAnimation();
 		}
 	}
