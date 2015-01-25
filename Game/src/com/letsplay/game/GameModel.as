@@ -23,77 +23,203 @@ public class GameModel extends Model {
 
 		this.dialogTree ||= new DialogTree();
 
+		//#1
 		this.dialogTree.add("startDialog", new Dialog({
-			text : "Do you wanna play with me?",
+			text : "Est ce que tu préfère les chiens ou les chats?",
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "NO YOU STINK!",
-					destinationId : "kidAngry_1",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					text : "Les chiens",
+					destinationId : "#2",
+					animationTrigger : [],
 					stats : {
-						parents : 5,
-						kid : -5
+						people : 0,
+						kid : 0
 					}
 				}),
 				new Choice({
-					text : "With pleasure!",
-					destinationId : "parentsBored_1",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					text : "Les chats",
+					destinationId : "#2",
+					animationTrigger : [],
 					stats : {
-						parents : -5,
-						kid : 5
+						parents : 0,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : "... (psss Jocelyne? C'est quoi déjà mon texte?)",
+					destinationId : "#3",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 0
 					}
 				})
 			])
 		}));
 
-		this.dialogTree.add("parentsBored_1", new Dialog({
-			text : "YAY! Lets play pretend!",
+		//#2
+		this.dialogTree.add("#2", new Dialog({
+			text : "Les chiens son bruiant, bruns et ils puent!\nJ'aimerais avoir un chat, mais maman ne veut pas.",
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "This game suck! lets play ball!",
-					destinationId : "kidAngry_3",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					text : "Brun? Ce n'est même pas vrai! (Mais qu'est-ce que je fait ici?)",
+					destinationId : "#4",
+					animationTrigger : [],
 					stats : {
-						parents : 5,
-						kid : -5
+						people : 1,
+						kid : 0
 					}
 				}),
 				new Choice({
-					text : "Even better! Lets make mud cake!",
-					destinationId : "parentsBored_3",
-					animationTrigger : [AnimationTrigger.CAT_FALL],
+					text : "Oh ! Regarde le jolie chaton!",
+					destinationId : "#5",
+					animationTrigger : [],
 					stats : {
-						parents : -5,
-						kid : 5
+						parents : 0,
+						kid : 1
+					}
+				}),
+				new Choice({
+					text : "... (Oups j'ai un blanc; ma soeur ne sera vraiment pas contente.)",
+					destinationId : "#4",
+					animationTrigger : [],
+					stats : {
+						parents : 0,
+						kid : 1
 					}
 				})
 			])
 		}));
 
-		this.dialogTree.add("kidAngry_1", new Dialog({
-			text : "NO YOU STINK! IMM GONNA TELL MOMMY!!",
+		//#3
+		this.dialogTree.add("#3", new Dialog({
+			text : "... Timmy aime-tu les chats? (Il n'a vraiment aucune mémoire!)",
 			choices : Vector.<Choice>([
 				new Choice({
-					text : "LIAR!",
-					destinationId : "kidAngry_2",
-					animationTrigger : [AnimationTrigger.KID_HAPPY],
+					text : "Oui beaucoup.",
+					destinationId : "#2",
+					animationTrigger : [],
 					stats : {
-						parents : 5,
-						kid : -5
+						people : 1,
+						kid : 0
 					}
 				}),
 				new Choice({
-					text : "Please don't... i'm sorry",
-					destinationId : "parentsBored_2",
-					animationTrigger : [AnimationTrigger.PLAYER_SAD],
+					text : "Vraiment pas.",
+					destinationId : "#2",
+					animationTrigger : [],
 					stats : {
-						parents : -5,
-						kid : 5
+						parents : 0,
+						kid : 1
+					}
+				}),
+				new Choice({
+					text : "... (Qu'est-ce que je fait)",
+					destinationId : "#3",
+					animationTrigger : [],
+					stats : {
+						parents : -1,
+						kid : -1
 					}
 				})
 			])
-		}))
+		}));
+		//#4
+		this.dialogTree.add("#4", new Dialog({
+			text : "Oh regarde le chaton. Attrapons-le! Aide moi! Aide moi!",
+			choices : Vector.<Choice>([
+				new Choice({
+					text : "Je vais à droite tu vas à gauche!",
+					destinationId : "#6",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
+					stats : {
+						people : 0,
+						kid : 1
+					}
+				}),
+				new Choice({
+					text : "Ce n'ais même pas un vria chat. Mathieu la fabriqué pour la pièce.",
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
+					stats : {
+						parents : 1,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : "...",
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
+					stats : {
+						parents : -1,
+						kid : -1
+					}
+				})
+			])
+		}));
+		//#5
+		this.dialogTree.add("#5", new Dialog({
+			text : "Ohhhh. Il est si beau! Attrapons-le. Ramenons le chez moi. Dis rien à maman.",
+			choices : Vector.<Choice>([
+				new Choice({
+					text : "Il a l'aire sale et méchant. Ce n'est pas une bonne idée.",
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
+					stats : {
+						people : 1,
+						kid : 0
+					}
+				}),
+				new Choice({
+					text : "Seulement si je peux le flatter en premier.",
+					destinationId : "#6",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
+					stats : {
+						parents : 0,
+						kid : 1
+					}
+				}),
+				new Choice({
+					text : "... (Je pers vraiment mon temps. Pourquoi une grenouille adopterait un chat?)",
+					destinationId : "#7",
+					animationTrigger : [AnimationTrigger.CAT_FALL],
+					stats : {
+						parents : -1,
+						kid : -1
+					}
+				})
+			])
+		}));
+		//#6
+		this.dialogTree.add("#6", new Dialog({
+			text : "Le chat s'enfuit !!! Vite Vite ! Suivons-le.",
+			choices : Vector.<Choice>([
+				new Choice({
+					text : "... (Je crois que je n'ai pas vraiment le choix.)",
+					destinationId : "act-fin",
+					animationTrigger : [],
+					stats : {
+						people : -1,
+						kid : -1
+					}
+				})
+			])
+		}));
+		//#7
+		this.dialogTree.add("#7", new Dialog({
+			text : "Tu l'as laisser s'enfuire ! C'est de ta faute !!! (Elle court dans le parc)",
+			choices : Vector.<Choice>([
+				new Choice({
+					text : "... (Se met à suivre Jocelyne.)",
+					destinationId : "act-fin",
+					animationTrigger : [],
+					stats : {
+						people : -1,
+						kid : -1
+					}
+				})
+			])
+		}));
 
 	}
 
