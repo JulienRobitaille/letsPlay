@@ -266,6 +266,8 @@ public class GameStageView extends View {
         this.boyHappy.visible = false;
         this.boySad.visible = true;
         this.boyMad.visible = false;
+		var sound : Sounds = SoundsAssets.kidSad;
+		sound.playSound();
 	}
 
     private function animatePlayerMad(event:Event):void {
@@ -296,6 +298,10 @@ public class GameStageView extends View {
         this.girlHappy.visible = false;
         this.girlSad.visible = true;
         this.girlMad.visible = false;
+
+
+		var sound : Sounds = SoundsAssets.kidSad;
+		sound.playSound();
     }
 	private function animateKidMad(event:Event):void {
 		this.girlHappy.visible = false;

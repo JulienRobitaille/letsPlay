@@ -84,6 +84,10 @@ public class SoundsAssets {
 	private static var shuuut_003Class:Class;
 	private static var shuuut_003:Sounds = new Sounds(new shuuut_003Class(), { volume: 0.5, autoPlay: false });
 
+	[Embed(source="/../assets/sounds/kid_sad_001.mp3")]
+	private static var kid_sad_001Class:Class;
+	private static var kid_sad_001:Sounds = new Sounds(new kid_sad_001Class(), { volume: 0.5, autoPlay: false });
+
 
 	private static const angryCatArray:Array = [
 		cat_angry_001,
@@ -115,6 +119,9 @@ public class SoundsAssets {
 		shuuut_002,
 		shuuut_003
 	];
+	private static const sadKidArray:Array = [
+		kid_sad_001,
+	];
 
 	public function SoundsAssets() {}
 
@@ -135,6 +142,9 @@ public class SoundsAssets {
 	};
 	public static function get shut():Sounds{
 		return getRandomSoundFromArray(shutArray);
+	};
+	public static function get kidSad():Sounds{
+		return getRandomSoundFromArray(sadKidArray);
 	};
 
 	private static function getRandomSoundFromArray(soundArray:Array):Sounds{
