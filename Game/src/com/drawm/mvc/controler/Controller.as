@@ -206,6 +206,7 @@ public class Controller {
 	protected function onTouchMove(touch:Touch):void {
 		if(touch.target is IInteractiveUI){
 			if(!isClick(touch.globalX,touch.globalY)){
+				this.out(touch);
 				IInteractiveUI(touch.target).out();
 			}
 		}
