@@ -21,14 +21,11 @@ public class TextBubble extends Sprite {
 	private var bubble:Quad;
 	private var bubbleBackground:Quad;
 
-
-
 	public function TextBubble(text:String, width:int, height:int) {
 		super();
 		this.text = text.split("");
 
-
-		this.nameTextfield ||= new TextField(Math.max(2,width),Math.max(2,height)," Timmy : ", "fluorine", 24);
+		this.nameTextfield ||= new TextField(Math.max(2,width),Math.max(2,height)," Jocelyne : ", "fluorine", 24);
 		this.nameTextfield.autoSize = TextFieldAutoSize.VERTICAL;
 		this.nameTextfield.hAlign = HAlign.LEFT;
 		this.addChild(this.nameTextfield);

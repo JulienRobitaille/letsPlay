@@ -54,7 +54,7 @@ public class GameView extends View {
 		answerBubble = new AnswerBubble(event.data.choices as Vector.<Choice>, bubble.width);
 		addChild(answerBubble);
 		answerBubble.x = (stage.stageWidth - answerBubble.width >> 1);
-		answerBubble.y = bubble.y + bubble.height + 45;
+		answerBubble.y = stage.stageHeight*0.65//bubble.y + bubble.height + 45;
 	}
 
 	override public function start():void {
