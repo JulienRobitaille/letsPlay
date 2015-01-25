@@ -62,9 +62,10 @@ public class GameStageView extends View {
         this.boyHappy = new MovieClip(Asset.BoyHappy,24);
         this.girlHappy = new MovieClip(Asset.GirlHappy,24);
         this.boySad = new MovieClip(Asset.BoySad,24);
+        this.girlSad = new MovieClip(Asset.GirlSad,24);
 
 
-
+ 
         this.act ||= new Sprite();
 
         this.addChild(this.scene);
