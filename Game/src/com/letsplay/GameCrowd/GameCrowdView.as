@@ -8,8 +8,11 @@ import com.drawm.ui.interactive.InteractiveImage;
 import com.greensock.TweenLite;
 import com.greensock.TweenMax;
 import com.letsplay.Atlas.Asset;
+import com.letsplay.GlobalDispatcher;
+import com.letsplay.game.StatsEvent;
 
 import starling.display.Sprite;
+import starling.events.Event;
 
 import starling.textures.Texture;
 
@@ -85,5 +88,26 @@ public class GameCrowdView extends View {
             }
         }
     }
+
+	override public function pause():void {
+		super.pause();
+		GlobalDispatcher.removeEventListener(StatsEvent.APPLY_STATS, onChangeStats);
+	}
+
+	override public function resume():void {
+		super.resume();
+		GlobalDispatcher.addEventListener(StatsEvent.APPLY_STATS, onChangeStats);
+	}
+
+	private function onChangeStats(event:Event):void {
+		trace(event.data.people);
+		if(event.data.people > 5){
+			this.crowdInteractiveLevelThree();
+		}else if(event.data.people > 3){
+			this.crowdInteractiveLevelTwo();
+		}else if(event.data.people >= 1){
+			this.crowdInteractiveLevelOne();
+		}
+	}
 }
 }

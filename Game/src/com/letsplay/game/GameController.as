@@ -46,6 +46,7 @@ public class GameController extends Controller {
 		var choice : Choice = event.data as Choice;
 		var id : String = choice.destinationId;
 		this.model.triggerAnimationFromChoice(choice);
+		this.model.changeStats(choice.stats);
 
 		if(this.model.getDialog(id) == null){
 			this._page.dispatchEventWith(StateEvent.ACTCHANGE);
