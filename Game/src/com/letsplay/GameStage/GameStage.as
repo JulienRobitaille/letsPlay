@@ -9,6 +9,8 @@ import com.drawm.mvc.view.View;
 import com.letsplay.AnimationTrigger;
 import com.letsplay.GlobalDispatcher;
 
+import starling.events.Event;
+
 public class GameStage extends Page {
     private var stageView:GameStageView;
     public function GameStage() {
@@ -37,8 +39,11 @@ public class GameStage extends Page {
 				break;
 		}
 	}
-	public function theEnd():void {
-		this.stageView.theEnd();
+	public function theGoodEnd(event:Event = null):void {
+		this.stageView.theGoodEnd();
+    }
+	public function theBadEnd(event:Event = null):void {
+		this.stageView.theBadEnd();
     }
     public function startThekitten():void {
         this.stageView.cat.play()

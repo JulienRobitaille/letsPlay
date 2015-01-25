@@ -228,6 +228,7 @@ public class GameModel extends Model {
 		switch ( $id ) {
 			case 2:
 				this.act2()
+
 				break;
 
 			case 3:

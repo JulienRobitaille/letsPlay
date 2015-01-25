@@ -17,6 +17,7 @@ public class AnimationTrigger extends Event {
 	public static const CAT_PURR:String = "CAT_PURR";
 	public static const CAT_MEOW:String = "CAT_MEOW";
 	public static const PLAYER_IDLE:String = "PLAYER_IDLE";
+	public static const KID_IDLE:String = "KID_IDLE";
 
 	public static const GOOD_END:String = "GOOD_END";
 	public static const BAD_END:String = "BAD_END";
