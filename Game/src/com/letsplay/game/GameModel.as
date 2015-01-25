@@ -543,7 +543,7 @@ public class GameModel extends Model {
 		}
 	}
 
-	public function changeStats(stats:Object){
+	public function changeStats(stats:Object):void{
 		GlobalDispatcher.dispatchEventWith(StatsEvent.CHANGE_STATS, false, stats);
 	}
 

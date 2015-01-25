@@ -77,6 +77,15 @@ public class GameStageView extends View {
 		this.boyIdle = new MovieClip(Asset.BoyIdle,1);
 		this.girlIdle = new MovieClip(Asset.GirlIdle,1);
 
+        this.boyHappy.visible = false;
+        this.girlHappy.visible = false;
+        this.boySad.visible = false;
+        this.girlSad.visible = false;
+        this.boyMad.visible = false;
+        this.girlMad.visible = false;
+        this.boyIdle.visible = false;
+        this.girlIdle.visible = false;
+
 		Starling.juggler.add(this.boyHappy);
 		Starling.juggler.add(this.girlHappy);
         Starling.juggler.add(this.boyMad);
@@ -141,15 +150,12 @@ public class GameStageView extends View {
         this.girlHappy.x = this.girlMad.x = this.girlSad.x = this.girlIdle.x = sWidth - (sWidth/2.3);
         this.girlHappy.y = this.girlMad.y = this.girlSad.y = this.girlIdle.y = sHeight/2.2;
 
-        this.boySad.visible = false;
-        this.boyMad.visible = false;
-        this.boyHappy.visible = false;
-        this.girlSad.visible = false;
-        this.girlMad.visible = false;
-        this.girlHappy.visible = false;
+        this.animateKidIdle(null);
+        this.animatePlayerIdle(null);
 
 
-        this.catEvents();
+        this.catEvents()
+
         this.act.addChild(cloud);
         this.act.addChild(leftTree);
         this.act.addChild(house);
@@ -217,8 +223,8 @@ public class GameStageView extends View {
         this.girlHappy.y = this.girlMad.y = this.girlSad.y = this.girlIdle.y = sHeight/2.2;
 
 
-        this.animateKidHappy(null);
-        this.animatePlayerHappy(null);
+        this.animateKidIdle(null);
+        this.animatePlayerIdle(null);
 
 
         this.act.addChild(cloud);
@@ -331,18 +337,15 @@ public class GameStageView extends View {
 		sound.playSound();
     }
     private function animateKidIdle(event:Event):void {
-        this.boyHappy.visible = false;
-        this.boySad.visible = false;
-        this.boyMad.visible = false;
+        this.girlIdle.visible = false;
+        this.girlIdle.visible = false;
+        this.girlIdle.visible = false;
         this.girlIdle.visible = true;
-
-
     }
 	private function animateKidMad(event:Event):void {
 		this.girlHappy.visible = false;
 		this.girlSad.visible = false;
 		this.girlMad.visible = true;
-        this.girlIdle.visible = false;
         this.girlIdle.visible = false;
 
 
