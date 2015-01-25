@@ -2,6 +2,7 @@
  * Created by damon-karelab on 1/24/2015.
  */
 package com.letsplay {
+import com.greensock.TweenLite;
 import com.letsplay.Atlas.Asset;
 import com.letsplay.GameCrowd.GameCrowd;
 import com.letsplay.GameStage.GameStage;
@@ -9,6 +10,7 @@ import com.letsplay.StateEvent.StateEvent;
 import com.letsplay.game.Game;
 import com.letsplay.intro.Intro;
 import com.letsplay.menu.Menu;
+import com.letsplay.utils.Sounds;
 
 import starling.display.Sprite;
 import starling.events.Event;
@@ -25,7 +27,10 @@ public class LetsPlay extends Sprite {
 	public static var act : int = 1;
 	private var game:Game;
 
+	private var theaterSound : Sounds = SoundsAssets.theater;
+
 	public function LetsPlay() {
+
 		super();
 
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
@@ -45,6 +50,10 @@ public class LetsPlay extends Sprite {
 		intro.addEventListener(StateEvent.DONE, function(event:Event):void{
 			self.removeChild(intro);
 			menu.oppeningAnimation();
+
+			theaterSound.volume = 0;
+			theaterSound.playSound();
+			TweenLite.to(theaterSound, 5, { volume : .4});
 		});
 
 		this.bindMenu();
@@ -53,6 +62,8 @@ public class LetsPlay extends Sprite {
 	private function bindMenu():void {
 		var self:LetsPlay = this;
 		menu.addEventListener(StateEvent.PLAY, function(event:Event):void{
+			TweenLite.to(theaterSound, 2, { volume : .1});
+
 			self.menu.removeMenuWithStyle();
 			self.gameCrowd.startLevelOne();
 			self.gameStage.curtainLift();

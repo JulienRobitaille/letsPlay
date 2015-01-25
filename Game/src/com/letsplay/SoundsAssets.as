@@ -89,6 +89,13 @@ public class SoundsAssets {
 	private static var kid_sad_001:Sounds = new Sounds(new kid_sad_001Class(), { volume: 0.5, autoPlay: false });
 
 
+	[Embed(source="/../assets/sounds/theater.mp3")]
+	private static var theaterClass:Class;
+	public static var theater:Sounds = new Sounds(new theaterClass(), { volume: 0.2, autoPlay: false, loop : true });
+
+
+
+
 	private static const angryCatArray:Array = [
 		cat_angry_001,
 		cat_angry_002
