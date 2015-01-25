@@ -201,10 +201,10 @@ public class GameStageView extends View {
         this.girlHappy.x = this.girlMad.x = this.girlSad.x = sWidth - (sWidth/2.3);
         this.girlHappy.y = this.girlMad.y = this.girlSad.y = sHeight/2.2;
 
-        this.boySad.visible = false;
-        this.boyMad.visible = false;
-        this.girlSad.visible = false;
-        this.girlMad.visible = false;
+
+        this.animateKidHappy(null);
+        this.animatePlayerHappy(null);
+
 
         this.act.addChild(cloud);
         this.act.addChild(cloud2);
@@ -248,7 +248,6 @@ public class GameStageView extends View {
 
 
     //Animation sexy time
-
 
     private function animatePlayerHappy(event:Event):void {
         this.boyHappy.visible = true;
