@@ -8,79 +8,79 @@ import flash.media.Sound;
 
 public class SoundsAssets {
 
-	[Embed(source="/../assets/sounds/Cat_Angry-001.wav")]
+	[Embed(source="/../assets/sounds/Cat_Angry-001.mp3")]
 	private static var cat_angry_001Class:Class;
 	private static var cat_angry_001:Sounds = new Sounds(new cat_angry_001Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Angry-002.wav")]
+	[Embed(source="/../assets/sounds/Cat_Angry-002.mp3")]
 	private static var cat_angry_002Class:Class;
 	private static var cat_angry_002:Sounds = new Sounds(new cat_angry_002Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Meow-001.wav")]
+	[Embed(source="/../assets/sounds/Cat_Meow-001.mp3")]
 	private static var cat_meow_001Class:Class;
 	private static var cat_meow_001:Sounds = new Sounds(new cat_meow_001Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Meow-002.wav")]
+	[Embed(source="/../assets/sounds/Cat_Meow-002.mp3")]
 	private static var cat_meow_002Class:Class;
 	private static var cat_meow_002:Sounds = new Sounds(new cat_meow_002Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Meow-003.wav")]
+	[Embed(source="/../assets/sounds/Cat_Meow-003.mp3")]
 	private static var cat_meow_003Class:Class;
 	private static var cat_meow_003:Sounds = new Sounds(new cat_meow_003Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Meow-004.wav")]
+	[Embed(source="/../assets/sounds/Cat_Meow-004.mp3")]
 	private static var cat_meow_004Class:Class;
 	private static var cat_meow_004:Sounds = new Sounds(new cat_meow_004Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Meow-005.wav")]
+	[Embed(source="/../assets/sounds/Cat_Meow-005.mp3")]
 	private static var cat_meow_005Class:Class;
 	private static var cat_meow_005:Sounds = new Sounds(new cat_meow_005Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Meow-006.wav")]
+	[Embed(source="/../assets/sounds/Cat_Meow-006.mp3")]
 	private static var cat_meow_006Class:Class;
 	private static var cat_meow_006:Sounds = new Sounds(new cat_meow_006Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Cat_Purr.wav")]
+	[Embed(source="/../assets/sounds/Cat_Purr.mp3")]
 	private static var cat_purrClass:Class;
 	private static var cat_purr:Sounds = new Sounds(new cat_purrClass(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Kid_Angry-001.wav")]
+	[Embed(source="/../assets/sounds/Kid_Angry-001.mp3")]
 	private static var kid_angry_001Class:Class;
 	private static var kid_angry_001:Sounds = new Sounds(new kid_angry_001Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Kid_Angry-002.wav")]
+	[Embed(source="/../assets/sounds/Kid_Angry-002.mp3")]
 	private static var kid_angry_002Class:Class;
 	private static var kid_angry_002:Sounds = new Sounds(new kid_angry_002Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Kid_Angry-003.wav")]
+	[Embed(source="/../assets/sounds/Kid_Angry-003.mp3")]
 	private static var kid_angry_003Class:Class;
 	private static var kid_angry_003:Sounds = new Sounds(new kid_angry_003Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Kid_Happy-001.wav")]
+	[Embed(source="/../assets/sounds/Kid_Happy-001.mp3")]
 	private static var kid_happy_001Class:Class;
 	private static var kid_happy_001:Sounds = new Sounds(new kid_happy_001Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Kid_Happy-002.wav")]
+	[Embed(source="/../assets/sounds/Kid_Happy-002.mp3")]
 	private static var kid_happy_002Class:Class;
 	private static var kid_happy_002:Sounds = new Sounds(new kid_happy_002Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Kid_Happy-003.wav")]
+	[Embed(source="/../assets/sounds/Kid_Happy-003.mp3")]
 	private static var kid_happy_003Class:Class;
 	private static var kid_happy_003:Sounds = new Sounds(new kid_happy_003Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Narration.wav")]
+	[Embed(source="/../assets/sounds/Narration.mp3")]
 	private static var narrationClass:Class;
 	private static var narration:Sounds = new Sounds(new narrationClass(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Shuuut-001.wav")]
+	[Embed(source="/../assets/sounds/Shuuut-001.mp3")]
 	private static var shuuut_001Class:Class;
 	private static var shuuut_001:Sounds = new Sounds(new shuuut_001Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Shuuut-002.wav")]
+	[Embed(source="/../assets/sounds/Shuuut-002.mp3")]
 	private static var shuuut_002Class:Class;
 	private static var shuuut_002:Sounds = new Sounds(new shuuut_002Class(), { volume: 0.5, autoPlay: false });
 
-	[Embed(source="/../assets/sounds/Shuuut-003.wav")]
+	[Embed(source="/../assets/sounds/Shuuut-003.mp3")]
 	private static var shuuut_003Class:Class;
 	private static var shuuut_003:Sounds = new Sounds(new shuuut_003Class(), { volume: 0.5, autoPlay: false });
 
