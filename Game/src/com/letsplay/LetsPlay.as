@@ -12,6 +12,8 @@ import com.letsplay.menu.Menu;
 
 import flash.display.Bitmap;
 
+import starling.display.DisplayObject;
+
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.text.BitmapFont;
@@ -24,9 +26,12 @@ public class LetsPlay extends Sprite {
 	private var gameStage:GameStage;
 	private var gameCrowd:GameCrowd;
 
+	private var act : int = 0;
+	private var game:Game;
 
 	public function LetsPlay() {
 		super();
+
 		var atlas : TextureAtlas = new TextureAtlas(Texture.fromEmbeddedAsset(Asset.AtlasTexture), XML(new Asset.AtlasXml));
 		TextField.registerBitmapFont(new BitmapFont(atlas.getTexture("fluorine"), XML(new Asset.FontXml())), "fluorine");
 
@@ -47,8 +52,6 @@ public class LetsPlay extends Sprite {
 		});
 
 		this.bindMenu();
-		this.bindGameStage();
-
 	}
 
 	private function bindMenu():void {
@@ -57,10 +60,11 @@ public class LetsPlay extends Sprite {
 			self.menu.removeMenuWithStyle();
 			self.gameCrowd.startLevelOne();
 			self.startGame();
-			//self.gameStage.startThekitten();
 
-			//var game:Game = new Game();
-			//self.addChild(game);
+			self.game = new Game();
+			self.addChild(self.game);
+
+			self.bindGameStage();
 
 		});
 		menu.addEventListener(StateEvent.CREDIT, function():void{
@@ -72,8 +76,9 @@ public class LetsPlay extends Sprite {
 	}
 	private function bindGameStage():void {
 		var self:LetsPlay = this;
-		gameStage.addEventListener(StateEvent.ACTCHANGE, function(evt:Event):void{
-			self.gameStage.actTransition( evt.data );
+		this.game.addEventListener(StateEvent.ACTCHANGE, function(evt:Event):void{
+			self.act++;
+			self.gameStage.actTransition( self.act );
 		});
 
 		gameStage.addEventListener(StateEvent.THEEND, function():void{

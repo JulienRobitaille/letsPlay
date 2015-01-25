@@ -12,6 +12,7 @@ import com.letsplay.Atlas.Asset;
 import flash.utils.setTimeout;
 
 import starling.core.Starling;
+import starling.display.DisplayObject;
 
 import starling.display.MovieClip;
 
@@ -20,9 +21,7 @@ import starling.events.Event;
 
 public class GameStageView extends View {
     private var closedScene:InteractiveImage;
-    private var act1:Sprite;
-    private var act2:Sprite;
-    private var act3:Sprite;
+    private var act:Sprite;
     private var topScene:InteractiveImage;
     private var scene:InteractiveImage;
     private var cat:MovieClip;
@@ -45,14 +44,16 @@ public class GameStageView extends View {
         this.closedScene.x = ( this.topScene.width - closedScene.width ) >> 1;
         this.scene.y = sHeight - this.scene.height - 30;
 
-        this.setAct1();
         //this.setAct2();
         //this.setAct3();
 
+		this.act ||= new Sprite();
+
         this.addChild(this.scene);
-        this.addChild(this.act1);
-        //this.addChild(this.act2);
-       // this.addChild(this.act3);
+
+		this.setAct1();
+
+        this.addChild(this.act);
         this.addChild(this.closedScene);
         this.addChild(this.topScene);
 
@@ -61,10 +62,13 @@ public class GameStageView extends View {
         TweenLite.to(this.closedScene,3, {y:-115});
     }
 
-    public function curtainDropThenLift( data:Object ):void {
-        TweenLite.to(this.closedScene,2, {y:"+115",onComplete:function():void{
-            trace(data);
-            TweenLite.to(this.closedScene,3, {y:-115});
+    public function curtainDropThenLift( callback : Function ):void {
+		var curtain : DisplayObject = this.closedScene;
+		TweenLite.killTweensOf(curtain);
+        TweenLite.to(curtain,2, {y:95,onComplete:function():void{
+			callback();
+            TweenLite.to(curtain,3, {y:-115});
+
         }});
     }
 
@@ -72,8 +76,8 @@ public class GameStageView extends View {
         //todo
     }
 
-    private function setAct1():void {
-        this.act1 = new Sprite();
+    public function setAct1():void {
+		this.act.removeChildren(0,-1,true);
 
         var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
         cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 100;
@@ -110,15 +114,15 @@ public class GameStageView extends View {
 
         Starling.juggler.add(this.girlHappy);
 
-        this.act1.addChild(cloud);
-        this.act1.addChild(leftTree);
-        this.act1.addChild(house);
-        this.act1.addChild(bush);
-        this.act1.addChild(this.boyHappy);
-        this.act1.addChild(this.girlHappy);
+        this.act.addChild(cloud);
+        this.act.addChild(leftTree);
+        this.act.addChild(house);
+        this.act.addChild(bush);
+        this.act.addChild(this.boyHappy);
+        this.act.addChild(this.girlHappy);
     }
-    private function setAct2():void {
-        this.act2= new Sprite();
+	public function setAct2():void {
+		this.act.removeChildren(0,-1,true);
 
         var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
         cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 170;
@@ -159,19 +163,18 @@ public class GameStageView extends View {
         bush4.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 160 + bush4.width + 70;
         bush4.y = this.topScene.height + 160;
 
-
-        this.act2.addChild(cloud);
-        this.act2.addChild(cloud2);
-        this.act2.addChild(bush);
-        this.act2.addChild(bush2);
-        this.act2.addChild(bush3);
-        this.act2.addChild(bush4);
-        this.act2.addChild(leftTree);
-        this.act2.addChild(rightTree);
+        this.act.addChild(cloud);
+        this.act.addChild(cloud2);
+        this.act.addChild(bush);
+        this.act.addChild(bush2);
+        this.act.addChild(bush3);
+        this.act.addChild(bush4);
+        this.act.addChild(leftTree);
+        this.act.addChild(rightTree);
     }
 
-    private function setAct3():void {
-        this.act3 = new Sprite();
+	public function setAct3():void {
+		this.act.removeChildren(0,-1,true);
 
         var cloud:InteractiveImage = new InteractiveImage(null,Asset.Cloud);
         cloud.x = (( this.topScene.width - this.closedScene.width ) >> 1) + 100;
@@ -199,15 +202,15 @@ public class GameStageView extends View {
 
         //WTF CAT LOOP !?!?!?!
 
-        this.act3.addChild(cloud);
-        this.act3.addChild(leftTree);
-        this.act3.addChild(house);
-        this.act3.addChild(bush);
-        this.act3.addChild(kitten3);
+        this.act.addChild(cloud);
+        this.act.addChild(leftTree);
+        this.act.addChild(house);
+        this.act.addChild(bush);
+        this.act.addChild(kitten3);
     }
     public function animateKitten():void{
         this.cat.addEventListener(Event.ADDED_TO_STAGE, this.onAdded);
-        this.act1.addChild(this.cat);
+        this.act.addChild(this.cat);
     }
     public function onAdded():void{
         this.cat.addEventListener(Event.ENTER_FRAME, this.entreFrameCat);

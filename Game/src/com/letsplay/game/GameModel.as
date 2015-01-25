@@ -117,5 +117,9 @@ public class GameModel extends Model {
 		this.currentDialog = dialogTree.get(destinationId);
 		this.dispatchEventWith(BubbleEvent.SHOW_BUBBLE, false, this.currentDialog);
 	}
+
+	public function getDialog(id:String):Dialog {
+		return dialogTree.get(id);
+	}
 }
 }

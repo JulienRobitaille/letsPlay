@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="Mobile">
+    <configurations>
+      <configuration name="Mobile" target-platform="Mobile" pure-as="true" main-class="Mobile" output-file="Main.swf" output-folder="$MODULE_DIR$/../out/production/Mobile">
+        <dependencies target-player="13.0">
+          <entries>
+            <entry library-id="b1acf001-b459-40fe-96d3-5af7ba486a59">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="f9a24c7b-d39e-4f86-80fe-a1eab632ab6e">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="13" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Mobile-app.xml" package-file-name="Main" />
+        <packaging-ios package-file-name="Main" />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="13" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="b1acf001-b459-40fe-96d3-5af7ba486a59" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Game/src" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="f9a24c7b-d39e-4f86-80fe-a1eab632ab6e" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Game/libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../Game/libs" recursive="false" />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
