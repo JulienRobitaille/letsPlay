@@ -219,6 +219,7 @@ public class GameModel extends Model {
 				})
 			])
 		}));
+
 	}
 
 	public function changeAct( $id:int ):void{

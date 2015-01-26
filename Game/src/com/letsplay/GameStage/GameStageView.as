@@ -394,11 +394,26 @@ public class GameStageView extends View {
 
             TweenLite.to(end, 0.5, {y: (this.sHeight / 2 - end.height - 50)});
         });
+
+		SoundsAssets.applause_low.playSound();
     }
     // The game ending
     public function theBadEnd():void {
         this.animateKidMad(null);
         this.animatePlayerHappy(null);
+
+		this.curtainDrop(function():void {
+
+			var end:InteractiveText = new InteractiveText(null, sWidth, 1, I18n.END, "fluorine", 48);
+			end.autoSize = TextFieldAutoSize.VERTICAL;
+			end.y = -20;
+			end.color = 0xD7D8D3;
+			end.useHandCursor = true;
+
+			TweenLite.to(end, 0.5, {y: (this.sHeight / 2 - end.height - 50)});
+		});
+
+		SoundsAssets.applause_high.playSound();
     }
 
 
